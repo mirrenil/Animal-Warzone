@@ -39,7 +39,7 @@ Lägg till ytterliggare information som är specifikt för ert projekt!
 
 
 
-##Krav för godkänt
+### Krav för godkänt
 
 Uppgiften lämnas in i tid!
 Alla filer: spelidé, klassdiagram, skisser, planering, kodbas etc har lämnats in
@@ -52,6 +52,6 @@ Spelet fungerar och efterliknar er idébeskrivning
 Du lämnar in en individuell loggbok
 Krav för väl godkänt:
 
-##Alla punkter för godkänt är uppfyllda
+### Alla punkter för godkänt är uppfyllda
 Spelet ska vara helt originellt eller vara en originell tappning på ett befintligt spel
 Slutresultatet matchar er idébeskrivning väl
