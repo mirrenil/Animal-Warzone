@@ -36,3 +36,22 @@ Typings för de globala variablerna relaterat till p5.sound fungerar tyvärr int
 Lägg till ytterliggare information som är specifikt för ert projekt!
 
 **LYCKA TILL!**
+
+
+
+##Krav för godkänt
+
+Uppgiften lämnas in i tid!
+Alla filer: spelidé, klassdiagram, skisser, planering, kodbas etc har lämnats in
+Objekt Orienterade Programmerings Principer har användas
+Ni har redovisat en idépresentation
+Ni har genomfört en presentation av projektet
+Ni har använt er av TypeScript & P5
+Git och GitHub har används enligt beskrivning
+Spelet fungerar och efterliknar er idébeskrivning
+Du lämnar in en individuell loggbok
+Krav för väl godkänt:
+
+##Alla punkter för godkänt är uppfyllda
+Spelet ska vara helt originellt eller vara en originell tappning på ett befintligt spel
+Slutresultatet matchar er idébeskrivning väl
