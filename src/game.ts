@@ -8,7 +8,7 @@ class Game implements MenuState {
     // private startMenu: StartMenu;
     // private characterMenu: CharacterMenu;
     // private pausedMenu: PausedMenu;
-    // private gameOverMenu: GameOverMenu;
+    private gameOverMenu: GameOverMenu;
     // private gameBoard: GameBoard;
   
     constructor() {
@@ -16,6 +16,7 @@ class Game implements MenuState {
       this.activeMenu = 'Start'; 
       // this.startMenu = new StartMenu(this);
       // this.characterMenu = new CharacterMenu(this);
+      this.gameOverMenu = new GameOverMenu(this);
     }
   
     public update() {

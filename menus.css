@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*REUSABLE CLASSES*/
+.flex{display: flex;}
+.center{justify-content: center;}
+.between{justify-content: space-between;}
+.evenly{justify-content: space-evenly;}
+.column{flex-direction: column;}
+.align{align-items: center;}
+.wrap{flex-wrap: wrap;}
+.display{display: none;}
+
+
+body {
+    background-color: #21212f;
+}
+
+button {
+    background-color: #0085FF;
+    font-size: 25px;
+    width: 250px;
+    height: 50px;
+    border-radius: 30px;
+    border: none;
+    margin: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-color: #006BCE;
+    cursor: pointer;
+}
+
+button:active {
+    box-shadow: 0px 6px 15px 0px #00000040;
+}
+
+.gameOverTitle {
+    font-size: 72px;
+    font-weight: bold;
+    margin: 2rem;
+    color: #FAFAFA
+}
+
+.characters {
+    width: 200px;
+    height: 120px;
+}
+
+.characters img {
+    width: 250%;
+    height: auto;
+}
+
