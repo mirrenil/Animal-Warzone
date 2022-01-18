@@ -1,10 +1,23 @@
 class StartMenu {
-    private menuState: MenuState;
-    constructor(menuState: MenuState) {
-        this.menuState = menuState;
-    }
+    // private menuState: MenuState;
+    // private width: Number;
+    // private height: Number;
+    // private appearance: p5.Image;
+    // private gameInstructions: Instructions;
 
-    private newGame() {
-        this.menuState.activeMenu = 'Character';
-    }
+    // constructor(menuState: MenuState, width: Number, height: Number, appearance: p5.Image, gameInstructions: Instructions) {
+    //     this.menuState = 'start';
+    // }
+
+    // public newGame() {
+        
+    // }
+
+    // public showRules() {
+
+    // }
+
+    // public draw() {
+
+    // }
 }
