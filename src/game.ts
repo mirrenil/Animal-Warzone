@@ -27,7 +27,9 @@ class Game implements GameState {
       
       if (state === 'Paused') {
         this.pausedMenu.openMenu();
-      } 
+      } else if (state === 'Start') {
+        this.startMenu.openStartMenu();
+      }
     };
   
     public update() {

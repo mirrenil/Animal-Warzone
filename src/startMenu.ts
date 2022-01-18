@@ -1,6 +1,7 @@
 class StartMenu {
     private gameState: GameState;
     private startMenuDivEl: HTMLDivElement;
+    
     // private width: Number;
     // private height: Number;
     // private appearance: p5.Image;
@@ -8,11 +9,14 @@ class StartMenu {
 
     constructor(gameState: GameState) {
         this.gameState = gameState;
-
+        
         this.startMenuDivEl = document.createElement('div');
         this.startMenuDivEl.className = 'startMenuContainer';
-        this.startMenuDivEl.append('div');
-
+        
+        const startMenuPicture = document.createElement('IMG').
+        startMenuPicture.src = "./assets/images/"
+        
+      
         const startMenuHeaderEl = document.createElement('h1');
         startMenuHeaderEl.className = 'startMenuTitle';
         startMenuHeaderEl.textContent = 'Animal Warzone';
@@ -24,6 +28,10 @@ class StartMenu {
         const instructionsButtonEl = document.createElement('button');
         instructionsButtonEl.addEventListener('click', this.showInstructionsMenu);
         this.startMenuDivEl.append('button'); //Skickar denna upp samtiga buttons eller bara den första ????
+    }
+
+    public openStartMenu() {
+        document.body.append(this.startMenuDivEl);
     }
 
     public startNewGame() {
