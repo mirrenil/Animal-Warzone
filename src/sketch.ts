@@ -1,6 +1,10 @@
 //---- GLOBAL VARIABLES ----//
 let game: Game;
 let animalWarzon: p5.Image;
+let monkeyBig: p5.Image;
+let pigBig: p5.Image;
+let rabbitBig: p5.Image;
+let turtleBig: p5.Image;
 let heart: p5.Image;
 let shield: p5.Image;
 let speed: p5.Image;
@@ -21,7 +25,11 @@ let esc: p5.Image;
 function preload() {
     // sound: p5.SoundFile = loadSound('../assets/mySound.wav');
     animalWarzon = loadImage('/assets/images/startMenuPicture.png');
-}   heart = loadImage('/assets/images/redheart.png')
+    monkeyBig = loadImage('/assets/images/bigMonkey.png');
+    pigBig = loadImage('/assets/images/bigPig.png');
+    rabbitBig = loadImage('/assets/images/bigRabbit.png');
+    turtleBig = loadImage('/assets/images/bigTurtle.png');
+   heart = loadImage('/assets/images/redheart.png')
     shield = loadImage('/assets/images/shield.png');
     speed = loadImage('/assets/images/speed.png');
     arrows = loadImage('/assets/images/ArrowKeys.png');
@@ -29,6 +37,7 @@ function preload() {
     enter = loadImage('/assets/images/Enter.png');
     space = loadImage('/assets/images/Space.png');
     esc = loadImage('/assets/images/Escape.png');
+}
 
 /**
  * Built in setup function in P5

@@ -10,9 +10,8 @@ class GameOverMenu {
          //this.menuState = 'gameOver';
     // }
 
-   
     
-    constructor() { 
+    constructor(gameState = GameOver) { 
         this.gameOverMenu = new GameOverMenu(this); 
 
         this.gameOverMenu = document.createElement('body');
@@ -87,6 +86,11 @@ class GameOverMenu {
     }
 
     public draw() {
+    imageMode(CENTER);
+    image(monkeyBig, windowHeight / 2, windowWidth / 2);
+    image(pigBig, windowHeight / 2, windowWidth / 2);
+    image(rabbitBig, windowHeight / 2, windowWidth / 2);
+    image(turtleBig, windowHeight / 2, windowWidth / 2);
 
     }
 }
