@@ -1,4 +1,4 @@
-type GameStateLabel = 'Start'|'Character'|'Paused'|'GameOver'|'Running' | 'Instructions';
+type GameStateLabel = 'Start'|'Character'|'Paused'|'GameOver'|'Running'| 'Instructions';
 
 interface GameState {
   // activeGameState: GameStateLabel;
@@ -44,7 +44,7 @@ class Game implements GameState {
     }
   
     public draw() {
-      background('blue');
+      background('blue');  
       // this.grid.draw();
     }
   }
