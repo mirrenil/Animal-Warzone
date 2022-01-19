@@ -1,6 +1,15 @@
 //---- GLOBAL VARIABLES ----//
 let game: Game;
 let animalWarzon: p5.Image;
+let heart: p5.Image;
+let shield: p5.Image;
+let speed: p5.Image;
+let arrows: p5.Image;
+let wasd: p5.Image;
+let enter: p5.Image;
+let space: p5.Image;
+let esc: p5.Image;
+
 
 // let sound: p5.SoundFile
 
@@ -12,7 +21,15 @@ let animalWarzon: p5.Image;
 function preload() {
     // sound: p5.SoundFile = loadSound('../assets/mySound.wav');
     animalWarzon = loadImage('/assets/images/startMenuPicture.png');
-} 
+}   heart = loadImage('/assets/images/redheart.png')
+    shield = loadImage('/assets/images/shield.png');
+    speed = loadImage('/assets/images/speed.png');
+    arrows = loadImage('/assets/images/ArrowKeys.png');
+    wasd = loadImage('/assets/images/WASD.png');
+    enter = loadImage('/assets/images/Enter.png');
+    space = loadImage('/assets/images/Space.png');
+    esc = loadImage('/assets/images/Escape.png');
+
 /**
  * Built in setup function in P5
  * This is a good place to create your first class object
@@ -41,7 +58,7 @@ function draw() {
     
 
     imageMode(CENTER);
-    image(animalWarzon, windowHeight /2, windowWidth / 2);
+    image(animalWarzon, windowHeight / 2, windowWidth / 2);
 
     game.update();
     game.draw();
