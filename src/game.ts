@@ -10,8 +10,11 @@ class Game implements GameState {
     public activeGameState: GameStateLabel;
     private startMenu: StartMenu;
     // private characterMenu: CharacterMenu;
+    private gameOverMenu: GameOverMenu;
+
     private pausedMenu: PausedMenu;
-    // private gameOverMenu: GameOverMenu;
+
+
     // private gameBoard: GameBoard;
   
     constructor() {
@@ -20,6 +23,7 @@ class Game implements GameState {
       this.pausedMenu = new PausedMenu(this);
       this.startMenu = new StartMenu(this);
       // this.characterMenu = new CharacterMenu(this);
+      this.gameOverMenu = new GameOverMenu(this);
     }
 
     public setGameState = (state: GameStateLabel) => {
