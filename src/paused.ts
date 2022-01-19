@@ -1,6 +1,6 @@
 class PausedMenu {
     private gameState: GameState;
-    private menuDiv: HTMLDivElement;
+    private pausedMenuDiv: HTMLDivElement;
     // private gamePaused: Boolean;
     // private continueGameButton: any;
     // private exitGameButton: any;
@@ -12,18 +12,26 @@ class PausedMenu {
     constructor(gameState: GameState) {
         this.gameState = gameState;
         
-        this.menuDiv = document.createElement('div');
-        this.menuDiv.className = "";
+        this.pausedMenuDiv = document.createElement("div");
+        this.pausedMenuDiv.className = "pauseMenu";
         
-        const p = document.createElement('p');
-        p.textContent = "Paused";
-        this.menuDiv.append(p);
+        const pauseMenuTitles = document.createElement("h1");
+        pauseMenuTitles.innerText = "Paused";
+        this.pausedMenuDiv.appendChild(pauseMenuTitles);
 
-        const img = document.createElement('img');
-        img.src = "./assets/images/BILD.png";
+        // const img = document.createElement('img');
+        // img.src = "./assets/images/BILD.png";
 
-        const button = document.createElement('button');
-        button.addEventListener('click', this.handleResumeGame);
+        const pauseMenuButtonsDiv = document.createElement("div");
+        pauseMenuButtonsDiv.className = "pauseMenuButtons";
+        const resumeMenuButton = document.createElement("button");
+        resumeMenuButton.className = "resumeMenuButton";
+        const quitMenuButton = document.createElement("button");
+        quitMenuButton.className = "resumeMenuButton";
+        pauseMenuButtonsDiv.appendChild(resumeMenuButton);
+        pauseMenuButtonsDiv.appendChild(quitMenuButton);
+        this.pausedMenuDiv.appendChild(pauseMenuButtonsDiv);
+        resumeMenuButton.addEventListener('click', this.handleResumeGame);
     }
 
     private handleResumeGame() {
@@ -32,10 +40,10 @@ class PausedMenu {
     }
     
     public openMenu() {
-        document.body.append(this.menuDiv);
+        document.body.appendChild(this.pausedMenuDiv);
     }
 
     private closeMenu() {
-        this.menuDiv.remove();
+        this.pausedMenuDiv.remove();
     }
 }
