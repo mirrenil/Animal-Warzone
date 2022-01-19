@@ -1,5 +1,5 @@
 class Barricade extends Entity {
- private size: p5.Vector;
+//  private size: p5.Vector;
 
 //   constructor(size: p5.Vector) {
 //     this.size = size; 
@@ -7,7 +7,6 @@ class Barricade extends Entity {
 
 
   public draw() {
-    const wallCellSize = createVector(width * .04, height * 0.02);
     const barricadeCellSize = createVector(width * .02, height * 0.05);
 
     push();
