@@ -1,6 +1,6 @@
 class GameOverMenu {
      private gameState: GameOver;
-     private gameOverMenu: any | undefined;
+     private gameOverDiv: HTMLDivElement;
     // private width: Number;
     // private height: Number;
     // public characters: p5.Image;
@@ -14,25 +14,28 @@ class GameOverMenu {
     constructor(gameState = GameOver) { 
         this.gameOverMenu = new GameOverMenu(this); 
 
-        this.gameOverMenu = document.createElement('body');
-        this.gameOverMenu.className = 'body';
+        this.gameOverDiv = document.createElement('div');
+        this.gameOverDiv.className = 'charactersDiv';
 
-        const gameOverTitle = document.createElement('div');
-        gameOverTitle.className = 'gameOverTitle flex evenly';
-        this.gameOverMenu.append(gameOverTitle);
+        const gameOverWinner = document.createElement('div');
+        gameOverWinner.className = 'gameOverTitle flex evenly';
+        this.gameOverDiv.append(gameOverWinner);
 
         const winner = document.createElement('span');
-        winner.className = 'gameOverTitle';
         winner.textContent = 'WINNER';
-        this.gameOverTitle.append(winner);
+        this.gameOverWinner.append(winner);
+
+        const gameOverLoser = document.createElement('div');
+        gameOverLoser.className = 'gameOverTitle flex evenly';
+        this.gameOverDiv.append(gameOverLoser);
 
         const loser = document.createElement('span');
-        winner.className = 'gameOverTitle';
         loser.textContent = 'LOSER';
-        this.gameOverTitle.append(loser);
+        this.gameOverLoser.append(loser);
 
-        this.charactersDiv = document.createElement('div');
+        const charactersDiv = document.createElement('div');
         this.charactersDiv.className = 'characters';
+        this.gameOverWinner.append(charactersDiv)
         
         const pig = document.createElement('img');
         pig.src = '../documents/gameCharacters/monkeyFront.png';
@@ -66,8 +69,9 @@ class GameOverMenu {
         mainMenuBtn.textContent = 'MAIN MENU';
         this.buttonsDiv.append(mainMenuBtn);
         //mainMenuBtn.addEventListener('click', startMenu);
-        
+   
     }
+    
     public openGameOverMenu() {
         document.body.append(this.gameOverMenu);
     }
