@@ -53,7 +53,6 @@ class GameOverMenu {
         rabbit.src = '/documents/gameCharacters/rabbitFront.png';
         this.charactersDiv.append(rabbit);
 
-
         this.buttonsDiv = document.createElement('div');
         this.buttonsDiv.className = "";
         this.gameOverMenu.append(buttonsDiv);
@@ -69,7 +68,6 @@ class GameOverMenu {
         mainMenuBtn.textContent = 'MAIN MENU';
         this.buttonsDiv.append(mainMenuBtn);
         //mainMenuBtn.addEventListener('click', startMenu);
-   
     }
     
     public openGameOverMenu() {
