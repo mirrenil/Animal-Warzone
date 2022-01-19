@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +10,12 @@
 :root {
     --background: #21212f;
     --blueBtn: #0085FF;
-    --Hover: #0458a7;
+    --HoverBtn: #0458a7;
     --FontColor: #FAFAFA;
+    --fontFBtn: 'Raleway', sans-serif;
+    --fontFBigText: 'Mochiy Pop P One', sans-serif;
+
+
 }
 
 main {
@@ -18,13 +25,14 @@ main {
     background-color: var(--background);
     width: 100%;
     height: 100vh;
+
 }
 
 
 .startMenuContainer {
     display: flex;
     flex-direction: column;
-    width: 50rem;
+    width: 60rem;
     align-items: center;
 }
 
@@ -32,6 +40,10 @@ main {
     color: var(--FontColor);
     font-size: 5rem;
     margin-top: 4rem;
+    font-family: 'Mochiy Pop P One', sans-serif;
+
+    ;
+
 }
 
 .NewGameBtn,
@@ -43,6 +55,8 @@ main {
     border-radius: 25px;
     margin-top: 3rem;
     transition: background-color .5s;
+    font-family: 'Raleway', sans-serif;
+
 }
 
 
