@@ -1,4 +1,4 @@
-type GameStateLabel = 'Start'|'Character'|'Paused'|'GameOver'|'Running' | 'Instructions';
+type GameStateLabel = 'Start'|'Character'|'Paused'|'GameOver'|'Running'| 'Instructions';
 
 interface GameState {
   // activeGameState: GameStateLabel;

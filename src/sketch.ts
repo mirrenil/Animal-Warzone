@@ -32,11 +32,12 @@ function setup() {
  * you created in the setup function above
  */
 function draw() {
-    background('blue');
-    fill('green');
-    stroke('white');
-    strokeWeight(10);
-    //circle(width * .5, height * .5, width * 0.2);
+    // background('orange');
+    // fill('green');
+    // stroke('white');
+    // strokeWeight(10);
+    // circle(width * .5, height * .5, width * 0.2);
+    
     
 
     imageMode(CENTER);

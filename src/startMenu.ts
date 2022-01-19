@@ -43,7 +43,7 @@ class StartMenu {
         this.startMenuDivEl.remove();
     }
 
-    // public draw() {
-
-    // }
+    public draw() {
+    
+    }
 }
