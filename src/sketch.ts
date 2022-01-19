@@ -24,7 +24,7 @@ function setup() {
     frameRate(60);
     // noCursor();
     
-    // game = new Game();
+    game = new Game();
 }
 
 /**
@@ -33,7 +33,7 @@ function setup() {
  * you created in the setup function above
  */
 function draw() {
-    background('blue');
+    background('darkblue');
     fill('green');
     stroke('white');
     strokeWeight(10);
@@ -43,8 +43,8 @@ function draw() {
     imageMode(CENTER);
     image(animalWarzon, windowHeight /2, windowWidth / 2);
 
-    // game.update();
-    // game.draw();
+    game.update();
+    game.draw();
 }
 
 
