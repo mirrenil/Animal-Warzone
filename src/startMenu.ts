@@ -13,10 +13,9 @@ class StartMenu {
         this.startMenuDivEl = document.createElement('div');
         this.startMenuDivEl.className = 'startMenuContainer';
         
-        const startMenuPicture = document.createElement('IMG').
-        startMenuPicture.src = "./assets/images/"
+        // const startMenuPicture = document.createElement('IMG').
+        // startMenuPicture.src = "./assets/images/"
         
-      
         const startMenuHeaderEl = document.createElement('h1');
         startMenuHeaderEl.className = 'startMenuTitle';
         startMenuHeaderEl.textContent = 'Animal Warzone';
@@ -44,7 +43,7 @@ class StartMenu {
         this.startMenuDivEl.remove();
     }
 
-    // public draw() {
-
-    // }
+    public draw() {
+    
+    }
 }

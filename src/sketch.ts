@@ -29,7 +29,7 @@ function preload() {
     pigBig = loadImage('/assets/images/bigPig.png');
     rabbitBig = loadImage('/assets/images/bigRabbit.png');
     turtleBig = loadImage('/assets/images/bigTurtle.png');
-    heart = loadImage('/assets/images/redheart.png')
+   heart = loadImage('/assets/images/redheart.png')
     shield = loadImage('/assets/images/shield.png');
     speed = loadImage('/assets/images/speed.png');
     arrows = loadImage('/assets/images/ArrowKeys.png');
@@ -38,6 +38,7 @@ function preload() {
     space = loadImage('/assets/images/Space.png');
     esc = loadImage('/assets/images/Escape.png');
 }
+
 /**
  * Built in setup function in P5
  * This is a good place to create your first class object
