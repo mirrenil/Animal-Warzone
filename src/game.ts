@@ -40,7 +40,7 @@ class Game implements GameState {
     }
   
     public draw() {
-      background('blue');
+      background('blue');  
       // this.grid.draw();
     }
   }
