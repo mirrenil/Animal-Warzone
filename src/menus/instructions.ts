@@ -1,3 +1,9 @@
+// ---- GLOBAL VARIABLES ----//
+let arrows: p5.Image;
+let wasd: p5.Image;
+let enter: p5.Image;
+let space: p5.Image;
+let esc: p5.Image;
 class InstructionsMenu {
     // private information: string;
     // private appearance: p5.Image;

@@ -1,4 +1,5 @@
-
+//---- GLOBAL VARIABLES ----//
+let heart: p5.Image;
 class Life extends Entity {
     // private showLife: p5.Image;
 

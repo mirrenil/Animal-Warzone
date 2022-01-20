@@ -1,4 +1,5 @@
-
+//---- GLOBAL VARIABLES ----//
+let speed: p5.Image;
 class Speed extends Entity {
 
     speedUpCharacter() {
