@@ -29,7 +29,7 @@ function preload() {
     pigBig = loadImage('/assets/images/bigPig.png');
     rabbitBig = loadImage('/assets/images/bigRabbit.png');
     turtleBig = loadImage('/assets/images/bigTurtle.png');
-   heart = loadImage('/assets/images/redheart.png')
+    heart = loadImage('/assets/images/redheart.png')
     shield = loadImage('/assets/images/shield.png');
     speed = loadImage('/assets/images/speed.png');
     arrows = loadImage('/assets/images/ArrowKeys.png');
