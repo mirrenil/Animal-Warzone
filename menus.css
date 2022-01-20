@@ -4,19 +4,60 @@
     padding: 0;
 }
 
+:root {
+    --background: #21212f;
+    --blueBtn: #0085FF;
+    --FontColor: #FAFAFA;
+}
+
 /*REUSABLE CLASSES*/
-.flex{display: flex;}
-.center{justify-content: center;}
-.between{justify-content: space-between;}
-.evenly{justify-content: space-evenly;}
-.column{flex-direction: column;}
-.align{align-items: center;}
-.wrap{flex-wrap: wrap;}
-.block{display: none;}
-.padding-left{padding-left: 7rem;}
-.padding-left-extra{padding-left: 8rem;}
-.padding-right{padding-right: 4rem;}
-.padding-top{padding-top: 2rem;}
+.flex {
+    display: flex;
+}
+
+.center {
+    justify-content: center;
+}
+
+.between {
+    justify-content: space-between;
+}
+
+.evenly {
+    justify-content: space-evenly;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.align {
+    align-items: center;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.block {
+    display: none;
+}
+
+.padding-left {
+    padding-left: 7rem;
+}
+
+.padding-left-extra {
+    padding-left: 8rem;
+}
+
+.padding-right {
+    padding-right: 4rem;
+}
+
+.padding-top {
+    padding-top: 2rem;
+}
 
 
 body {
@@ -70,4 +111,3 @@ span {
     letter-spacing: 5px;
     text-align: center;
 }
-
