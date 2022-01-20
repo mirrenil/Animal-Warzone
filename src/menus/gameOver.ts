@@ -1,4 +1,5 @@
 class GameOverMenu {
+
     private gameState: GameState;
     private gameOverDiv: HTMLDivElement;
      
@@ -21,6 +22,7 @@ class GameOverMenu {
     // private width: Number;
     // private height: Number;
     // public characters: p5.Image;
+
 
     
      constructor(gameState: GameState ) { 
@@ -117,7 +119,12 @@ class GameOverMenu {
 
     // public closeGameOverMenu() {
     //     this.closeGameOverMenu.remove();
+
     // }
+
+    // // public closeGameOverMenu() {
+    // //     this.closeGameOverMenu.remove();
+    // // }
 
 
     public startNewGame() {
@@ -137,4 +144,5 @@ class GameOverMenu {
     image(rabbitBig, windowHeight / 2, windowWidth / 2);
     image(turtleBig, windowHeight / 2, windowWidth / 2);
     }
+
 }
