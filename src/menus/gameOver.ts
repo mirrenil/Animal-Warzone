@@ -103,12 +103,12 @@ class GameOverMenu {
         this.playAgainBtn = document.createElement('button');
         this.playAgainBtn.textContent = 'PLAY AGAIN';
         this.buttonsDiv.append(this.playAgainBtn);
-        this.playAgainBtn.addEventListener('click', this.startNewGame);
+        this.playAgainBtn.addEventListener('click', () => this.startNewGame());
 
         this.mainMenuBtn = document.createElement('button');
         this.mainMenuBtn.textContent = 'MAIN MENU';
         this.buttonsDiv.append(this.mainMenuBtn);
-        this.mainMenuBtn.addEventListener('click', this.goToMainMenu);
+        this.mainMenuBtn.addEventListener('click', () => this.goToMainMenu());
     }
     
     // public openGameOverMenu() {
