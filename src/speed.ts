@@ -1,11 +1,11 @@
-class Speed extends Entity {
+// class Speed extends Entity {
 
-    speedUpCharacter() {
+//     speedUpCharacter() {
 
-    }
+//     }
 
-    updateSpeed() {
+//     updateSpeed() {
 
-    }
+//     }
 
-}
+// }
