@@ -5,26 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="chooseCharacter.css">
 </head>
 <body>
+
+    <header>
+        <img src="assets\images\Vector.png" alt="" id="arrow">
+        <h2 style="text-align: center;">Choose your character</h2>
+    </header>
+
     <main> 
         <div>
-            <!--ARROW BACK-->
-            <h1>Choose your character</h1>
+            <div class="player1">
+                <h3 style="text-align: center;">Player 1</h3>  
+
+                <div id="characters">
+                    <div id="pig"> <input type="checkbox" id="checkbox"> <img src="documents\gameCharacters\pigFront.png" alt=""> </div>
+                    <div id="turtle"> <input type="checkbox" id="checkbox"> <img src="documents\gameCharacters\turtleFront.png" alt=""> </div>
+                    <div id="monkey"> <input type="checkbox" id="checkbox"> <img src="documents\gameCharacters\monkeyFront.png" alt=""> </div>
+                    <div id="rabbit"> <input type="checkbox" id="checkbox"> <img src="documents\gameCharacters\rabbitFront.png" alt=""> </div>
+                </div>
+
+            </div>
+
+            <div id="vertical"><!--VERTICAL--></div>
+
+            <div class="player2">
+                <h3 style="text-align: center;">Player 2</h3>  
+
+                <div id="characters">
+                    <div id="pig"> <input type="checkbox" id="checkbox"> <img src="documents\gameCharacters\pigFront.png" alt=""> </div>
+                    <div id="turtle"> <input type="checkbox" id="checkbox"> <img src="documents\gameCharacters\turtleFront.png" alt=""> </div>
+                    <div id="monkey"> <input type="checkbox" id="checkbox"> <img src="documents\gameCharacters\monkeyFront.png" alt=""> </div>
+                    <div id="rabbit"> <input type="checkbox" id="checkbox"> <img src="documents\gameCharacters\rabbitFront.png" alt=""> </div>
+                </div>
+
+            </div>
         </div>
         <div>
-            <div>
-                <h3>Player 1</h3>  
-            </div>
-            <div><!--VERTICAL--></div>
-            <div>
-                <h3>Player 2</h3>  
-            </div>
-        </div>
-        <div>
-            <button><a href="">START GAME</a></button>
+            
         </div>
     </main>
+
+    <footer>
+        <button id="start-game-button"><p>START GAME</p></button>
+    </footer>
+
 </body>
 </html>
