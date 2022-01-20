@@ -11,6 +11,7 @@ class Game implements GameState {
     private startMenu: StartMenu;
     // private characterMenu: CharacterMenu;
     private gameOverMenu: GameOverMenu;
+    private barricade: Barricade;
 
     private pausedMenu: PausedMenu;
 
@@ -19,6 +20,7 @@ class Game implements GameState {
   
     constructor() {
       // this.grid = new Grid(createVector(10, 10));
+      this.barricade = new Barricade(createVector(10, 10));
       this.activeGameState = 'Start';
       this.pausedMenu = new PausedMenu(this);
       this.startMenu = new StartMenu(this);
@@ -44,7 +46,8 @@ class Game implements GameState {
     }
   
     public draw() {
-      background('blue');  
+      background('#21212F');
+      this.barricade.draw();  
       // this.grid.draw();
     }
   }
