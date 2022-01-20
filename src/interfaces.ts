@@ -36,3 +36,4 @@ interface Instructions {
     space: p5.Image;
     esc: p5.Image;
 }
+
