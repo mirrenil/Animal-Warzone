@@ -18,22 +18,16 @@
 
 }
 
-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--background);
-    width: 100%;
-    height: 100vh;
-
-}
-
 
 .startMenuContainer {
+    position: fixed;
+    inset: 0;
     display: flex;
     flex-direction: column;
-    width: 60rem;
     align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    gap: 4rem;
 }
 
 .startMenuTitle {
@@ -41,28 +35,23 @@ main {
     font-size: 5rem;
     margin-top: 4rem;
     font-family: 'Mochiy Pop P One', sans-serif;
-
-    ;
-
 }
 
-.NewGameBtn,
-.instructionBtn {
+.btn {
     color: var(--FontColor);
     background-color: var(--blueBtn);
     height: 3rem;
     width: 10rem;
     border-radius: 25px;
     margin-top: 3rem;
-    transition: background-color .5s;
+
     font-family: 'Raleway', sans-serif;
 
 }
 
 
 /* Hover functions*/
-.NewGameBtn:hover,
-.instructionBtn:hover {
+.btn:hover {
     background-color: var(--Hover);
     box-shadow: 10px 10px 10px 10px rgba(71, 69, 69, 0.2);
 
