@@ -12,7 +12,7 @@ class Game implements GameState {
     private startMenu: StartMenu;
     // private characterMenu: CharacterMenu;
     // private pausedMenu: PausedMenu;
-    // private gameOverMenu: GameOverMenu;
+    private gameOverMenu: GameOverMenu;
     // private gameBoard: GameBoard;
 
     constructor() {
