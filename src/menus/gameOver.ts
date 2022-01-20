@@ -117,6 +117,7 @@ class GameOverMenu {
         this.mainMenuBtn.textContent = 'MAIN MENU';
         this.buttonsDiv.append(this.mainMenuBtn);
         this.mainMenuBtn.addEventListener('click', () => this.goToMainMenu());
+        this.startNewGame();
     }
     
     // public openGameOverMenu() {
