@@ -1,0 +1,115 @@
+body{
+    margin: 0;
+    font-family: 'Bebas Neue', cursive;
+    background-color: #21212F;
+    color: whitesmoke;
+}
+
+header{
+    min-width: 100%;
+    height: 10vh;
+    position: relative;
+}
+
+h2{
+    font-size: 72px;
+}
+
+h3{
+    font-size: 52px;
+}
+
+main{
+    min-width: 100%;
+    height: 75vh;
+}
+
+footer{
+    min-width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+footer > div > img{
+    height: 40%;
+    margin-right: 10%;
+}
+
+footer > div{
+    display:flex;
+    flex-direction: row;
+    min-width: 16rem;
+}
+
+#extra-life > img{
+    left:9%;
+}
+
+#speed-up > img{
+    left:43%;
+}
+
+#shield > img{
+    left: 76%;
+}
+
+#move{
+    height: 35vh;
+    min-width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#shoot{
+    height: 25vh;
+    min-width: 100%;
+    position: relative;
+}
+
+#space-key{
+    height: 40%;
+    position: absolute;
+    left:9%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#enter-key{
+    height: 60%;
+    position: absolute;
+    right:15%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#pause{
+    height: 10vh;
+    min-width: 100%;
+    position: relative;
+}
+
+#pause > h3{
+    position: absolute;
+    left: 40%;
+}
+
+#pause > img{
+    position: absolute;
+    height: 85%;
+    left: 50%;
+}
+
+#player1{
+    margin:0;
+    position: absolute;
+    left: 14%;
+}
+
+#player2{
+    margin: 0;
+    position: absolute;
+    right:14%;
+}
