@@ -1,5 +1,5 @@
-// class Entity {
-//     // private width: Number;
+class Entity {
+    // private width: Number;
 //     // private height: Number;
 //     // private appearance: p5.Image;
 //     // private name: String;
@@ -16,4 +16,4 @@
 
 //     // }
 
-// }
+}

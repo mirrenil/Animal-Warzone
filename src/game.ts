@@ -9,6 +9,7 @@ interface GameState {
 class Game implements GameState {
     // private grid: Grid;
     public activeGameState: GameStateLabel;
+    private barricade: Barricade;
     private startMenu: StartMenu;
     // private characterMenu: CharacterMenu;
     // private pausedMenu: PausedMenu;
@@ -20,6 +21,7 @@ class Game implements GameState {
         this.activeGameState = 'Start';
         // this.pausedMenu = new PausedMenu(this);
         this.startMenu = new StartMenu(this);
+        this.barricade = new Barricade(createVector(10, 10));
         // this.characterMenu = new CharacterMenu(this);
     }
 
