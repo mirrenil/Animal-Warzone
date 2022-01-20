@@ -1,3 +1,4 @@
+
 let barricade: p5.Image;
 let img;
 
@@ -110,6 +111,7 @@ class Barricade {
 
 
   }
+
     barricadeShape() {
 
     }
