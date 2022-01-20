@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // type GameStateLabel = 'Start'|'Character'|'Paused'|'GameOver'|'Running'| 'Instructions';
+=======
+// type GameStateLabel = 'Start' | 'Character' | 'Paused' | 'GameOver' | 'Running' | 'Instructions';
+>>>>>>> 121626e81bcb3acce41e41b559c8ab4363a1b385
 
 // interface GameState {
 //   // activeGameState: GameStateLabel;
@@ -6,6 +10,7 @@
 // }
 
 // class Game implements GameState {
+<<<<<<< HEAD
 //     // private grid: Grid;
 //     public activeGameState: GameStateLabel;
 //     private startMenu: StartMenu;
@@ -44,3 +49,47 @@
 //       // this.grid.draw();
 //     }
 //   }
+=======
+//   // private grid: Grid;
+//   public activeGameState: GameStateLabel;
+//   private startMenu: StartMenu;
+//   // private characterMenu: CharacterMenu;
+//   private gameOverMenu: GameOverMenu;
+
+//   private pausedMenu: PausedMenu;
+
+
+//   // private gameBoard: GameBoard;
+
+//   constructor() {
+//     // this.grid = new Grid(createVector(10, 10));
+//     this.activeGameState = 'Start';
+//     this.pausedMenu = new PausedMenu(this);
+//     this.startMenu = new StartMenu(this);
+//     // this.characterMenu = new CharacterMenu(this);
+//     this.gameOverMenu = new GameOverMenu(this);
+//   }
+
+//   public setGameState = (state: GameStateLabel) => {
+//     this.activeGameState = state;
+
+//     if (state === 'Paused') {
+//       this.pausedMenu.openMenu();
+//     } else if (state === 'Start') {
+//       this.startMenu.openStartMenu();
+//     }
+//   };
+
+//   public update() {
+//     if (this.activeGameState === 'Running') {
+//       // this.gameBoard.update();
+//     }
+//     // this.grid.update();
+//   }
+
+//   public draw() {
+//     background('blue');
+//     // this.grid.draw();
+//   }
+// }
+>>>>>>> 121626e81bcb3acce41e41b559c8ab4363a1b385
