@@ -1,9 +1,9 @@
-class barricade extends Entity {
-    barricadeShape() {
+// class barricade extends Entity {
+//     barricadeShape() {
 
-    }
+//     }
 
-    breakBarricade() {
+//     breakBarricade() {
         
-    }
-}
+//     }
+// }

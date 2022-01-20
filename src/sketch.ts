@@ -12,7 +12,7 @@ let animalWarzon: p5.Image;
 function preload() {
     // sound: p5.SoundFile = loadSound('../assets/mySound.wav');
     animalWarzon = loadImage('/assets/images/startMenuPicture.png');
-} 
+}
 /**
  * Built in setup function in P5
  * This is a good place to create your first class object
@@ -23,7 +23,6 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     frameRate(60);
     // noCursor();
-    
     // game = new Game();
 }
 
@@ -33,15 +32,11 @@ function setup() {
  * you created in the setup function above
  */
 function draw() {
-    background('blue');
-    fill('green');
-    stroke('white');
-    strokeWeight(10);
-    circle(width * .5, height * .5, width * 0.2);
-    
+    background('grey');
+
 
     imageMode(CENTER);
-    image(animalWarzon, windowHeight /2, windowWidth / 2);
+    image(animalWarzon, windowHeight / 5, windowWidth / 8);
 
     // game.update();
     // game.draw();
