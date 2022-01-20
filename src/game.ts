@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+
 // type GameStateLabel = 'Start'|'Character'|'Paused'|'GameOver'|'Running'| 'Instructions';
-=======
-// type GameStateLabel = 'Start' | 'Character' | 'Paused' | 'GameOver' | 'Running' | 'Instructions';
->>>>>>> 121626e81bcb3acce41e41b559c8ab4363a1b385
 
 // interface GameState {
 //   // activeGameState: GameStateLabel;
@@ -10,7 +7,6 @@
 // }
 
 // class Game implements GameState {
-<<<<<<< HEAD
 //     // private grid: Grid;
 //     public activeGameState: GameStateLabel;
 //     private startMenu: StartMenu;
@@ -49,7 +45,7 @@
 //       // this.grid.draw();
 //     }
 //   }
-=======
+
 //   // private grid: Grid;
 //   public activeGameState: GameStateLabel;
 //   private startMenu: StartMenu;
@@ -92,4 +88,3 @@
 //     // this.grid.draw();
 //   }
 // }
->>>>>>> 121626e81bcb3acce41e41b559c8ab4363a1b385
