@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="chooseCharacter.css">
+    <script defer src="chooseCharacter.js"></script>
 </head>
 <body>
 
     <header>
-        <img src="assets\images\Vector.png" alt="" id="arrow">
         <h2 style="text-align: center;">Choose your character</h2>
     </header>
 
@@ -20,10 +20,10 @@
                 <h3 style="text-align: center;">Player 1</h3>  
 
                 <div id="characters">
-                    <div id="pig"> <input type="checkbox" id="checkbox"> <img src="documents\gameCharacters\pigFront.png" alt=""> </div>
-                    <div id="turtle"> <input type="checkbox" id="checkbox"> <img src="documents\gameCharacters\turtleFront.png" alt=""> </div>
-                    <div id="monkey"> <input type="checkbox" id="checkbox"> <img src="documents\gameCharacters\monkeyFront.png" alt=""> </div>
-                    <div id="rabbit"> <input type="checkbox" id="checkbox"> <img src="documents\gameCharacters\rabbitFront.png" alt=""> </div>
+                    <div id="pig"> <input type="checkbox" class="checkbox" id="checkboxPig"> <img src="documents\gameCharacters\pigFront.png" alt="" id="imgPig"> </div>
+                    <div id="turtle"> <input type="checkbox" class="checkbox" id="checkboxTurtle"> <img src="documents\gameCharacters\turtleFront.png" alt="" id="imgTurtle"> </div>
+                    <div id="monkey"> <input type="checkbox" class="checkbox" id="checkboxMonkey"> <img src="documents\gameCharacters\monkeyFront.png" alt="" id="imgMonkey"> </div>
+                    <div id="rabbit"> <input type="checkbox" class="checkbox" id="checkboxRabbit"> <img src="documents\gameCharacters\rabbitFront.png" alt="" id="imgRabbit"> </div>
                 </div>
 
             </div>
@@ -34,10 +34,10 @@
                 <h3 style="text-align: center;">Player 2</h3>  
 
                 <div id="characters">
-                    <div id="pig"> <input type="checkbox" id="checkbox"> <img src="documents\gameCharacters\pigFront.png" alt=""> </div>
-                    <div id="turtle"> <input type="checkbox" id="checkbox"> <img src="documents\gameCharacters\turtleFront.png" alt=""> </div>
-                    <div id="monkey"> <input type="checkbox" id="checkbox"> <img src="documents\gameCharacters\monkeyFront.png" alt=""> </div>
-                    <div id="rabbit"> <input type="checkbox" id="checkbox"> <img src="documents\gameCharacters\rabbitFront.png" alt=""> </div>
+                    <div id="pig"> <input type="checkbox" class="checkbox" id="checkboxPig"> <img src="documents\gameCharacters\pigFront.png" alt="" id="imgPig"> </div>
+                    <div id="turtle"> <input type="checkbox" class="checkbox" id="checkboxTurtle"> <img src="documents\gameCharacters\turtleFront.png" alt="" id="imgTurtle"> </div>
+                    <div id="monkey"> <input type="checkbox" class="checkbox" id="checkboxMonkey"> <img src="documents\gameCharacters\monkeyFront.png" alt="" id="imgMonkey"> </div>
+                    <div id="rabbit"> <input type="checkbox" class="checkbox" id="checkboxRabbit"> <img src="documents\gameCharacters\rabbitFront.png" alt="" id="imgRabbit"> </div>
                 </div>
 
             </div>
@@ -48,7 +48,7 @@
     </main>
 
     <footer>
-        <button id="start-game-button"><p>START GAME</p></button>
+        <button id="start-game-button"><p id="buttonText">START GAME</p></button>
     </footer>
 
 </body>
