@@ -41,6 +41,9 @@ let turtleRight: p5.Image;
 function preload() {
     // sound: p5.SoundFile = loadSound('../assets/mySound.wav');
     animalWarzon = loadImage('/assets/images/startMenuPicture.png');
+<<<<<<< HEAD
+}
+=======
     monkeyBig = loadImage('/assets/images/bigMonkey.png');
     pigBig = loadImage('/assets/images/bigPig.png');
     rabbitBig = loadImage('/assets/images/bigRabbit.png');
@@ -77,6 +80,7 @@ function preload() {
 
 }
 
+>>>>>>> master
 /**
  * Built in setup function in P5
  * This is a good place to create your first class object
@@ -87,7 +91,10 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     frameRate(60);
     // noCursor();
+<<<<<<< HEAD
+=======
     
+>>>>>>> master
     game = new Game();
 }
 
@@ -97,6 +104,10 @@ function setup() {
  * you created in the setup function above
  */
 function draw() {
+<<<<<<< HEAD
+    // imageMode(CENTER);
+    // image(animalWarzon, windowHeight / 5, windowWidth / 8);
+=======
     background('darkblue');
     fill('green');
     stroke('white');
@@ -107,6 +118,7 @@ function draw() {
     imageMode(CENTER);
     image(animalWarzon, windowHeight / 2, windowWidth / 2);
 
+>>>>>>> master
     game.update();
     game.draw();
 }
