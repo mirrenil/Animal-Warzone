@@ -36,9 +36,33 @@ class Character {
 
     // }
 
-    // draw() {
-
-    // }
+    draw() {
+        imageMode(CENTER);
+        // Rabbit
+        image(rabbitFront, windowHeight / 2, windowWidth / 2);
+        image(rabbitBack, windowHeight / 2, windowWidth / 2);
+        image(rabbitRight, windowHeight / 2, windowWidth / 2);
+        image(rabbitLeft, windowHeight / 2, windowWidth / 2);
+    
+        // Pig
+        image(pigFront, windowHeight / 2, windowWidth / 2);
+        image(pigBack, windowHeight / 2, windowWidth / 2);
+        image(pigRight, windowHeight / 2, windowWidth / 2);
+        image(pigRight, windowHeight / 2, windowWidth / 2);
+    
+        // Monkey
+        image(monkeyFront, windowHeight / 2, windowWidth / 2);
+        image(monkeyBack, windowHeight / 2, windowWidth / 2);
+        image(monkeyRight, windowHeight / 2, windowWidth / 2);
+        image(monkeyLeft, windowHeight / 2, windowWidth / 2);   
+    
+        // Turtle
+        image(turtleFront, windowHeight / 2, windowWidth / 2);
+        image(turtleBack, windowHeight / 2, windowWidth / 2);
+        image(turtleRight, windowHeight / 2, windowWidth / 2);
+        image(turtleLeft, windowHeight / 2, windowWidth / 2);
+       
+     }
 
     // update() {
 
