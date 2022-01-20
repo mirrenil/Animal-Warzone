@@ -41,7 +41,8 @@ class Game implements GameState {
     }
 
     public draw() {
-        background('blue');
-        // this.grid.draw();
+      background('#21212F');
+      this.barricade.draw();  
+      // this.grid.draw();
     }
 }

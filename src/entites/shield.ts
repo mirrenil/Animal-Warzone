@@ -1,14 +1,14 @@
-// class Shield extends Entity {
-//     shieldCharacter() {
+class Shield extends Entity {
+    shieldCharacter() {
 
-//     }
+    }
 
-//     stopDamage() {
+    stopDamage() {
         
-//     }
+    }
     
-//     draw() {
-//     imageMode(CENTER);
-//     image(shield, windowHeight / 2, windowWidth / 2);
-//     }
-// }
+    draw() {
+    imageMode(CENTER);
+    image(shield, windowHeight / 2, windowWidth / 2);
+    }
+}

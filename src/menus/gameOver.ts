@@ -1,98 +1,148 @@
-// class GameOverMenu {
-//      private gameState: GameOver;
-//      private gameOverDiv: HTMLDivElement;
-//     // private width: Number;
-//     // private height: Number;
-//     // public characters: p5.Image;
+class GameOverMenu {
 
+    private gameState: GameState;
+    private gameOverDiv: HTMLDivElement;
+     
+    private gameOverWinner: HTMLDivElement;
+    private gameOverLoser: HTMLDivElement;
+    private winnersDiv: HTMLDivElement;
+    private losersDiv: HTMLDivElement;
+    private winner: HTMLSpanElement;
+    private loser: HTMLSpanElement;
+    private buttonsDiv: HTMLDivElement;
+    private playAgainBtn: HTMLButtonElement;
+    private mainMenuBtn: HTMLButtonElement;
+    private pig: HTMLImageElement;
+    private monkey: HTMLImageElement;
+    private turtle: HTMLImageElement;
+    private rabbit: HTMLImageElement;
 
-//     // constructor(width: Number, height: Number, appearance: p5.Image, mainMenuButton: any, startGameButton: any) {
-//          //this.menuState = 'gameOver';
-//     // }
+     //public buttonsDiv: HTMLDivElement;
+     
+    // private width: Number;
+    // private height: Number;
+    // public characters: p5.Image;
+
 
     
-//     constructor(gameState = GameOver) { 
-//         this.gameOverMenu = new GameOverMenu(this); 
+     constructor(gameState: GameState ) { 
+        this.gameState = gameState;
 
-//         this.gameOverDiv = document.createElement('div');
-//         this.gameOverDiv.className = 'charactersDiv';
 
-//         const gameOverWinner = document.createElement('div');
-//         gameOverWinner.className = 'gameOverTitle flex evenly';
-//         this.gameOverDiv.append(gameOverWinner);
+        /** CREATING DIVS AND SPAN */
 
-//         const winner = document.createElement('span');
-//         winner.textContent = 'WINNER';
-//         this.gameOverWinner.append(winner);
+        this.gameOverDiv = document.createElement('div');
+        this.gameOverDiv.className = 'flex evenly';
 
-//         const gameOverLoser = document.createElement('div');
-//         gameOverLoser.className = 'gameOverTitle flex evenly';
-//         this.gameOverDiv.append(gameOverLoser);
+        this.gameOverWinner = document.createElement('div');
+        this.gameOverWinner.className = 'gameOverTitle flex column align padding-right padding-top';
+        this.gameOverDiv.append(this.gameOverWinner);
 
-//         const loser = document.createElement('span');
-//         loser.textContent = 'LOSER';
-//         this.gameOverLoser.append(loser);
+        this.winner = document.createElement('span');
+        this.winner.textContent = 'WINNER';
+        this.gameOverWinner.append(this.winner);
 
-//         const charactersDiv = document.createElement('div');
-//         this.charactersDiv.className = 'characters';
-//         this.gameOverWinner.append(charactersDiv)
+        this.gameOverLoser = document.createElement('div');
+        this.gameOverLoser.className = 'gameOverTitle flex column padding-top';
+        this.gameOverDiv.append(this.gameOverLoser);
+
+        this.loser = document.createElement('span');
+        this.loser.textContent = 'LOSER';
+        this.gameOverLoser.append(this.loser);
+
         
-//         const pig = document.createElement('img');
-//         pig.src = '../documents/gameCharacters/monkeyFront.png';
-//         this.charactersDiv.append(pig);
+        /** CHARACTER WINNER */
 
-//         const monkey = document.createElement('img');
-//         monkey.src = '../documents/gameCharacters/monkeyFront.png';
-//         this.charactersDiv.append(monkey);
-
-//         const turtle = document.createElement('img');
-//         turtle.src = '/documents/gameCharacters/turtleFront.png';
-//         this.charactersDiv.append(turtle);
+        this.winnersDiv = document.createElement('div');
+        this.winnersDiv.className = 'characters padding-top align padding-left';
+        this.gameOverWinner.append(this.winnersDiv)
         
-//         const rabbit = document.createElement('img');
-//         rabbit.src = '/documents/gameCharacters/rabbitFront.png';
-//         this.charactersDiv.append(rabbit);
+        this.pig = document.createElement('img');
+        this.pig.src = '../documents/gameCharacters/monkeyFront.png';
+        this.winnersDiv.append(this.pig);
 
-//         this.buttonsDiv = document.createElement('div');
-//         this.buttonsDiv.className = "";
-//         this.gameOverMenu.append(buttonsDiv);
+        this.monkey = document.createElement('img');
+        this.monkey.src = '../documents/gameCharacters/monkeyFront.png';
+        this.winnersDiv.append(this.monkey);
 
-//         const playAgainBtn = document.createElement('button');
-//         playAgainBtn.className = 'button a';
-//         playAgainBtn.textContent = 'PLAY AGAIN';
-//         this.buttonsDiv.append(playAgainBtn);
-//         // playAgainBtn.addEventListener('click');
+        this.turtle = document.createElement('img');
+        this.turtle.src = '/documents/gameCharacters/turtleFront.png';
+        this.winnersDiv.append(this.turtle);
+        
+        this.rabbit = document.createElement('img');
+        this.rabbit.src = '/documents/gameCharacters/rabbitFront.png';
+        this.winnersDiv.append(this.rabbit);
 
-//         const mainMenuBtn = document.createElement('button');
-//         mainMenuBtn.className = 'button a';
-//         mainMenuBtn.textContent = 'MAIN MENU';
-//         this.buttonsDiv.append(mainMenuBtn);
-//         //mainMenuBtn.addEventListener('click', startMenu);
-//     }
+
+        /** CHARACTER LOSER */
+
+        this.losersDiv = document.createElement('div');
+        this.losersDiv.className = 'characters padding-top align padding-left';
+        this.gameOverDiv.append(this.losersDiv)
+        
+        this.pig = document.createElement('img');
+        this.pig.src = '../documents/gameCharacters/monkeyFront.png';
+        this.losersDiv.append(this.pig);
+
+        this.monkey = document.createElement('img');
+        this.monkey.src = '../documents/gameCharacters/monkeyFront.png';
+        this.losersDiv.append(this.monkey);
+
+        this.turtle = document.createElement('img');
+        this.turtle.src = '/documents/gameCharacters/turtleFront.png';
+        this.losersDiv.append(this.turtle);
+        
+        this.rabbit = document.createElement('img');
+        this.rabbit.src = '/documents/gameCharacters/rabbitFront.png';
+        this.losersDiv.append(this.rabbit);
+        
+        /** BUTTONS */
+
+        this.buttonsDiv = document.createElement('div');
+        this.buttonsDiv.className = "flex column center align";
+        document.body.append(this.buttonsDiv);
+
+        this.playAgainBtn = document.createElement('button');
+        this.playAgainBtn.textContent = 'PLAY AGAIN';
+        this.buttonsDiv.append(this.playAgainBtn);
+        this.playAgainBtn.addEventListener('click', () => this.startNewGame());
+
+        this.mainMenuBtn = document.createElement('button');
+        this.mainMenuBtn.textContent = 'MAIN MENU';
+        this.buttonsDiv.append(this.mainMenuBtn);
+        this.mainMenuBtn.addEventListener('click', () => this.goToMainMenu());
+    }
     
-//     public openGameOverMenu() {
-//         document.body.append(this.gameOverMenu);
-//     }
+    // public openGameOverMenu() {
+    //     document.body.append(this.gameOverMenu);
+    // }
 
-//     // public closeGameOverMenu() {
-//     //     this.closeGameOverMenu.remove();
-//     // }
+    // public closeGameOverMenu() {
+    //     this.closeGameOverMenu.remove();
+
+    // }
+
+    // // public closeGameOverMenu() {
+    // //     this.closeGameOverMenu.remove();
+    // // }
 
 
-//     public startGame() {
+    public startNewGame() {
+        this.gameState.setGameState('Character');
+        this.gameOverDiv.remove();
+    }
 
-//     }
+    public goToMainMenu() {
+        this.gameState.setGameState('Start');
+        this.gameOverDiv.remove();
+    }
+    
+    public draw() {
+    imageMode(CENTER);
+    image(monkeyBig, windowHeight / 2, windowWidth / 2);
+    image(pigBig, windowHeight / 2, windowWidth / 2);
+    image(rabbitBig, windowHeight / 2, windowWidth / 2);
+    image(turtleBig, windowHeight / 2, windowWidth / 2);
+    }
 
-//     public quit() {
-
-//     }
-
-//     public draw() {
-//     imageMode(CENTER);
-//     image(monkeyBig, windowHeight / 2, windowWidth / 2);
-//     image(pigBig, windowHeight / 2, windowWidth / 2);
-//     image(rabbitBig, windowHeight / 2, windowWidth / 2);
-//     image(turtleBig, windowHeight / 2, windowWidth / 2);
-
-//     }
-// }
+}

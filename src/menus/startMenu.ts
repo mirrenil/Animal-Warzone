@@ -1,7 +1,7 @@
 class StartMenu {
     private gameState: GameState;
     private startMenuDivEl: HTMLDivElement;
-    private startMenuPicture: HTMLImageElement;
+    // private startMenuPicture: HTMLImageElement;
 
     // private width: Number;
     // private height: Number;
