@@ -71,12 +71,12 @@ class Barricade {
       //middle-up left
       image(barricade, imageX * x + width * .08, height * .5 - imageY * 3,imageX, imageY)
       //middle-up right
-      image(barricade, imageX * x + width * .92 - imageX * 4, height * .5 - imageY * 3,imageX, imageY)
+      image(barricade, imageX * x + width * .92 - imageX * 3, height * .5 - imageY * 3,imageX, imageY)
 
       //middle-down left
       image(barricade, imageX * x + width * .08, height * .5 + imageY * 2, imageX, imageY)
       // middle-down right
-      image(barricade, imageX * x + width * .92 - imageX * 4, height * .5 + imageY * 2, imageX, imageY)
+      image(barricade, imageX * x + width * .92 - imageX * 3, height * .5 + imageY * 2, imageX, imageY)
 
       // middle-down
       image(barricade, imageX * x + width * .4, height * .7, imageX, imageY)
@@ -92,7 +92,7 @@ class Barricade {
       image(barricade, width * .08 + imageX * 3, y * imageY + height * .5 - imageY * 2, imageX, imageY)
 
       //middle right 
-      image(barricade, width * .92 - imageX * 4, y * imageY + height * .5 - imageY * 2, imageX, imageY)
+      image(barricade, width * .92 - imageX * 3, y * imageY + height * .5 - imageY * 2, imageX, imageY)
 			
       // middle
       image(barricade, width * .5 - imageX /2, y * imageY + height * .5 - imageY * 2, imageX, imageY)
