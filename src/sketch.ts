@@ -37,6 +37,7 @@ function preload() {
     enter = loadImage('/assets/images/Enter.png');
     space = loadImage('/assets/images/Space.png');
     esc = loadImage('/assets/images/Escape.png');
+    barricade = loadImage('../assets/images/Group 67.png')
 }
 
 /**

@@ -93,7 +93,6 @@ class GameOverMenu {
         this.rabbit = document.createElement('img');
         this.rabbit.src = '/documents/gameCharacters/rabbitFront.png';
         this.losersDiv.append(this.rabbit);
-
         
         /** BUTTONS */
 
