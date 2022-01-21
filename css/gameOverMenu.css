@@ -16,6 +16,10 @@
 
 }
 
+.blocked {
+  display: none;
+}
+
 /*REUSABLE CLASSES*/
 .flex {
   display: flex;
@@ -62,26 +66,29 @@
 }
 
 .padding-top {
-  padding-top: 2rem;
+  padding-top: 1rem;
+}
+
+main {
+  display: none
 }
 
 body {
   background-color: #000000;
   color: #fafafa;
-}
-
-.gameOverMainDiv {
   
 }
 
-.btn {
+.gameOverMainDiv {
+  height: 100vh;
+}
 
+.btn {
   color: var(--FontColor);
   background-color: var(--blueBtn);
   height: 3rem;
   width: 10rem;
   border-radius: 25px;
-  margin-top: 3rem;
   font-family: 'Raleway', sans-serif;
 
 }
@@ -93,24 +100,32 @@ body {
 
 }
 
-.gameOverTitle {
-  font-size: 80px;
-  font-weight: bold;
-  margin: 2rem;
+.gameOverWinner{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gameOverLoser {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .characters {
   display: flex;
+  justify-content: center;
 }
 
 .characters img {
-  height: auto;
-  width: 30%;
-  position: absolute;
+  height: 60%;
+  width: auto;
 }
 
 span {
-  letter-spacing: 5px;
+  font-size: 80px;
+  font-weight: bold;
+  letter-spacing: 6px;
   text-align: center;
   font-family: 'Mochiy Pop P One', sans-serif;
 }
@@ -121,10 +136,8 @@ span {
 
 }
 
-
 .loser {
   width: 100%;
   height: 100%;
-
+  
 }
-
