@@ -16,8 +16,8 @@ class StartMenu {
         this.startMenuDivEl = document.createElement('div');
         this.startMenuDivEl.className = 'startMenuContainer';
 
-        this.startMenuPicture = document.createElement('img');
-        this.startMenuPicture.src = '/assets/images/startMenuImg.png';
+        // const startMenuPicture = document.createElement('IMG').
+        //     startMenuPicture.src = "./assets/images/"
 
         const startMenuHeaderEl = document.createElement('h1');
         startMenuHeaderEl.className = 'startMenuTitle';
@@ -34,7 +34,7 @@ class StartMenu {
         instructionsButtonEl.textContent = 'Instruction'
         instructionsButtonEl.className = 'btn'
 
-        this.startMenuDivEl.append(startMenuHeaderEl, this.startMenuPicture, newGameButtonEl, instructionsButtonEl)
+        this.startMenuDivEl.append(startMenuHeaderEl, newGameButtonEl, instructionsButtonEl)
         this.openStartMenu();
     }
 
@@ -53,8 +53,6 @@ class StartMenu {
 
     public showInstructionsMenu() {
         this.gameState.setGameState('Instructions');
-        
-        console.log("instructions");
         this.startMenuDivEl.remove(); // ta ev bort.
     }
 
