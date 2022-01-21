@@ -2,7 +2,7 @@
 type GameStateLabel = 'Start' | 'Character' | 'Paused' | 'GameOver' | 'Running' | 'Instructions';
 
 interface GameState {
-    // activeGameState: GameStateLabel;
+    activeGameState: GameStateLabel;
     setGameState: (state: GameStateLabel) => void;
 }
 
@@ -11,9 +11,9 @@ class Game implements GameState {
     private barricade: Barricade;
     private startMenu: StartMenu;
     // private characterMenu: CharacterMenu;
-    private pausedMenu: PausedMenu;
+    // private pausedMenu: PausedMenu;
 
-    private gameOverMenu: GameOverMenu;
+    // private gameOverMenu: GameOverMenu;
     private gameBoard: GameBoard;
     public instructionsMenu: InstructionsMenu;
 
@@ -21,7 +21,7 @@ class Game implements GameState {
     constructor() {
         // this.grid = new Grid(createVector(10, 10));
         this.activeGameState = 'Start';
-        this.pausedMenu = new PausedMenu(this);
+        // this.pausedMenu = new PausedMenu(this);
 
            //this.startMenu = new StartMenu(this);
 
@@ -30,7 +30,7 @@ class Game implements GameState {
         this.gameBoard = new GameBoard(this);
 
          this.barricade = new Barricade(createVector(10, 10));
-         this.gameOverMenu = new GameOverMenu(this);
+        //  this.gameOverMenu = new GameOverMenu(this);
         this.instructionsMenu = new InstructionsMenu(this);
 
 
@@ -41,13 +41,13 @@ class Game implements GameState {
         this.activeGameState = state;
 
         if (state === 'Paused') {
-            this.pausedMenu.openPauseMenu();
+            // this.pausedMenu.openPauseMenu();
         } else if (state === 'Start') {
             this.startMenu.openStartMenu();
         } else if (state === 'Running') {
             this.gameBoard.openGameBoard();
         } else if (state === 'GameOver') {
-            this.gameOverMenu.openGameOverMenu();
+            // this.gameOverMenu.openGameOverMenu();
 
         }else if (state === 'Instructions'){
             this.instructionsMenu.openInstructionsMenu();
@@ -67,15 +67,10 @@ class Game implements GameState {
     public draw() {
       background('#21212F');
       this.barricade.draw();
-      this.gameBoard.draw();
-
-
-
-
+    //   this.gameBoard.draw();
     }
 
     public openGame() {
 
     }
 }
-

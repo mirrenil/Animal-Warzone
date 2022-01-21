@@ -2,7 +2,6 @@
 let game: Game;
 
 let characters: Characters;
-
 let images: Images;
 let entites: Entites;
 let instructions: Instructions;
@@ -16,6 +15,7 @@ let instructions: Instructions;
  */
 function preload() {
   // sound: p5.SoundFile = loadSound('../assets/mySound.wav');
+  barricade = loadImage("/assets/images/Group 67.png");
   images = {
     monkeyBig: loadImage("/assets/images/bigMonkey.png"),
     pigBig: loadImage("/assets/images/bigPig.png"),
@@ -48,7 +48,6 @@ function preload() {
     heart: loadImage("/assets/images/redheart.png"),
     shield: loadImage("/assets/images/shield.png"),
     speed: loadImage("/assets/images/speed.png"),
-    barricade: loadImage("/assets/images/Group 67.png"),
   };
 
 
@@ -74,14 +73,7 @@ function setup() {
     // noCursor();
     
     game = new Game();
-    characters = new Characters(this)
-
-  createCanvas(windowWidth, windowHeight);
-  frameRate(60);
-  // noCursor();
-
-  game = new Game();
-
+    // characters = new Characters(this)
 }
 
 /**
@@ -91,20 +83,9 @@ function setup() {
  */
 function draw() {
 
-    game.update();
+    // game.update();
     game.draw();
-    characters.draw();
-
-
-  background("darkblue");
-  
-
-  // imageMode(CENTER);
-  // image(animalWarzon, windowHeight / 2, windowWidth / 2);
-
-  game.update();
-  game.draw();
-
+    // characters.draw();
 }
 
 /**

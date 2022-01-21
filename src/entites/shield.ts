@@ -9,8 +9,8 @@ class Shield extends Entity {
         
     }
     
-    draw() {
-    imageMode(CENTER);
-    image(shield, windowHeight / 2, windowWidth / 2);
-    }
+    // draw() {
+    // imageMode(CENTER);
+    // image(shield, windowHeight / 2, windowWidth / 2);
+    // }
 }
