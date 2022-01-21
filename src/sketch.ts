@@ -1,5 +1,8 @@
 //---- GLOBAL VARIABLES ----//
 let game: Game;
+
+let characters: Characters;
+
 let images: Images;
 let entites: Entites;
 let instructions: Instructions;
@@ -37,12 +40,17 @@ function preload() {
     animalWarzon: loadImage("/assets/images/startMenuPicture.png"),
   };
 
+
+    // 
+   
+
   entites = {
     heart: loadImage("/assets/images/redheart.png"),
     shield: loadImage("/assets/images/shield.png"),
     speed: loadImage("/assets/images/speed.png"),
     barricade: loadImage("/assets/images/Group 67.png"),
   };
+
 
   instructions = {
     arrows: loadImage("/assets/images/ArrowKeys.png"),
@@ -60,11 +68,20 @@ function preload() {
  * in the draw function below
  */
 function setup() {
+
+    createCanvas(windowWidth, windowHeight);
+    frameRate(60);
+    // noCursor();
+    
+    game = new Game();
+    characters = new Characters(this)
+
   createCanvas(windowWidth, windowHeight);
   frameRate(60);
   // noCursor();
 
   game = new Game();
+
 }
 
 /**
@@ -73,6 +90,12 @@ function setup() {
  * you created in the setup function above
  */
 function draw() {
+
+    game.update();
+    game.draw();
+    characters.draw();
+
+
   background("darkblue");
   
 
@@ -81,6 +104,7 @@ function draw() {
 
   game.update();
   game.draw();
+
 }
 
 /**

@@ -22,9 +22,13 @@ class Game implements GameState {
         // this.grid = new Grid(createVector(10, 10));
         this.activeGameState = 'Start';
         this.pausedMenu = new PausedMenu(this);
+
+           //this.startMenu = new StartMenu(this);
+
         this.startMenu = new StartMenu(this);
 
         this.gameBoard = new GameBoard(this);
+
          this.barricade = new Barricade(createVector(10, 10));
          this.gameOverMenu = new GameOverMenu(this);
         this.instructionsMenu = new InstructionsMenu(this);
