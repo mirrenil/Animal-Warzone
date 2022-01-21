@@ -2,7 +2,7 @@
 let animalWarzon: p5.Image;
 class StartMenu {
     private gameState: GameState;
-    private startMenuDivEl: HTMLDivElement;
+    public startMenuDivEl: HTMLDivElement;
     // private startMenuPicture: HTMLImageElement;
 
     // private width: Number;
@@ -39,7 +39,7 @@ class StartMenu {
     }
 
     public openStartMenu() {
-        console.log('open');
+        // console.log('open');
         document.body.append(this.startMenuDivEl);
     }
 
@@ -50,6 +50,8 @@ class StartMenu {
 
     public showInstructionsMenu() {
         this.gameState.setGameState('Instructions');
+        
+        console.log("instructions");
         this.startMenuDivEl.remove(); // ta ev bort.
     }
 
