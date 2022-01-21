@@ -1,14 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inconsolata:wght@300&family=M+PLUS+1+Code:wght@200&family=Source+Code+Pro:wght@100&display=swap');
+
+:root {
+    --background: #21212f;
+    --blueBtn: #0085FF;
+    --HoverBtn: #0458a7;
+    --FontColor: #FAFAFA;
+    --fontFBtn: 'Raleway', sans-serif;
+    --fontFBigText: 'Mochiy Pop P One', sans-serif;
+    --instructionsFText: 'Bebas Neue';
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
 body{
     margin: 0;
-    font-family: 'Bebas Neue', cursive;
+    font-family: var(--instructionsFText);
     background-color: #21212F;
     color: whitesmoke;
 }
 
-header{
+.header{
     min-width: 100%;
     height: 10vh;
     position: relative;
+    top: 0;
 }
 
 h2{
@@ -19,12 +42,38 @@ h3{
     font-size: 52px;
 }
 
-main{
-    min-width: 100%;
-    height: 75vh;
+.main-div{
+    position: fixed;
+    inset:0;
+    gap: 5rem;
+    display: block;
 }
 
-footer{
+.main{
+    min-width: 100%;
+    height: 75vh;
+    gap: 10rem;
+}
+
+.extra-life{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.speed-up{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.shield{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer{
     min-width: 100%;
     height: 15vh;
     display: flex;
@@ -44,32 +93,20 @@ footer > div{
     min-width: 16rem;
 }
 
-#extra-life > img{
-    left:9%;
-}
-
-#speed-up > img{
-    left:43%;
-}
-
-#shield > img{
-    left: 76%;
-}
-
-#move{
+.move{
     height: 35vh;
     min-width: 100%;
     display: flex;
     justify-content: space-around;
 }
 
-#shoot{
+.shoot{
     height: 25vh;
     min-width: 100%;
     position: relative;
 }
 
-#space-key{
+.space-key{
     height: 40%;
     position: absolute;
     left:9%;
@@ -77,7 +114,7 @@ footer > div{
     transform: translateY(-50%);
 }
 
-#enter-key{
+.enter-key{
     height: 60%;
     position: absolute;
     right:15%;
@@ -85,31 +122,37 @@ footer > div{
     transform: translateY(-50%);
 }
 
-#pause{
+.pause{
     height: 10vh;
     min-width: 100%;
     position: relative;
 }
 
-#pause > h3{
+.pause > h3{
     position: absolute;
     left: 40%;
 }
 
-#pause > img{
+.pause > img{
     position: absolute;
     height: 85%;
     left: 50%;
 }
 
-#player1{
+.player1{
     margin:0;
     position: absolute;
     left: 14%;
 }
 
-#player2{
+.player2{
     margin: 0;
     position: absolute;
     right:14%;
+}
+
+.startMenu{
+    margin: 1rem;
+    cursor:pointer;
+    position: absolute;
 }

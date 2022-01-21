@@ -14,12 +14,14 @@ class Game implements GameState {
     // private pausedMenu: PausedMenu;
     // private gameOverMenu: GameOverMenu;
     // private gameBoard: GameBoard;
+    public instructionsMenu: InstructionsMenu;
 
     constructor() {
         // this.grid = new Grid(createVector(10, 10));
         this.activeGameState = 'Start';
         // this.pausedMenu = new PausedMenu(this);
         this.startMenu = new StartMenu(this);
+        this.instructionsMenu = new InstructionsMenu(this);
         // this.characterMenu = new CharacterMenu(this);
     }
 
@@ -30,6 +32,8 @@ class Game implements GameState {
             // this.pausedMenu.openMenu();
         } else if (state === 'Start') {
             this.startMenu.openStartMenu();
+        }else if (state === 'Instructions'){
+            this.instructionsMenu.openInstructionsMenu();
         }
     };
 
@@ -42,7 +46,7 @@ class Game implements GameState {
 
     public draw() {
       background('#21212F');
-      this.barricade.draw();  
+    //   this.barricade.draw();  
       // this.grid.draw();
     }
 }
