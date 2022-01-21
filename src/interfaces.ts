@@ -29,11 +29,4 @@ interface Entites {
     barricade: p5.Image;
 }
 
-interface Instructions {
-    arrows: p5.Image;
-    wasd: p5.Image;
-    enter: p5.Image;
-    space: p5.Image;
-    esc: p5.Image;
-}
 

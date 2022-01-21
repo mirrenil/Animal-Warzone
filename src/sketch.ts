@@ -41,23 +41,12 @@ function preload() {
   };
 
 
-    // 
-   
 
   entites = {
     heart: loadImage("/assets/images/redheart.png"),
     shield: loadImage("/assets/images/shield.png"),
     speed: loadImage("/assets/images/speed.png"),
     barricade: loadImage("/assets/images/Group 67.png"),
-  };
-
-
-  instructions = {
-    arrows: loadImage("/assets/images/ArrowKeys.png"),
-    wasd: loadImage("/assets/images/WASD.png"),
-    enter: loadImage("/assets/images/Enter.png"),
-    space: loadImage("/assets/images/Space.png"),
-    esc: loadImage("/assets/images/Escape.png"),
   };
 }
 
