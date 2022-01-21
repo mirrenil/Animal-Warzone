@@ -3,7 +3,7 @@ let animalWarzon: p5.Image;
 class StartMenu {
     private gameState: GameState;
     public startMenuDivEl: HTMLDivElement;
-    // private startMenuPicture: HTMLImageElement;
+    private startMenuPicture: HTMLImageElement;
 
     // private width: Number;
     // private height: Number;
