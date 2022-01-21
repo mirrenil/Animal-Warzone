@@ -1,3 +1,5 @@
+//---- GLOBAL VARIABLES ----//
+let shield: p5.Image;
 class Shield extends Entity {
     shieldCharacter() {
 

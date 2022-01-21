@@ -1,3 +1,20 @@
+//---- GLOBAL VARIABLES ----//
+let rabbitFront: p5.Image;
+let rabbitBack: p5.Image;
+let rabbitLeft: p5.Image;
+let rabbitRight: p5.Image;
+let pigFront: p5.Image;
+let pigBack: p5.Image;
+let pigLeft: p5.Image;
+let pigRight: p5.Image;
+let monkeyFront: p5.Image;
+let monkeyBack: p5.Image;
+let monkeyLeft: p5.Image;
+let monkeyRight: p5.Image;
+let turtleFront: p5.Image;
+let turtleBack: p5.Image;
+let turtleLeft: p5.Image;
+let turtleRight: p5.Image;
 class Character {
     // private width: Number;
     // private height: Number;
@@ -61,8 +78,8 @@ class Character {
         image(turtleBack, windowHeight / 2, windowWidth / 2);
         image(turtleRight, windowHeight / 2, windowWidth / 2);
         image(turtleLeft, windowHeight / 2, windowWidth / 2);
-    
-    // }
+       
+     }
 
     // update() {
 
