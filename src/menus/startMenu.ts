@@ -2,7 +2,7 @@
 let animalWarzon: p5.Image;
 class StartMenu {
     private gameState: GameState;
-    private startMenuDivEl: HTMLDivElement;
+    public startMenuDivEl: HTMLDivElement;
     // private startMenuPicture: HTMLImageElement;
 
     // private width: Number;
@@ -38,20 +38,26 @@ class StartMenu {
     //     this.openStartMenu();
     // }
 
-    // public openStartMenu() {
-    //     console.log('open');
-    //     document.body.append(this.startMenuDivEl);
-    // }
+
+    public openStartMenu() {
+        // console.log('open');
+        document.body.append(this.startMenuDivEl);
+    }
+
 
     // public startNewGame() {
     //     this.gameState.setGameState("Character");
     //     this.startMenuDivEl.remove();
     // }
 
-    // public showInstructionsMenu() {
-    //     this.gameState.setGameState('Instructions');
-    //     this.startMenuDivEl.remove(); // ta ev bort.
-    // }
+
+    public showInstructionsMenu() {
+        this.gameState.setGameState('Instructions');
+        
+        console.log("instructions");
+        this.startMenuDivEl.remove(); // ta ev bort.
+    }
+
 
     public draw() {
         // let Btn1 = createElement('button', 'klicka mig');
