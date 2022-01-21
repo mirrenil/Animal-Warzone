@@ -93,36 +93,57 @@ class Characters {
        })
     }
     draw() {
+
         imageMode(CENTER);
         // Rabbit
+
+        // imageMode(CENTER);
+        // // Rabbit
+
         // image(rabbitFront, windowHeight / 2, windowWidth / 2);
         // image(rabbitBack, windowHeight / 2, windowWidth / 2);
         // image(rabbitRight, windowHeight / 2, windowWidth / 2);
         // image(rabbitLeft, windowHeight / 2, windowWidth / 2);
     
+
         // Pig
+
+        // // Pig
+
         // image(pigFront, windowHeight / 2, windowWidth / 2);
         // image(pigBack, windowHeight / 2, windowWidth / 2);
         // image(pigRight, windowHeight / 2, windowWidth / 2);
         // image(pigRight, windowHeight / 2, windowWidth / 2);
     
+
         // Monkey
+
+        // // Monkey
+
         // image(monkeyFront, windowHeight / 2, windowWidth / 2);
         // image(monkeyBack, windowHeight / 2, windowWidth / 2);
         // image(monkeyRight, windowHeight / 2, windowWidth / 2);
         // image(monkeyLeft, windowHeight / 2, windowWidth / 2);   
     
+
         // Turtle
+
+        // // Turtle
+
         // image(turtleFront, windowHeight / 2, windowWidth / 2);
         // image(turtleBack, windowHeight / 2, windowWidth / 2);
         // image(turtleRight, windowHeight / 2, windowWidth / 2);
         // image(turtleLeft, windowHeight / 2, windowWidth / 2);
+
 
         // 
         image(monkeyFront, this.playerOnePosition.x, this.playerOnePosition.y, 70, 60)
         image(turtleFront,  this.playerTowPosition.x, this.playerTowPosition.y)
         this.characterOneMove();
         this.characterTowMove();
+
+       
+
      }
 
     // update() {

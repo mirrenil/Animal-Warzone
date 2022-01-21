@@ -7,21 +7,33 @@ interface GameState {
 }
 
 class Game implements GameState {
-    // private grid: Grid;
     public activeGameState: GameStateLabel;
     private barricade: Barricade;
     private startMenu: StartMenu;
     // private characterMenu: CharacterMenu;
     private pausedMenu: PausedMenu;
-    // private gameOverMenu: GameOverMenu;
-    // private gameBoard: GameBoard;
+
+    private gameOverMenu: GameOverMenu;
+    private gameBoard: GameBoard;
+    public instructionsMenu: InstructionsMenu;
+
 
     constructor() {
         // this.grid = new Grid(createVector(10, 10));
         this.activeGameState = 'Start';
         this.pausedMenu = new PausedMenu(this);
+
            //this.startMenu = new StartMenu(this);
+
+        this.startMenu = new StartMenu(this);
+
+        this.gameBoard = new GameBoard(this);
+
          this.barricade = new Barricade(createVector(10, 10));
+         this.gameOverMenu = new GameOverMenu(this);
+        this.instructionsMenu = new InstructionsMenu(this);
+
+
         // this.characterMenu = new CharacterMenu(this);
     }
 
@@ -32,19 +44,38 @@ class Game implements GameState {
             this.pausedMenu.openPauseMenu();
         } else if (state === 'Start') {
             this.startMenu.openStartMenu();
+        } else if (state === 'Running') {
+            this.gameBoard.openGameBoard();
+        } else if (state === 'GameOver') {
+            this.gameOverMenu.openGameOverMenu();
+
+        }else if (state === 'Instructions'){
+            this.instructionsMenu.openInstructionsMenu();
+
         }
     };
 
     public update() {
         if (this.activeGameState === 'Running') {
-            // this.gameBoard.update();
+             this.gameBoard.update();
+        } else if(this.activeGameState === 'GameOver') {
+            this.gameBoard.update();
         }
-        // this.grid.update();
+        
     }
 
     public draw() {
       background('#21212F');
-      this.barricade.draw();  
-      // this.grid.draw();
+      this.barricade.draw();
+      this.gameBoard.draw();
+
+
+
+
+    }
+
+    public openGame() {
+
     }
 }
+

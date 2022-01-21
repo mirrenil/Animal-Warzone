@@ -2,7 +2,7 @@
 let animalWarzon: p5.Image;
 class StartMenu {
     private gameState: GameState;
-    private startMenuDivEl: HTMLDivElement;
+    public startMenuDivEl: HTMLDivElement;
     // private startMenuPicture: HTMLImageElement;
 
     // private width: Number;
@@ -13,45 +13,51 @@ class StartMenu {
     constructor(gameState: GameState) {
         this.gameState = gameState;
 
-        this.startMenuDivEl = document.createElement('div');
-        this.startMenuDivEl.className = 'startMenuContainer';
+    //     this.startMenuDivEl = document.createElement('div');
+    //     this.startMenuDivEl.className = 'startMenuContainer';
 
-        // const startMenuPicture = document.createElement('IMG').
-        //     startMenuPicture.src = "./assets/images/"
+    //     // const startMenuPicture = document.createElement('IMG').
+    //     //     startMenuPicture.src = "./assets/images/"
 
-        const startMenuHeaderEl = document.createElement('h1');
-        startMenuHeaderEl.className = 'startMenuTitle';
-        startMenuHeaderEl.textContent = 'Animal Warzone';
+    //     const startMenuHeaderEl = document.createElement('h1');
+    //     startMenuHeaderEl.className = 'startMenuTitle';
+    //     startMenuHeaderEl.textContent = 'Animal Warzone';
 
-        const newGameButtonEl = document.createElement('button');
-        newGameButtonEl.addEventListener('click', () => this.startNewGame());
-        newGameButtonEl.textContent = 'Starta'
-        newGameButtonEl.className = 'btn'
+    //     const newGameButtonEl = document.createElement('button');
+    //     newGameButtonEl.addEventListener('click', () => this.startNewGame());
+    //     newGameButtonEl.textContent = 'Starta'
+    //     newGameButtonEl.className = 'btn'
 
 
-        const instructionsButtonEl = document.createElement('button');
-        instructionsButtonEl.addEventListener('click', () => this.showInstructionsMenu());
-        instructionsButtonEl.textContent = 'Instruction'
-        instructionsButtonEl.className = 'btn'
+    //     const instructionsButtonEl = document.createElement('button');
+    //     instructionsButtonEl.addEventListener('click', () => this.showInstructionsMenu());
+    //     instructionsButtonEl.textContent = 'Instruction'
+    //     instructionsButtonEl.className = 'btn'
 
-        this.startMenuDivEl.append(startMenuHeaderEl, newGameButtonEl, instructionsButtonEl)
-        this.openStartMenu();
-    }
+    //     this.startMenuDivEl.append(startMenuHeaderEl, newGameButtonEl, instructionsButtonEl)
+    //     this.openStartMenu();
+    // }
+
 
     public openStartMenu() {
-        console.log('open');
+        // console.log('open');
         document.body.append(this.startMenuDivEl);
     }
 
-    public startNewGame() {
-        this.gameState.setGameState("Character");
-        this.startMenuDivEl.remove();
-    }
+
+    // public startNewGame() {
+    //     this.gameState.setGameState("Character");
+    //     this.startMenuDivEl.remove();
+    // }
+
 
     public showInstructionsMenu() {
         this.gameState.setGameState('Instructions');
+        
+        console.log("instructions");
         this.startMenuDivEl.remove(); // ta ev bort.
     }
+
 
     public draw() {
         // let Btn1 = createElement('button', 'klicka mig');
