@@ -74,13 +74,10 @@ function setup() {
  */
 function draw() {
   background("darkblue");
-  fill("green");
-  stroke("white");
-  strokeWeight(10);
-  circle(width * 0.5, height * 0.5, width * 0.2);
+  
 
-  imageMode(CENTER);
-  image(animalWarzon, windowHeight / 2, windowWidth / 2);
+  // imageMode(CENTER);
+  // image(animalWarzon, windowHeight / 2, windowWidth / 2);
 
   game.update();
   game.draw();
