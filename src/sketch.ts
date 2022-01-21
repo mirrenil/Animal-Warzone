@@ -1,5 +1,7 @@
 //---- GLOBAL VARIABLES ----//
 let game: Game;
+let characters: Characters;
+
 // let sound: p5.SoundFile
 
 /**
@@ -44,6 +46,8 @@ function preload() {
     turtleLeft = loadImage('/documents/gameCharacters/turtleLeft.png');
     turtleRight = loadImage('/documents/gameCharacters/turtleRight.png');
 
+    // 
+   
 
 }
 
@@ -59,6 +63,7 @@ function setup() {
     // noCursor();
     
     game = new Game();
+    characters = new Characters(this)
 }
 
 /**
@@ -67,18 +72,10 @@ function setup() {
  * you created in the setup function above
  */
 function draw() {
-    background('darkblue');
-    fill('green');
-    stroke('white');
-    strokeWeight(10);
-    circle(width * .5, height * .5, width * 0.2);
-    
-
-    imageMode(CENTER);
-    image(animalWarzon, windowHeight / 2, windowWidth / 2);
-
     game.update();
     game.draw();
+    characters.draw();
+
 }
 
 
