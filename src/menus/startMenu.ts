@@ -16,8 +16,8 @@ class StartMenu {
         this.startMenuDivEl = document.createElement('div');
         this.startMenuDivEl.className = 'startMenuContainer';
 
-        // const startMenuPicture = document.createElement('IMG').
-        //     startMenuPicture.src = "./assets/images/"
+        this.startMenuPicture = document.createElement('img');
+        this.startMenuPicture.src = "/assets/images/startMenuImg.png";
 
         const startMenuHeaderEl = document.createElement('h1');
         startMenuHeaderEl.className = 'startMenuTitle';
@@ -34,7 +34,7 @@ class StartMenu {
         instructionsButtonEl.textContent = 'Instruction'
         instructionsButtonEl.className = 'btn'
 
-        this.startMenuDivEl.append(startMenuHeaderEl, newGameButtonEl, instructionsButtonEl)
+        this.startMenuDivEl.append(startMenuHeaderEl, this.startMenuPicture, newGameButtonEl, instructionsButtonEl)
         this.openStartMenu();
     }
 
@@ -58,8 +58,6 @@ class StartMenu {
 
 
     public draw() {
-        // let Btn1 = createElement('button', 'klicka mig');
-        // Btn1.style('color', 'blue');
-        // Btn1.position(10, 10);
+        
     }
 }
