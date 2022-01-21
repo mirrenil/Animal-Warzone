@@ -10,7 +10,7 @@ class Game implements GameState {
     public activeGameState: GameStateLabel;
     private barricade: Barricade;
     private startMenu: StartMenu;
-    // private characterMenu: CharacterMenu;
+    private characterMenu: CharacterMenu;
     private pausedMenu: PausedMenu;
 
     private gameOverMenu: GameOverMenu;
@@ -23,7 +23,7 @@ class Game implements GameState {
         this.activeGameState = 'Start';
         this.pausedMenu = new PausedMenu(this);
 
-           //this.startMenu = new StartMenu(this);
+        this.characterMenu = new CharacterMenu(this);
 
         this.startMenu = new StartMenu(this);
 
@@ -33,8 +33,6 @@ class Game implements GameState {
          this.gameOverMenu = new GameOverMenu(this);
         this.instructionsMenu = new InstructionsMenu(this);
 
-
-        // this.characterMenu = new CharacterMenu(this);
     }
 
     public setGameState = (state: GameStateLabel) => {
@@ -44,14 +42,14 @@ class Game implements GameState {
             this.pausedMenu.openPauseMenu();
         } else if (state === 'Start') {
             this.startMenu.openStartMenu();
+        } else if (state === 'Character') {
+            this.characterMenu.chooseCharacter();
         } else if (state === 'Running') {
             this.gameBoard.openGameBoard();
+        }else if (state === 'Instructions'){
+            this.instructionsMenu.openInstructionsMenu(); 
         } else if (state === 'GameOver') {
             this.gameOverMenu.openGameOverMenu();
-
-        }else if (state === 'Instructions'){
-            this.instructionsMenu.openInstructionsMenu();
-
         }
     };
 

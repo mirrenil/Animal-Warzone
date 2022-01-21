@@ -62,7 +62,7 @@ footer{
     right: 5%;
 }
 
-#characters{
+.characters{
     display: flex;
     flex-wrap: wrap;
     height: 50%;
@@ -73,7 +73,7 @@ footer{
     top: 25%;
 }
 
-#characters > div{
+.characters > div{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -89,7 +89,7 @@ footer{
     cursor: pointer;
 }
 
-#start-game-button{
+.start-game-button{
     font-size: 36px;
     border-radius: 50px;
     background: rgb(0, 133, 255);
@@ -102,9 +102,9 @@ footer{
     color: var(--FontColor);
 }
 
-#start-game-button > p{opacity: 0.5;}
+.start-game-button > p{opacity: 0.5;}
 
-#vertical{
+.vertical{
     height: 100%;
     width: 0.1rem;
     background: whitesmoke;
@@ -112,7 +112,7 @@ footer{
     left:50%;
 }
 
-#arrow{
+.arrow{
     margin: 2rem;
     position: absolute;
 }
