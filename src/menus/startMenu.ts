@@ -1,3 +1,5 @@
+//---- GLOBAL VARIABLES ----//
+let animalWarzon: p5.Image;
 class StartMenu {
     private gameState: GameState;
     public startMenuDivEl: HTMLDivElement;

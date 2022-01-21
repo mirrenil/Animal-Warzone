@@ -1,41 +1,56 @@
-// class PausedMenu {
-//     private gameState: GameState;
-//     private menuDiv: HTMLDivElement;
-//     // private gamePaused: Boolean;
-//     // private continueGameButton: any;
-//     // private exitGameButton: any;
-
-//     // constructor(menuState: MenuState, gamePaused: Boolean, continueGameButton: any, exitGameButton: any) {
-//     //     this.menuState = 'paused';
-//     // }
-
-//     constructor(gameState: GameState) {
-//         this.gameState = gameState;
+class PausedMenu {
+    private gameState: GameState;
+    private pausedMenuDiv: HTMLDivElement;
+    // private gamepaused: boolean;
+    // private continueGameButton: any;
+    // private exitGameButton: any;
+  
+    // constructor(gamepaused: boolean, continueGameButton:any){
+  
+    // }
+    // public isPaused(){
+  
+    // }
+    constructor(gameState: GameState){
+      this.gameState = gameState;
+      this.pausedMenuDiv = document.createElement("div");
+      this.pausedMenuDiv.className = "pauseMenu";
+  
+      const pauseMenuTitles = document.createElement("h1");
+      pauseMenuTitles.innerText = "Paused";
+      this.pausedMenuDiv.appendChild(pauseMenuTitles)
+  
+      const pauseMenuButtonsDiv = document.createElement("div");
+      pauseMenuButtonsDiv.className = "pauseMenuButtons"
+      const ResumeMenuButton = document.createElement("button");
+      ResumeMenuButton.className = "resumeMenuButton";
+      ResumeMenuButton.innerText = "Resume";
+      const quitMenuButton = document.createElement("button");
+      quitMenuButton.className = "resumeMenuButton";
+      quitMenuButton.innerText = "Quit";
+      pauseMenuButtonsDiv.append(quitMenuButton, ResumeMenuButton)
+      this.pausedMenuDiv.append(pauseMenuButtonsDiv)
+  
+      ResumeMenuButton.addEventListener('click',() => this.handleResumeGame);
+      quitMenuButton.addEventListener('click', () => this.closeMenu);
+      this.openPauseMenu();
+      }
+      private handleResumeGame() {
+        this.gameState.setGameState("Running");
+        this.closeMenu();
         
-//         this.menuDiv = document.createElement('div');
-//         this.menuDiv.className = "";
-        
-//         const p = document.createElement('p');
-//         p.textContent = "Paused";
-//         this.menuDiv.append(p);
-
-//         const img = document.createElement('img');
-//         img.src = "./assets/images/BILD.png";
-
-//         const button = document.createElement('button');
-//         button.addEventListener('click', this.handleResumeGame);
-//     }
-
-//     private handleResumeGame() {
-//         this.gameState.setGameState("Running");
-//         this.closeMenu();
-//     }
-    
-//     public openMenu() {
-//         document.body.append(this.menuDiv);
-//     }
-
-//     private closeMenu() {
-//         this.menuDiv.remove();
-//     }
-// }
+    }
+    public openPauseMenu(){
+      document.body.appendChild(this.pausedMenuDiv);
+      console.log('daaaa22')
+    }
+    private closeMenu() {
+      this.pausedMenuDiv.remove();
+  }
+  
+  
+   // public draw(){
+  
+    // }
+  }
+  

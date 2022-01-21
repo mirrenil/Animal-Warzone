@@ -1,8 +1,13 @@
-class GameOverMenu {
+//---- GLOBAL VARIABLES ----//
 
+let monkeyBig: p5.Image;
+let pigBig: p5.Image;
+let rabbitBig: p5.Image;
+let turtleBig: p5.Image;
+class GameOverMenu {
     private gameState: GameState;
+    private gameOverMainDiv:  HTMLDivElement;
     private gameOverDiv: HTMLDivElement;
-     
     private gameOverWinner: HTMLDivElement;
     private gameOverLoser: HTMLDivElement;
     private winnersDiv: HTMLDivElement;
@@ -17,19 +22,14 @@ class GameOverMenu {
     private turtle: HTMLImageElement;
     private rabbit: HTMLImageElement;
 
-     //public buttonsDiv: HTMLDivElement;
-     
-    // private width: Number;
-    // private height: Number;
-    // public characters: p5.Image;
-
-
-    
      constructor(gameState: GameState ) { 
         this.gameState = gameState;
 
 
         /** CREATING DIVS AND SPAN */
+        this.gameOverMainDiv = document.createElement('div');
+        this.gameOverMainDiv.className = '';
+        
 
         this.gameOverDiv = document.createElement('div');
         this.gameOverDiv.className = 'flex evenly';
@@ -111,20 +111,17 @@ class GameOverMenu {
         this.mainMenuBtn.textContent = 'MAIN MENU';
         this.buttonsDiv.append(this.mainMenuBtn);
         this.mainMenuBtn.addEventListener('click', () => this.goToMainMenu());
+        this.startNewGame();
     }
     
-    // public openGameOverMenu() {
-    //     document.body.append(this.gameOverMenu);
-    // }
+    public openGameOverMenu() {
+       document.body.append(this.gameOverMainDiv);
+     }
 
     // public closeGameOverMenu() {
     //     this.closeGameOverMenu.remove();
 
     // }
-
-    // // public closeGameOverMenu() {
-    // //     this.closeGameOverMenu.remove();
-    // // }
 
 
     public startNewGame() {

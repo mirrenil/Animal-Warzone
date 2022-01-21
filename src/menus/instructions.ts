@@ -1,5 +1,3 @@
-
-
     class InstructionsMenu {
 
     private gameState: GameState;

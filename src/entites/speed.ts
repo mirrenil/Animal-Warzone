@@ -1,16 +1,17 @@
+//---- GLOBAL VARIABLES ----//
+let speed: p5.Image;
+class Speed extends Entity {
 
-// class Speed extends Entity {
+    speedUpCharacter() {
 
-//     speedUpCharacter() {
+    }
 
-//     }
+    updateSpeed() {
 
-//     updateSpeed() {
+    }
 
-//     }
-
-//     draw() {
-//     imageMode(CENTER);
-//     image(speed, windowHeight / 2, windowWidth / 2);
-//     }
-// }
+    draw() {
+    imageMode(CENTER);
+    image(speed, windowHeight / 2, windowWidth / 2);
+    }
+}
