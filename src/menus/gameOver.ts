@@ -26,7 +26,7 @@ class GameOverMenu {
     private turtle: HTMLImageElement;
     private rabbit: HTMLImageElement;
 
-     constructor(gameState: GameState ) { 
+     constructor(gameState: GameState) { 
         this.gameState = gameState;
 
 
