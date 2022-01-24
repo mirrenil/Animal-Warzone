@@ -46,7 +46,7 @@ class StartMenu {
 
 
     public startNewGame() {
-        this.gameState.setGameState("Character");
+        this.gameState.setGameState("Running");
         this.startMenuDivEl.remove();
     }
 

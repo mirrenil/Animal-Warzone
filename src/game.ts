@@ -8,7 +8,6 @@ interface GameState {
 
 class Game implements GameState {
     public activeGameState: GameStateLabel;
-    private barricade: Barricade;
     private startMenu: StartMenu;
     // private characterMenu: CharacterMenu;
     // private pausedMenu: PausedMenu;
@@ -28,8 +27,6 @@ class Game implements GameState {
         this.startMenu = new StartMenu(this);
 
         this.gameBoard = new GameBoard(this);
-
-        this.barricade = new Barricade(createVector(10, 10));
         //  this.gameOverMenu = new GameOverMenu(this);
         this.instructionsMenu = new InstructionsMenu(this);
 
@@ -45,7 +42,7 @@ class Game implements GameState {
         } else if (state === 'Start') {
             this.startMenu.openStartMenu();
         } else if (state === 'Running') {
-            this.gameBoard.openGameBoard();
+           // tror inte att något behöver göras här
         } else if (state === 'GameOver') {
             // this.gameOverMenu.openGameOverMenu();
 
@@ -59,15 +56,14 @@ class Game implements GameState {
         if (this.activeGameState === 'Running') {
             this.gameBoard.update();
         } else if (this.activeGameState === 'GameOver') {
-            this.gameBoard.update();
+            // this.gameBoard.update();
         }
 
     }
 
     public draw() {
         background('#21212F');
-        this.barricade.draw();
-        //   this.gameBoard.draw();
+        this.gameBoard.draw();
     }
 
     public openGame() {

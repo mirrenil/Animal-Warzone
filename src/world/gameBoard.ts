@@ -9,18 +9,38 @@ let move = 5;
 class GameBoard {
     private gameState: GameState;
     private life: Life;
-    // private worldMap: WorldMap;
-    // public character: Character;
-    // private entities: Entity[];
-    // private playerOne: Character;
-    // private playerTwo: Character;
-
-
+    private worldMap: WorldMap;
+    private entities: Entity[];
+    private playerOne: Character;
+    private playerTwo: Character;
 
     constructor(gameState: GameState) {
         this.gameState = gameState;
-        this.life = life;
-
+        this.life = new Life(createVector(10, 10));
+        this.worldMap = new WorldMap();
+        this.entities = this.worldMap.getEntities();
+        this.playerOne = new Character(
+            turtleFront,
+            createVector(150, height * .5 - 30),
+            createVector(10, 10),
+            {
+                left: LEFT_ARROW,
+                right: RIGHT_ARROW,
+                down: DOWN_ARROW,
+                up: UP_ARROW,
+            }
+        );
+        this.playerTwo = new Character(
+            monkeyFront,
+            createVector(width - 150, height * .5 - 30),
+            createVector(10, 10),
+            {
+                left: 65,
+                right: 68,
+                up: 87,
+                down: 83,
+            }
+        );
     }
 
     // private windowBounderies() {
@@ -65,11 +85,17 @@ class GameBoard {
     // }
 
     public update() {
-
-
+        // this.barricade.update();
+        this.playerOne.update();
+        this.playerTwo.update();
     }
 
     public draw() {
+        
+        this.playerOne.draw();
+        this.playerTwo.draw();
+        
+        this.life.draw();
         // this.gameState.setGameState('Running');
         // // keyPressed();
         // // this.windowBounderies();
@@ -81,13 +107,8 @@ class GameBoard {
         // rect(rectX1, rectY1, rectWidth, rectHeight);
 
     }
-
-    public openGameBoard() {
-
-    }
-
+    
     public openGame() {
-
 
     }
 }

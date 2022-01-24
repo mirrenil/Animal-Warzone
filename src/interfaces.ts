@@ -29,4 +29,9 @@ interface Entites {
     barricade: p5.Image;
 }
 
-
+interface Controls {
+    left: number;
+    right: number;
+    up: number;
+    down: number;
+}

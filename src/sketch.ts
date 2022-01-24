@@ -1,9 +1,8 @@
 //---- GLOBAL VARIABLES ----//
 let game: Game;
-let life: Life;
-let characters: Characters;
 let images: Images;
 let entites: Entites;
+let barricade: p5.Image;
 let instructions: Instructions;
 
 // let sound: p5.SoundFile
@@ -63,14 +62,11 @@ function preload() {
  * in the draw function below
  */
 function setup() {
-
   createCanvas(windowWidth, windowHeight);
   frameRate(60);
   // noCursor();
 
   game = new Game();
-  life = new Life(createVector(10, 10));
-  characters = new Characters(createVector(10, 10))
 }
 
 /**
@@ -79,11 +75,8 @@ function setup() {
  * you created in the setup function above
  */
 function draw() {
-
-  // game.update();
+  game.update();
   game.draw();
-  life.draw();
-  characters.draw();
 }
 
 /**
