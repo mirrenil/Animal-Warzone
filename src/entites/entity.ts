@@ -1,19 +1,28 @@
 class Entity {
-    // private width: Number;
-//     // private height: Number;
-//     // private appearance: p5.Image;
-//     // private name: String;
-//     // private position: p5.Vector;
+    protected appearance: p5.Image;
+    protected x: number;
+    protected y: number;
+    public size: p5.Vector;
+    protected velocity: p5.Vector;
 
-     // constructor(width: Number, height: Number, appearance: p5.Image, name: string, position: p5.Vector)
-    //     {
+    constructor(appearance: p5.Image, x: number, y: number, size: p5.Vector, velocity?: p5.Vector) {
+        this.appearance = appearance;
+        this.x = x;
+        this.y = y;
+        this.size = size;
+        this.velocity = velocity || createVector(0, 0)
+    }
 
-     //     }
+    public update() {
+        this.x += this.velocity.x;
+        this.y += this.velocity.y;
+    }
 
-     // 
-
-     // draw() {
-
-    // }
+    public draw() {
+        push();
+        imageMode(CENTER);
+        image(this.appearance, this.x, this.y);
+        pop();
+    }
 
 }

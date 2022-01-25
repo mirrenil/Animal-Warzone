@@ -34,4 +34,5 @@ interface Controls {
     right: number;
     up: number;
     down: number;
+    shoot: number;
 }

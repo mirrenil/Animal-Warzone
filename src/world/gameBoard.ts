@@ -18,9 +18,11 @@ class GameBoard {
         this.gameState = gameState;
         this.life = new Life(createVector(10, 10));
         this.worldMap = new WorldMap();
-        this.entities = this.worldMap.getEntities();
+        this.entities = []; // this.worldMap.getEntities();
         this.playerOne = new Character(
-            turtleFront, createVector(150, height * .5 - 30),
+            turtleFront, 
+            150,
+            height * .5 - 30,
             // createVector(150, height * .5 - 30),
             createVector(10, 10),
             {
@@ -28,10 +30,13 @@ class GameBoard {
                 right: RIGHT_ARROW,
                 down: DOWN_ARROW,
                 up: UP_ARROW,
+                shoot: ENTER,
             }
         );
         this.playerTwo = new Character(
-            monkeyFront, createVector(width - 150, height * .5 - 30),
+            monkeyFront, 
+            width - 150,
+            height * .5 - 30,
             // createVector(width - 150, height * .5 - 30),
             createVector(10, 10),
             {
@@ -39,18 +44,57 @@ class GameBoard {
                 right: 68,
                 up: 87,
                 down: 83,
+                shoot: 32
             }
         );
     }
 
     private checkCollision() {
-        if (this.playerOne.x > this.playerTwo.x - monkeyFront.width && this.playerOne.x < this.playerTwo.x + monkeyFront.width && this.playerOne.y > this.playerTwo.y - monkeyFront.height && this.playerOne.y < this.playerTwo.y + monkeyFront.height) {
-            this.playerOne.x -= 10;
-            this.playerTwo.x += 10;
-            // HUR FLYTTA KORREKT????????
-        } else {
-            move = 5;
+        const allEntities = [...this.entities, this.playerOne, this.playerTwo];
+        for (const entity1 of allEntities) {
+            for (const entity2 of allEntities) {
+                if (entity1 === entity2) continue;
+
+                // kolla om rektanglar överlappar
+                // if (rect1.x < rect2.x + rect2.w &&
+                //     rect1.x + rect1.w > rect2.x &&
+                //     rect1.y < rect2.y + rect2.h &&
+                //     rect1.h + rect1.y > rect2.y) {
+                if (true) {
+                    if (entity1 instanceof Character) {
+                        if (entity2 instanceof Character) {
+                            // reaktion
+                        }
+                        if (entity2 instanceof GunFire) {
+                            // reaktion
+                        }
+                        if (entity2 instanceof Shield) {
+                            // reaktion
+                        }
+                        if (entity2 instanceof Life) {
+                            // reaktion
+                        }
+                        if (entity2 instanceof Barricade) {
+                            // reaktion
+                        }
+                    }
+                    if (entity1 instanceof GunFire) {
+                        if (entity2 instanceof Barricade) {
+                            // reaktion
+                        }
+                    }
+                }
+            }
         }
+
+        // if (this.playerOne.x > this.playerTwo.x - monkeyFront.width && this.playerOne.x < this.playerTwo.x + monkeyFront.width && this.playerOne.y > this.playerTwo.y - monkeyFront.height && this.playerOne.y < this.playerTwo.y + monkeyFront.height) {
+        //     this.playerOne.x -= 10;
+        //     this.playerTwo.x += 10;
+        //     // HUR FLYTTA KORREKT????????
+        //     // this.playerOne.x -= this.playerOne.speed.x;
+        // } else {
+        //     move = 5;
+        // }
     }
 
 
@@ -98,8 +142,17 @@ class GameBoard {
 
     public update() {
         // this.barricade.update();
-        this.playerOne.update();
+        const gunFire = this.playerOne.update();
+        if (gunFire) {
+            this.entities.push(gunFire)
+        }
         this.playerTwo.update();
+
+        this.checkCollision();
+
+        for (const entity of this.entities) {
+            entity.update();
+        }
     }
 
     public draw() {
@@ -108,6 +161,10 @@ class GameBoard {
         this.playerTwo.draw();
 
         this.life.draw();
+
+        for (const entity of this.entities) {
+            entity.draw();
+        }
         // this.gameState.setGameState('Running');
         // // keyPressed();
         // // this.windowBounderies();

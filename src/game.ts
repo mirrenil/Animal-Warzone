@@ -63,7 +63,9 @@ class Game implements GameState {
 
     public draw() {
         background('#21212F');
-        this.gameBoard.draw();
+        this.gameBoard.draw()
+        
+        ;
     }
 
     public openGame() {
