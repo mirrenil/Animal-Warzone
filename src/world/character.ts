@@ -117,13 +117,13 @@ class Character extends Entity {
       const size = createVector(35, 35);
       const velocity = createVector(0, 0);
       if (currentDirection == 'up') {
-        velocity.y = -30;
+        velocity.y = -15;
       } else if (currentDirection == 'down') {
-        velocity.y = 30;
+        velocity.y = 15;
       } else if (currentDirection == 'right') {
-        velocity.x = 30;
+        velocity.x = 15;
       } else if (currentDirection == 'left') {
-        velocity.x = -30;
+        velocity.x = -15;
       }
       return new GunFire(appearance, this.x, this.y, size, velocity)
     }

@@ -19,11 +19,11 @@ class GameBoard {
         this.life = new Life(createVector(10, 10));
         this.worldMap = new WorldMap();
         this.entities = []; // this.worldMap.getEntities();
+
         this.playerOne = new Character(
             turtleFront, 
             150,
             height * .5 - 30,
-            // createVector(150, height * .5 - 30),
             createVector(10, 10),
             {
                 left: LEFT_ARROW,
@@ -33,6 +33,7 @@ class GameBoard {
                 shoot: ENTER,
             }
         );
+
         this.playerTwo = new Character(
             monkeyFront, 
             width - 150,
@@ -141,30 +142,33 @@ class GameBoard {
     // }
 
     public update() {
-        // this.barricade.update();
-        const gunFire = this.playerOne.update();
-        if (gunFire) {
-            this.entities.push(gunFire)
+        const gunFireP1 = this.playerOne.update();
+        if (gunFireP1) {
+            this.entities.push(gunFireP1);
         }
-        this.playerTwo.update();
 
-        this.checkCollision();
-
+        const gunFireP2 = this.playerTwo.update();
+        if(gunFireP2) {
+            this.entities.push(gunFireP2);
+        }
+        
         for (const entity of this.entities) {
             entity.update();
         }
+
+        this.checkCollision();
     }
 
     public draw() {
-
         this.playerOne.draw();
         this.playerTwo.draw();
-
         this.life.draw();
-
+        
         for (const entity of this.entities) {
             entity.draw();
         }
+
+        // this.barricade.update();
         // this.gameState.setGameState('Running');
         // // keyPressed();
         // // this.windowBounderies();
@@ -174,7 +178,6 @@ class GameBoard {
 
         // // character test
         // rect(rectX1, rectY1, rectWidth, rectHeight);
-
     }
 
     public openGame() {
