@@ -103,9 +103,12 @@ class GameBoard {
         // noStroke();
         // fill(255);
 
-        // // character test
-        // rect(rectX1, rectY1, rectWidth, rectHeight);
 
+      
+    public initGameBoard(p1: CharacterName, p2: CharacterName) {
+       //this.gameState.setGameState('Running');
+
+      
     }
     
     public openGame() {

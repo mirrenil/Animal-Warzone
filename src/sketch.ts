@@ -62,11 +62,14 @@ function preload() {
  * in the draw function below
  */
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  frameRate(60);
-  // noCursor();
 
-  game = new Game();
+    createCanvas(windowWidth, windowHeight);
+    frameRate(60);
+    // noCursor();
+    
+    game = new Game();
+    //characters = new Characters(this);
+
 }
 
 /**
@@ -75,8 +78,14 @@ function setup() {
  * you created in the setup function above
  */
 function draw() {
-  game.update();
-  game.draw();
+
+    game.update();
+    game.draw();
+
+
+  background("darkblue");
+
+
 }
 
 /**
