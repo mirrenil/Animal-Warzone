@@ -1,13 +1,3 @@
-let pig: p5.Image;
-let rabbit: p5.Image;
-let turtle: p5.Image;
-let monkey: p5.Image;
-let pig2: p5.Image;
-let rabbit2: p5.Image;
-let turtle2: p5.Image;
-let monkey2: p5.Image;
-
-
 type CharacterStateP1 =  '' | 'pig' | 'rabbit' | 'turtle' | 'monkey';
 type CharacterStateP2 =  '' | 'pig2' | 'rabbit2' | 'turtle2' | 'monkey2';
 
@@ -20,7 +10,7 @@ class CharacterMenu implements CharacterState {
     public activeCharacterStateP1: CharacterStateP1;
     public activeCharacterStateP2: CharacterStateP2;
     private gameState: GameState;
-    private mainDiv: HTMLDivElement;
+    private mainDivChoose: HTMLDivElement;
     // private monkey: p5.Image;
 
     constructor(gameState: GameState) {
@@ -29,11 +19,15 @@ class CharacterMenu implements CharacterState {
         this.gameState = gameState;
 
        /** CREATING DIV TO HOLD EVERYTHING */
-        this.mainDiv = document.createElement('div');
-        this.mainDiv.className = '';
+        this.mainDivChoose = document.createElement('div');
+        this.mainDivChoose.className = 'mainDivChoose';
+
+        const playersDiv = document.createElement('div');
+        playersDiv.className = 'playersDiv';
 
        /** H2 HEADER */
         const headerText = document.createElement('h2');
+        headerText.className = 'h2';
         headerText.textContent = 'Choose your character';
 
          /** PLAYER 1 */
@@ -41,43 +35,65 @@ class CharacterMenu implements CharacterState {
         playerOneDiv.className = 'player1';
 
         const playerOneText = document.createElement('h3');
+        playerOneText.className = 'h3';
         playerOneText.textContent = 'Player 1';
+        
 
         const characterImg = document.createElement('div');
+        characterImg.className = 'choose-characters';
         
+        const leftTop = document.createElement('div');
+        leftTop.className = 'left-top';
+
+        const leftBottom = document.createElement('div');
+        leftBottom.className = 'left-bottom';
+
         const divPig = document.createElement('div');
+        divPig.className = 'div-animals';
         const pig = document.createElement('img');
         pig.src = '/documents/gameCharacters/pigFront.png';
         pig.addEventListener('click', () => this.chooseCharacterP1());
         
         const divTurtle = document.createElement('div');
-      
-        
+        divTurtle.className = 'div-animals';
         const turtle = document.createElement('img');
         turtle.src = '/documents/gameCharacters/turtleFront.png';
         turtle.addEventListener('click', () => this.chooseCharacterP1());
 
         const divMonkey = document.createElement('div');
+        divMonkey.className = 'div-animals';
         const monkeyButton = document.createElement('button');
+        monkeyButton.className = 'opacityBtn';
         const monkey = document.createElement('img');
         monkey.src = '/documents/gameCharacters/monkeyFront.png';
         monkey.addEventListener('click', () => this.chooseCharacter());
 
         const divRabbit = document.createElement('div');
+        divRabbit.className = 'div-animals';
         const rabbit = document.createElement('img');
         rabbit.src = '/documents/gameCharacters/rabbitFront.png';
         rabbit.addEventListener('click', () => this.chooseCharacterP1());
 
         /** INSERT VERTICAL LINE IN CSS HERE */
+        const verticalLine = document.createElement('div');
+        verticalLine.className = 'vertical'
 
         /** PLAYER 2 */
         const playerTwoDiv = document.createElement('div');
         playerTwoDiv.className = 'player2';
 
         const playerTwoText = document.createElement('h3');
+        playerTwoText.className = 'h3';
         playerTwoText.textContent = 'Player 2';
 
         const characterImg2 = document.createElement('div');
+        characterImg2.className = 'choose-characters';
+
+        const rightTop = document.createElement('div');
+        rightTop.className = 'right-top';
+
+        const rightBottom = document.createElement('div');
+        rightBottom.className = 'right-bottom';
         
         const divPig2 = document.createElement('div');
         const pig2 = document.createElement('img');
@@ -85,32 +101,43 @@ class CharacterMenu implements CharacterState {
         pig2.addEventListener('click', () => this.chooseCharacterP2())
 
         const divTurtle2 = document.createElement('div');
+        divTurtle2.className ='div-animals';
         const turtle2 = document.createElement('img');
         turtle2.src = '/documents/gameCharacters/turtleFront.png';
         turtle2.addEventListener('click', () => this.chooseCharacterP2());
 
         const divMonkey2 = document.createElement('div');
+        divMonkey2.className = 'div-animals';
         const monkey2 = document.createElement('img');
         monkey2.src = '/documents/gameCharacters/monkeyFront.png';
         monkey2.addEventListener('click', () => this.chooseCharacterP2())
 
         const divRabbit2 = document.createElement('div');
+        divRabbit2.className ='div-animals';
         const rabbit2 = document.createElement('img');
         rabbit2.src = '/documents/gameCharacters/rabbitFront.png';
         rabbit2.addEventListener('click', () => this.chooseCharacterP2());
 
 
         /** BUTTON */
+        const buttonDiv = document.createElement('div');
+        buttonDiv.className = 'btn-div';
         const startGameButton = document.createElement('button');
+        startGameButton.className = 'btn'
         startGameButton.textContent = ('Start Game');
         startGameButton.addEventListener('click', () => this.startGame());
         
         /** APPEND */
-        this.mainDiv.append(headerText, playerOneDiv, playerTwoDiv, startGameButton);
+        this.mainDivChoose.append(headerText, playersDiv, buttonDiv);
+        playersDiv.append(playerOneDiv, playerOneText, verticalLine, playerTwoDiv, playerTwoText);
         playerOneDiv.append(playerOneText, characterImg);
         playerTwoDiv.append(playerTwoText, characterImg2);
-        characterImg.append(divPig, divRabbit, divTurtle, divMonkey);
-        characterImg2.append(divPig2, divRabbit2, divTurtle2, divMonkey2);
+        characterImg.append(leftTop, leftBottom);
+        leftTop.append(divPig, divRabbit);
+        leftBottom.append(divTurtle, divMonkey);
+        characterImg2.append(rightTop, rightBottom);
+        rightTop.append(divPig2, divRabbit2);
+        rightBottom.append(divTurtle2, divMonkey2);
         divPig.append(pig);
         divRabbit.append(rabbit);
         divTurtle.append(turtle);
@@ -120,14 +147,17 @@ class CharacterMenu implements CharacterState {
         divRabbit2.append(rabbit2);
         divTurtle2.append(turtle2);
         divMonkey2.append(monkey2);
+        buttonDiv.append(startGameButton);
+       
         
         this.openCharacterMenu();
     }
    
-    /** APPEND MAINDIV HERE */
+    /** APPEND mainDivChoose HERE */
     public openCharacterMenu() {
-        document.body.append(this.mainDiv);
+        document.body.append(this.mainDivChoose);
     };
+    
 
         public chooseCharacter() {
             // this.monkeyButton.classList.add('btn');
@@ -203,7 +233,7 @@ class CharacterMenu implements CharacterState {
     public startGame() {
         if(this.activeCharacterStateP1 !== '' && this.activeCharacterStateP2 !== '') {
             this.gameState.setGameState('Running');
-            this.mainDiv.remove();   
+            this.mainDivChoose.remove();   
         } else {
             throw new Error('To continue both players must choose a character!');
         }
@@ -211,7 +241,7 @@ class CharacterMenu implements CharacterState {
 
     public goBack() {
         this.gameState.setGameState("Start");
-        this.mainDiv.remove();
+        this.mainDivChoose.remove();
      }
 
     public update() {

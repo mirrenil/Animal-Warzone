@@ -93,7 +93,6 @@ function draw() {
 
     game.update();
     game.draw();
-    characters.draw();
 
 
   background("darkblue");
