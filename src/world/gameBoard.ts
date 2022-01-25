@@ -20,8 +20,8 @@ class GameBoard {
         this.worldMap = new WorldMap();
         this.entities = this.worldMap.getEntities();
         this.playerOne = new Character(
-            turtleFront,
-            createVector(150, height * .5 - 30),
+            turtleFront, createVector(150, height * .5 - 30),
+            // createVector(150, height * .5 - 30),
             createVector(10, 10),
             {
                 left: LEFT_ARROW,
@@ -31,8 +31,8 @@ class GameBoard {
             }
         );
         this.playerTwo = new Character(
-            monkeyFront,
-            createVector(width - 150, height * .5 - 30),
+            monkeyFront, createVector(width - 150, height * .5 - 30),
+            // createVector(width - 150, height * .5 - 30),
             createVector(10, 10),
             {
                 left: 65,
@@ -42,6 +42,18 @@ class GameBoard {
             }
         );
     }
+
+    private checkCollision() {
+        if (this.playerOne.x > this.playerTwo.x - monkeyFront.width && this.playerOne.x < this.playerTwo.x + monkeyFront.width && this.playerOne.y > this.playerTwo.y - monkeyFront.height && this.playerOne.y < this.playerTwo.y + monkeyFront.height) {
+            this.playerOne.x -= 10;
+            this.playerTwo.x += 10;
+            // HUR FLYTTA KORREKT????????
+        } else {
+            move = 5;
+        }
+    }
+
+
 
     // private windowBounderies() {
     //     if(rectX1 < 0) {
@@ -91,10 +103,10 @@ class GameBoard {
     }
 
     public draw() {
-        
+
         this.playerOne.draw();
         this.playerTwo.draw();
-        
+
         this.life.draw();
         // this.gameState.setGameState('Running');
         // // keyPressed();
@@ -107,7 +119,7 @@ class GameBoard {
         // rect(rectX1, rectY1, rectWidth, rectHeight);
 
     }
-    
+
     public openGame() {
 
     }

@@ -16,12 +16,12 @@ class WorldMap {
     const entities: Entity[] = [];
     const imageX = 35
     const imageY = 35
-    
+
     //horizontal
     for (let x = 0; x < 4; x++) {
       // up left
       entities.push(new Barricade(imageX * x + width * .5, height * .15, imageX, imageY))
-      entities.push(new Barricade(imageX * x + width * .5 + imageX * 5, height * .15 + imageY * 2, imageX, imageY)))
+      entities.push(new Barricade(imageX * x + width * .5 + imageX * 5, height * .15 + imageY * 2, imageX, imageY))
 
       //middle-up left
       entities.push(new Barricade(imageX * x + width * .08, height * .5 - imageY * 3, imageX, imageY))

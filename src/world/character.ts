@@ -12,7 +12,7 @@ class Character {
   private speed: number;
   private controls: Controls
   private size: p5.Vector;
-  private position: p5.Vector;
+  public position: p5.Vector;
   // private width: number;
   // private height: number;
 
@@ -28,7 +28,7 @@ class Character {
     this.position = position;
     this.speed = 15;
   }
-  
+
   private move() {
     if (keyIsDown(this.controls.up)) {
       this.position.y = this.position.y - this.speed;
@@ -62,40 +62,40 @@ class Character {
 
   public update() {
     this.move();
-    
+
     if (this.position.x < 40) {
       this.position.x = this.position.x + this.speed;
     }
-  
+
     if (this.position.x > width - 40) {
       this.position.x = this.position.x - this.speed;
     }
-  
+
     if (this.position.y < 35) {
-      this.position.y = this.position.y +this.speed;
+      this.position.y = this.position.y + this.speed;
     }
-  
+
     if (this.position.y > height - 35) {
       this.position.y = this.position.y - this.speed;
     }
     if (this.position.x < 40) {
       this.position.x = this.position.x + this.speed;
     }
-  
+
     if (this.position.x > width - 40) {
       this.position.x = this.position.x - this.speed;
     }
-  
+
     if (this.position.y < 35) {
       this.position.y = this.position.y + this.speed;
     }
-  
+
     if (this.position.y > height - 35) {
       this.position.y = this.position.y - this.speed;
     }
     //bullet
     for (let bullet of bullets) {
-  
+
       if (currentDirection == 'up') {
         bullet.y = bullet.y - 2;
       } else if (currentDirection == 'down') {
