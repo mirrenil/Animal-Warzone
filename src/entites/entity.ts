@@ -10,7 +10,7 @@ class Entity {
         this.x = x;
         this.y = y;
         this.size = size;
-        this.velocity = velocity || createVector(0, 0)
+        this.velocity = velocity || createVector(0, 0);
     }
 
     public update() {
