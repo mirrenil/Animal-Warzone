@@ -38,7 +38,6 @@ class GameBoard {
             monkeyFront, 
             width - 150,
             height * .5 - 30,
-            // createVector(width - 150, height * .5 - 30),
             createVector(10, 10),
             {
                 left: 65,
