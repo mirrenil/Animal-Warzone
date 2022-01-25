@@ -33,12 +33,14 @@ h2 {
     height:20vh;
     min-width: 100%;
     text-align: center;
+    letter-spacing: 4px;
 }
 
 h3 {
     font-size: 52px; 
     font-family: var(--fontFBigText);
     padding-bottom: 40px;
+    letter-spacing: 2px;
 }
 
 
@@ -117,7 +119,7 @@ img {
 }
 
 img:hover {
-    transform: scale(1.5);
+    transform: scale(1.3);
 }
 
 /* .checkbox{
@@ -170,7 +172,9 @@ img:hover {
     bottom: 30%;
 }
 
-.arrow{
-    margin: 2rem;
+
+.startMenu{
+    top: 0;
+    cursor:pointer;
     position: absolute;
 }

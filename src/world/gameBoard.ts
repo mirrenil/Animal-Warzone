@@ -68,7 +68,6 @@ class GameBoard {
     }
 
     public draw() {
-        this.gameState.setGameState('Running');
         keyPressed();
         this.windowBounderies();
         rectMode(CENTER);
@@ -80,8 +79,9 @@ class GameBoard {
 
     }
 
-    public openGameBoard() {
-       
+    public initGameBoard(p1: CharacterName, p2: CharacterName) {
+       //this.gameState.setGameState('Running');
+        
     }
 
     public openGame() {
