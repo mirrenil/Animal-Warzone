@@ -24,7 +24,7 @@ body{
 }
 
 
-h2{
+h2 {
     font-size: 72px; 
     font-family: var(--fontFBigText);  
     height:65vh;
@@ -35,7 +35,8 @@ h2{
     text-align: center;
 }
 
-h3{font-size: 52px; 
+h3 {
+    font-size: 52px; 
     font-family: var(--fontFBigText);
     padding-bottom: 40px;
 }
@@ -102,14 +103,22 @@ h3{font-size: 52px;
 }
 
 
-
-
 .div-animals{
     align-items: center;
     width: 50%;
     
 }
 
+img {
+    padding: 50px;
+    transition: transform .2s; /* Animation */
+   
+    margin: 0 auto;
+}
+
+img:hover {
+    transform: scale(1.5);
+}
 
 /* .checkbox{
     width: 50%;

@@ -52,18 +52,18 @@ class CharacterMenu implements CharacterState {
         divPig.className = 'div-animals';
         const pig = document.createElement('img');
         pig.src = '/documents/gameCharacters/pigFront.png';
-        pig.addEventListener('click', () => this.chooseCharacterP1());
+        pig.addEventListener('click', () => this.chooseCharacter());
         
         const divTurtle = document.createElement('div');
         divTurtle.className = 'div-animals';
         const turtle = document.createElement('img');
         turtle.src = '/documents/gameCharacters/turtleFront.png';
-        turtle.addEventListener('click', () => this.chooseCharacterP1());
+        turtle.addEventListener('click', () => this.chooseCharacter());
 
         const divMonkey = document.createElement('div');
         divMonkey.className = 'div-animals';
-        const monkeyButton = document.createElement('button');
-        monkeyButton.className = 'opacityBtn';
+        // const monkeyButton = document.createElement('button');
+        // monkeyButton.className = 'opacityBtn';
         const monkey = document.createElement('img');
         monkey.src = '/documents/gameCharacters/monkeyFront.png';
         monkey.addEventListener('click', () => this.chooseCharacter());
@@ -72,7 +72,7 @@ class CharacterMenu implements CharacterState {
         divRabbit.className = 'div-animals';
         const rabbit = document.createElement('img');
         rabbit.src = '/documents/gameCharacters/rabbitFront.png';
-        rabbit.addEventListener('click', () => this.chooseCharacterP1());
+        rabbit.addEventListener('click', () => this.chooseCharacter());
 
         /** INSERT VERTICAL LINE IN CSS HERE */
         const verticalLine = document.createElement('div');
@@ -98,25 +98,25 @@ class CharacterMenu implements CharacterState {
         const divPig2 = document.createElement('div');
         const pig2 = document.createElement('img');
         pig2.src = '/documents/gameCharacters/pigFront.png';
-        pig2.addEventListener('click', () => this.chooseCharacterP2())
+        pig2.addEventListener('click', () => this.chooseCharacter())
 
         const divTurtle2 = document.createElement('div');
         divTurtle2.className ='div-animals';
         const turtle2 = document.createElement('img');
         turtle2.src = '/documents/gameCharacters/turtleFront.png';
-        turtle2.addEventListener('click', () => this.chooseCharacterP2());
+        turtle2.addEventListener('click', () => this.chooseCharacter());
 
         const divMonkey2 = document.createElement('div');
         divMonkey2.className = 'div-animals';
         const monkey2 = document.createElement('img');
         monkey2.src = '/documents/gameCharacters/monkeyFront.png';
-        monkey2.addEventListener('click', () => this.chooseCharacterP2())
+        monkey2.addEventListener('click', () => this.chooseCharacter())
 
         const divRabbit2 = document.createElement('div');
         divRabbit2.className ='div-animals';
         const rabbit2 = document.createElement('img');
         rabbit2.src = '/documents/gameCharacters/rabbitFront.png';
-        rabbit2.addEventListener('click', () => this.chooseCharacterP2());
+        rabbit2.addEventListener('click', () => this.chooseCharacter());
 
 
         /** BUTTON */
@@ -141,8 +141,9 @@ class CharacterMenu implements CharacterState {
         divPig.append(pig);
         divRabbit.append(rabbit);
         divTurtle.append(turtle);
-        divMonkey.append(monkeyButton);
-        monkeyButton.append(monkey);
+        divMonkey.append(monkey);
+        // divMonkey.append(monkeyButton);
+        // monkeyButton.append(monkey);
         divPig2.append(pig2);
         divRabbit2.append(rabbit2);
         divTurtle2.append(turtle2);
@@ -159,38 +160,39 @@ class CharacterMenu implements CharacterState {
     };
     
 
-        public chooseCharacter() {
-            // this.monkeyButton.classList.add('btn');
-            // this.monkeyButton.className = 'btn'
-        }
-    // public chooseCharacterP1(e: p5.Image) {
-    //     if (e === pig) {
-    //         pig.resize(400, 400);
-    //         rabbit.resize(200, 200);
-    //         turtle.resize(200, 200);
-    //         monkey.resize(200, 200);
+        // public chooseCharacter() {
+        //     // this.monkeyButton.classList.add('btn');
+        //     // this.monkeyButton.className = 'btn'
+        // }
         
-    //         this.activeCharacterStateP1 = 'pig';
-    //     } else if (e === rabbit) {
-    //         rabbit.resize(400, 400);
-    //         pig.resize(200,200);
-    //         turtle.resize(200,200);
-    //         monkey.resize(200,200);
-    //         this.activeCharacterStateP1 = 'rabbit';
-    //     } else if (e === turtle)  {
-    //         turtle.resize(400, 400);
-    //         pig.resize(200, 200);
-    //         rabbit.resize(200, 200);
-    //         monkey.resize(200, 200);
-    //         this.activeCharacterStateP1 = 'turtle';
-    //     } else if (e === monkey) {
-    //         monkey.resize(400, 400);
-    //         pig.resize(200, 200);
-    //         rabbit.resize(200, 200);
-    //         turtle.resize(200, 200);
-    //         this.activeCharacterStateP1 = 'monkey';
-    //         }
-    //     }
+    public chooseCharacter(e: p5.Image) {
+        if (e === pig) {
+            // pig.resize(400, 400);
+            // rabbit.resize(200, 200);
+            // turtle.resize(200, 200);
+            // monkey.resize(200, 200);
+        
+            this.activeCharacterStateP1 = 'pig';
+        } else if (e === rabbit) {
+            // rabbit.resize(400, 400);
+            // pig.resize(200,200);
+            // turtle.resize(200,200);
+            // monkey.resize(200,200);
+            this.activeCharacterStateP1 = 'rabbit';
+        } else if (e === turtle)  {
+            // turtle.resize(400, 400);
+            // pig.resize(200, 200);
+            // rabbit.resize(200, 200);
+            // monkey.resize(200, 200);
+            this.activeCharacterStateP1 = 'turtle';
+        } else if (e === monkey) {
+            // monkey.resize(400, 400);
+            // pig.resize(200, 200);
+            // rabbit.resize(200, 200);
+            // turtle.resize(200, 200);
+            this.activeCharacterStateP1 = 'monkey';
+            }
+        }
     
 
     // public chooseCharacterP2(e:p5.Image) {
