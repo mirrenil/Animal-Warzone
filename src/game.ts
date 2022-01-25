@@ -8,9 +8,9 @@ interface GameState {
 
 class Game implements GameState {
     public activeGameState: GameStateLabel;
-    private barricade: Barricade;
     private startMenu: StartMenu;
     private characterMenu: CharacterMenu;
+
     // private pausedMenu: PausedMenu;
 
     // private gameOverMenu: GameOverMenu;
@@ -20,15 +20,19 @@ class Game implements GameState {
     constructor() {
         this.activeGameState = 'Start';
         // this.pausedMenu = new PausedMenu(this);
+
         
         this.characterMenu = new CharacterMenu(this);
-        
+
         this.startMenu = new StartMenu(this);
         
         this.gameBoard = new GameBoard(this);
+
         
         this.barricade = new Barricade(createVector(10, 10));
-        //  this.gameOverMenu = new GameOverMenu(this);
+
+        this.gameOverMenu = new GameOverMenu(this);
+      
         this.instructionsMenu = new InstructionsMenu(this);
         
         this.setGameState('Character');
@@ -44,6 +48,7 @@ class Game implements GameState {
         } else if (state === 'Character') {
             this.characterMenu.openCharacterMenu();
         } else if (state === 'Running') {
+
             this.gameBoard.initGameBoard(
                 this.characterMenu.activeCharacterStateP1,
                 this.characterMenu.activeCharacterStateP2,
@@ -52,6 +57,7 @@ class Game implements GameState {
             this.instructionsMenu.openInstructionsMenu(); 
         } else if (state === 'GameOver') {
             // this.gameOverMenu.openGameOverMenu();
+
         }
     };
 
@@ -61,23 +67,16 @@ class Game implements GameState {
         }   else if(this.activeGameState === 'Character') {
             this.gameBoard.update();
         }   else if(this.activeGameState === 'GameOver') {
-            this.gameBoard.update();
-        }
-        
+
+
     }
 
     public draw() {
-      background('#21212F');
-      this.barricade.draw();
-      this.gameBoard.draw();
-
-
-
-
+        background('#21212F');
+        this.gameBoard.draw();
     }
 
     public openGame() {
 
     }
 }
-

@@ -23,7 +23,6 @@
 body{
     margin: 0;
     font-family: var(--instructionsFText);
-    background-color: #21212F;
     color: whitesmoke;
 }
 
@@ -47,6 +46,7 @@ h3{
     inset:0;
     gap: 5rem;
     display: block;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .main{

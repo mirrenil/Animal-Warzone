@@ -17,7 +17,7 @@ class StartMenu {
         this.startMenuDivEl.className = 'startMenuContainer';
 
         this.startMenuPicture = document.createElement('img');
-        this.startMenuPicture.src = '/assets/images/startMenuImg.png';
+        this.startMenuPicture.src = "/assets/images/startMenuImg.png";
 
         const startMenuHeaderEl = document.createElement('h1');
         startMenuHeaderEl.className = 'startMenuTitle';
@@ -46,22 +46,19 @@ class StartMenu {
     
 
     public startNewGame() {
-      this.gameState.setGameState("Character");
-      this.startMenuDivEl.remove();
+
+        this.gameState.setGameState("Running");
+        this.startMenuDivEl.remove();
     }
 
 
     public showInstructionsMenu() {
         this.gameState.setGameState('Instructions');
-        
-        console.log("instructions");
         this.startMenuDivEl.remove(); // ta ev bort.
     }
 
 
     public draw() {
-        // let Btn1 = createElement('button', 'klicka mig');
-        // Btn1.style('color', 'blue');
-        // Btn1.position(10, 10);
+        
     }
 }

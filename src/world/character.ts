@@ -1,155 +1,116 @@
-//---- GLOBAL VARIABLES ----//
-let rabbitFront: p5.Image;
-let rabbitBack: p5.Image;
-let rabbitLeft: p5.Image;
-let rabbitRight: p5.Image;
-let pigFront: p5.Image;
-let pigBack: p5.Image;
-let pigLeft: p5.Image;
-let pigRight: p5.Image;
 let monkeyFront: p5.Image;
-let monkeyBack: p5.Image;
-let monkeyLeft: p5.Image;
-let monkeyRight: p5.Image;
 let turtleFront: p5.Image;
-let turtleBack: p5.Image;
-let turtleLeft: p5.Image;
-let turtleRight: p5.Image;
-let playerSpeed = 0.01;
+let banana: p5.Image;
+let characterMoL: p5.Image;
+let characterMoR: p5.Image;
+let currentDirection: string;
+let bullets: any[] = [];
+let bullet: p5.Image;
 
-// 
-let character: p5.Image;
-let characterMoF: p5.Image;
+class Character {
+  private appearance: p5.Image;
+  private speed: number;
+  private controls: Controls
+  private size: p5.Vector;
+  private position: p5.Vector;
+  // private width: number;
+  // private height: number;
 
-class Characters {
-    private size: p5.Vector;
-    // private width: number;
-    // private height: number;
-    // private appearance: p5.Image;
-    
-    private playerTowPosition = new p5.Vector()
-    private playerOnePosition = new p5.Vector()
+  // private playerOnePositionX = 100;
+  // private playerOnePositionY = 450;
+  // private positionX = 500;
+  // private positionY = 450;
+
+  constructor(appearance: p5.Image, position: p5.Vector, size: p5.Vector, controls: Controls) {
+    this.appearance = appearance;
+    this.controls = controls;
+    this.size = size;
+    this.position = position;
+    this.speed = 15;
+  }
   
-    constructor(size: p5.Vector) {
-      this.size = size;
-      this.playerTowPosition = createVector(150, height * .5 - 30)
-      this.playerOnePosition = createVector(width - 150, height * .5 - 30)
-      
+  private move() {
+    if (keyIsDown(this.controls.up)) {
+      this.position.y = this.position.y - this.speed;
+      currentDirection = 'up';
     }
-  
-    public characterTowMove() {
-      window.addEventListener('keyup', (e) => {
-        // if (keyCode === 38) {
-        //   this.playerONePositionY -= .1;
-        //   console.log('character')
-        // } else if (keyCode === 40) {
-        //   this.playerONePositionY += .1;
-        // }
-        // else if (keyCode === 37) {
-        //   this.playerONePositionX-= .1;
-        // }
-        // else if (keyCode === 39) {
-        //   this.playerONePositionX += .1;
-        // }
-        switch (e.key) {
-          case 'ArrowUp':
-            this.playerOnePosition.y -= playerSpeed;
-           
-            break;
-          case 'ArrowDown':
-            this.playerOnePosition.y += playerSpeed;
-            break;
-          case 'ArrowLeft':
-            this.playerOnePosition.x -= playerSpeed;
-            break;
-          case 'ArrowRight':
-            this.playerOnePosition.x += playerSpeed;
-            break;
-        
-          default:
-            break;
-        }
-       })
-      
+
+    if (keyIsDown(this.controls.down)) {
+      this.position.y = this.position.y + this.speed;
+      currentDirection = 'down';
     }
-    public characterOneMove() {
-      window.addEventListener('keyup', (e) => {
-        if (keyCode === 87) {
-          this.playerTowPosition.y  -= playerSpeed;
-                                               // spelare 2 går uppåt
-        
-        } else if (keyCode === 83) {
-          this.playerTowPosition.y += playerSpeed;
-        }                                    //spelare 2 går ner
-        else if (keyCode === 65) {
-          this.playerTowPosition.x -= playerSpeed;
-                                             //ddww spelre 2 går vänster
-          
-        }
-        else if (keyCode === 68) {
-          this.playerTowPosition.x  += playerSpeed;
-                                            //spelare 2 går höger
-        }
-       })
+
+    if (keyIsDown(this.controls.left)) {
+      this.position.x = this.position.x - this.speed;
+      currentDirection = 'left';
     }
-    draw() {
 
-        imageMode(CENTER);
-        // Rabbit
-
-        // imageMode(CENTER);
-        // // Rabbit
-
-        // image(rabbitFront, windowHeight / 2, windowWidth / 2);
-        // image(rabbitBack, windowHeight / 2, windowWidth / 2);
-        // image(rabbitRight, windowHeight / 2, windowWidth / 2);
-        // image(rabbitLeft, windowHeight / 2, windowWidth / 2);
-    
-
-        // Pig
-
-        // // Pig
-
-        // image(pigFront, windowHeight / 2, windowWidth / 2);
-        // image(pigBack, windowHeight / 2, windowWidth / 2);
-        // image(pigRight, windowHeight / 2, windowWidth / 2);
-        // image(pigRight, windowHeight / 2, windowWidth / 2);
-    
-
-        // Monkey
-
-        // // Monkey
-
-        // image(monkeyFront, windowHeight / 2, windowWidth / 2);
-        // image(monkeyBack, windowHeight / 2, windowWidth / 2);
-        // image(monkeyRight, windowHeight / 2, windowWidth / 2);
-        // image(monkeyLeft, windowHeight / 2, windowWidth / 2);   
-    
-
-        // Turtle
-
-        // // Turtle
-
-        // image(turtleFront, windowHeight / 2, windowWidth / 2);
-        // image(turtleBack, windowHeight / 2, windowWidth / 2);
-        // image(turtleRight, windowHeight / 2, windowWidth / 2);
-        // image(turtleLeft, windowHeight / 2, windowWidth / 2);
+    if (keyIsDown(this.controls.right)) {
+      this.position.x = this.position.x + this.speed;
+      currentDirection = 'right';
+    }
 
 
-        // 
-        image(monkeyFront, this.playerOnePosition.x, this.playerOnePosition.y, 70, 60)
-        image(turtleFront,  this.playerTowPosition.x, this.playerTowPosition.y)
-        this.characterOneMove();
-        this.characterTowMove();
-
-       
-
-     }
-
-    // update() {
-
+    // if(keyCode == ENTER && keyIsPressed) {
+    //     let bullet = {
+    //         x: rectX,
+    //         y: rectY
+    //     };
+    //     bullets.push(bullet);
     // }
-}
+  }
+
+  public update() {
+    this.move();
     
+    if (this.position.x < 40) {
+      this.position.x = this.position.x + this.speed;
+    }
+  
+    if (this.position.x > width - 40) {
+      this.position.x = this.position.x - this.speed;
+    }
+  
+    if (this.position.y < 35) {
+      this.position.y = this.position.y +this.speed;
+    }
+  
+    if (this.position.y > height - 35) {
+      this.position.y = this.position.y - this.speed;
+    }
+    if (this.position.x < 40) {
+      this.position.x = this.position.x + this.speed;
+    }
+  
+    if (this.position.x > width - 40) {
+      this.position.x = this.position.x - this.speed;
+    }
+  
+    if (this.position.y < 35) {
+      this.position.y = this.position.y + this.speed;
+    }
+  
+    if (this.position.y > height - 35) {
+      this.position.y = this.position.y - this.speed;
+    }
+    //bullet
+    for (let bullet of bullets) {
+  
+      if (currentDirection == 'up') {
+        bullet.y = bullet.y - 2;
+      } else if (currentDirection == 'down') {
+        bullet.y = bullet.y + 2;
+      } else if (currentDirection == 'right') {
+        bullet.x = bullet.x + 2;
+      } else if (currentDirection == 'left') {
+        bullet.x = bullet.x - 2;
+      }
+      image(banana, bullet.x, bullet.y);
+    }
+  }
 
-
+  public draw() {
+    imageMode(CENTER)
+    image(this.appearance, this.position.x, this.position.y)
+  }
+}
