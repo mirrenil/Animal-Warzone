@@ -7,7 +7,7 @@ let currentDirection: string;
 let bullet: p5.Image;
 
 class Character extends Entity {
-  private speed: number;
+  public speed: number;
   private controls: Controls;
   // public position: p5.Vector;
   // private width: number;
@@ -20,8 +20,8 @@ class Character extends Entity {
 
   constructor(appearance: p5.Image, x: number, y: number, size: p5.Vector, controls: Controls) {
     super(appearance, x, y, size);
-    this.controls = controls;
     this.speed = 15;
+    this.controls = controls;
   }
 
   private move() {
@@ -112,20 +112,20 @@ class Character extends Entity {
 
     
 
-    if(keyIsDown(this.controls.shoot)) {
+    if (keyIsDown(this.controls.shoot)) {
       const appearance = banana;
       const size = createVector(35, 35);
       const velocity = createVector(0, 0);
       if (currentDirection == 'up') {
-        velocity.y = -15;
+        velocity.y = -30;
       } else if (currentDirection == 'down') {
-        velocity.y = 15;
+        velocity.y = 30;
       } else if (currentDirection == 'right') {
-        velocity.x = 15;
+        velocity.x = 30;
       } else if (currentDirection == 'left') {
-        velocity.x = -15;
+        velocity.x = -30;
       }
-      return new GunFire(appearance, this.x, this.y, size, velocity)
+      return new GunFire(appearance, this.x, this.y, size, velocity);
     }
     
   }

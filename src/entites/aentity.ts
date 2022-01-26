@@ -1,7 +1,7 @@
 class Entity {
     protected appearance: p5.Image;
-    protected x: number;
-    protected y: number;
+    public x: number;
+    public y: number;
     public size: p5.Vector;
     protected velocity: p5.Vector;
 
@@ -21,7 +21,7 @@ class Entity {
     public draw() {
         push();
         imageMode(CENTER);
-        image(this.appearance, this.x, this.y);
+        image(this.appearance, this.x, this.y, this.size.x, this.size.y);
         pop();
     }
 
