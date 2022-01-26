@@ -15,7 +15,11 @@ class CharacterMenu implements CharacterName, CharacterName2 {
     // public activeCharacterName: CharacterNameLabel;
     public characterName: CharacterName;
     public characterName2: CharacterName2;
-    private gameState: GameState;
+    public activeCharacterName: CharacterNameLabel;
+    public activeCharacterName2: CharacterNameLabel2; 
+    public playerOne: any;
+    public playerTwo: any;
+    public gameState: GameState;
     private mainDiv: HTMLDivElement;
     private characterImg: HTMLDivElement;
     private monkey: HTMLImageElement;
@@ -27,15 +31,15 @@ class CharacterMenu implements CharacterName, CharacterName2 {
     private pig2: HTMLImageElement;
     private turtle2: HTMLImageElement;
     private startGameButton: HTMLButtonElement;
-    public activeCharacterName: CharacterNameLabel;
-    public activeCharacterName2: CharacterNameLabel2;
+   
 
     constructor(
         gameState: GameState,
         characterName: CharacterName,
         characterName2: CharacterName2,
         activeCharacterName: CharacterNameLabel,
-        activeCharacterName2: CharacterNameLabel2
+        activeCharacterName2: CharacterNameLabel2,
+        playerOne: Character, playerTwo: Character,
     ) {
         //this.activeCharacterName = '';
         //this.activeCharacterNameP2 = '';
@@ -44,6 +48,7 @@ class CharacterMenu implements CharacterName, CharacterName2 {
         this.characterName2 = characterName2;
         this.activeCharacterName2 = activeCharacterName2;
         this.gameState = gameState;
+        // this.player1Character = player1Character;
 
         /** CREATING DIV TO HOLD EVERYTHING */
         this.mainDiv = document.createElement("div");
@@ -206,6 +211,7 @@ class CharacterMenu implements CharacterName, CharacterName2 {
         this.activeCharacterName = "";
 
         if (name === "monkey") {
+            this.playerOne = "/documents/gameCharacters/monkeyFront.png";
             this.rabbit.style.opacity = ".4";
             this.turtle.style.opacity = ".4";
             this.pig.style.opacity = ".4";
@@ -234,6 +240,7 @@ class CharacterMenu implements CharacterName, CharacterName2 {
             this.turtle2.style.opacity = ".4";
             this.pig2.style.opacity = ".4";
         } else if (name === "pig") {
+            this.playerTwo = '/documents/gameCharacters/pigFront.png'
             this.rabbit2.style.opacity = ".4";
             this.turtle2.style.opacity = ".4";
             this.monkey2.style.opacity = ".4";

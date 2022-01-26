@@ -6,21 +6,27 @@ let rectHeight: number = 100;
 let move = 5;
 
 
-class GameBoard {
-    private gameState: GameState;
+class GameBoard extends CharacterMenu {
+    public activeCharacterName: CharacterNameLabel;
+    public gameState: GameState;
     private life: Life;
     private worldMap: WorldMap;
     private entities: Entity[];
-    private playerOne: Character;
-    private playerTwo: Character;
+    // public playerOne: Character;
+    // public playerTwo: Character;
 
-    constructor(gameState: GameState) {
+    constructor(gameState: GameState, activeCharacterName: CharacterNameLabel, characterName: CharacterName, 
+        characterName2: CharacterName2, activeCharacterName2: CharacterNameLabel2, playerOne: any, playerTwo: any ) {
+            
+        super(gameState, characterName, characterName2, activeCharacterName, activeCharacterName2, playerOne, playerTwo);
+        
         this.gameState = gameState;
+        this.activeCharacterName = activeCharacterName;
         this.life = new Life(createVector(10, 10));
         this.worldMap = new WorldMap();
         this.entities = this.worldMap.getEntities();
         this.playerOne = new Character(
-            turtleFront,
+           turtleFront,
             createVector(150, height * .5 - 30),
             createVector(10, 10),
             {
@@ -31,7 +37,7 @@ class GameBoard {
             }
         );
         this.playerTwo = new Character(
-            monkeyFront,
+            this.activeCharacterName2,
             createVector(width - 150, height * .5 - 30),
             createVector(10, 10),
             {
@@ -110,7 +116,8 @@ class GameBoard {
 
     public initGameBoard(activeCharacterName: CharacterNameLabel, activeCharacterName2: CharacterNameLabel2) {
        // HJÄLP från david tack
-       
+      // Hur kopplar vi string till p5.Image?
+      
     }
     
     public openGame() {
