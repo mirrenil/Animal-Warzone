@@ -96,6 +96,7 @@ class GameBoard {
         this.playerTwo.draw();
         
         this.life.draw();
+
         // this.gameState.setGameState('Running');
         // // keyPressed();
         // // this.windowBounderies();
@@ -104,11 +105,11 @@ class GameBoard {
         // fill(255);
 
 
-      
-    public initGameBoard(p1: CharacterName, p2: CharacterName) {
-       //this.gameState.setGameState('Running');
+    }
+  
 
-      
+    public initGameBoard(activeCharacterName: CharacterNameLabel, activeCharacterName2: CharacterNameLabel2) {
+       
     }
     
     public openGame() {

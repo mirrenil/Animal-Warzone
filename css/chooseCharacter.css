@@ -114,7 +114,6 @@ h3 {
 img {
     padding: 50px;
     transition: transform .2s; /* Animation */
-   
     margin: 0 auto;
 }
 
@@ -139,9 +138,21 @@ img:hover {
     bottom: 50;
     left: 50;
     right: 50;
-
-
 }
+
+.unactive {
+    pointer-events: none;
+
+    color: var(--FontColor);
+    background-color: var(--blueBtn);
+    height: 3rem;
+    width: 10rem;
+    border-radius: 25px;
+    margin-top: 3rem;
+    font-family: 'Raleway', sans-serif;
+    opacity: .5;
+}
+
 
 .btn {
     color: var(--FontColor);

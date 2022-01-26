@@ -77,16 +77,16 @@ function setup() {
  * This is a good place to call public methods of the object
  * you created in the setup function above
  */
-function draw() {
+// function draw() {
 
-    game.update();
-    game.draw();
-
-
-  background("darkblue");
+//     game.update();
+//     game.draw();
 
 
-}
+ //background("darkblue");
+
+
+//}
 
 /**
  *  Built in windowResize listener function in P5

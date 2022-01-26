@@ -29,7 +29,7 @@ class Game implements GameState {
         this.gameBoard = new GameBoard(this);
 
         
-        this.barricade = new Barricade(createVector(10, 10));
+        //this.barricade = new Barricade(createVector(10, 10));
 
         this.gameOverMenu = new GameOverMenu(this);
       
@@ -50,9 +50,10 @@ class Game implements GameState {
         } else if (state === 'Running') {
 
             this.gameBoard.initGameBoard(
-                this.characterMenu.activeCharacterStateP1,
-                this.characterMenu.activeCharacterStateP2,
+                this.characterMenu.activeCharacterName,
+                this.characterMenu.activeCharacterName2,
             );
+            
         } else if (state === 'Instructions'){
             this.instructionsMenu.openInstructionsMenu(); 
         } else if (state === 'GameOver') {
@@ -61,20 +62,20 @@ class Game implements GameState {
         }
     };
 
-    public update() {
-        if (this.activeGameState === 'Running') {
-             this.gameBoard.update();
-        }   else if(this.activeGameState === 'Character') {
-            this.gameBoard.update();
-        }   else if(this.activeGameState === 'GameOver') {
+    // public update() {
+    //     if (this.activeGameState === 'Running') {
+    //          this.gameBoard.update();
+    //     }   else if(this.activeGameState === 'Character') {
+    //         this.gameBoard.update();
+    //     }   else if(this.activeGameState === 'GameOver') {
 
 
-    }
+    // }
 
-    public draw() {
-        background('#21212F');
-        this.gameBoard.draw();
-    }
+    // public draw() {
+    //     background('#21212F');
+    //     this.gameBoard.draw();
+    // }
 
     public openGame() {
 
