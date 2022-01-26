@@ -21,7 +21,7 @@ class Character extends Entity {
   constructor(appearance: p5.Image, x: number, y: number, size: p5.Vector, controls: Controls) {
     super(appearance, x, y, size);
     this.speed = 15;
-    this.controls = controls;
+    this.controls = controls; 
   }
 
   private move() {

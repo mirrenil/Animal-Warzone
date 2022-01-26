@@ -103,7 +103,7 @@ class GameBoard {
                         }
                         if (entity2 instanceof Barricade) {
                             
-                        // this.playerOne.speed = this.playerOne.speed * -1;
+                        //    this.playerOne.speed = this.playerOne.speed * -1;
                             // this.playerTwo.speed = this.playerOne.speed * -1;
                             console.log('brricade')
                         } else {

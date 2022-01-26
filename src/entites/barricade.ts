@@ -6,17 +6,13 @@ class Barricade extends Entity  {
   //   }
 
   
-  constructor(appearance: p5.Image, x: number, y: number, size: p5.Vector) {
+  public constructor(appearance: p5.Image, x: number, y: number, size: p5.Vector) {
     super(appearance, x, y, size);
   }
 
   // public draw() {
   //   image(barricade, imageX * x + width * .5, height * .15, imageX, imageY)
   // }
-
-  barricadeShape() {
-
-  }
 
   breakBarricade() {
 

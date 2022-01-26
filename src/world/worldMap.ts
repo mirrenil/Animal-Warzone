@@ -1,16 +1,4 @@
 class WorldMap {
-  createGrid(){
-
-  }
-  setBackGround(){
-
-  }
-  initRandomizedBoard(){
-
-  }
-  darw(){
-    
-  }
   protected appearance: p5.Image;
   protected x: number;
   protected y: number;
@@ -76,5 +64,9 @@ class WorldMap {
     entities.push(new ExtraLife(redHeart, width * .4 - imageX -15, height * .7 , this.size ))
 
     return entities;
+  }
+
+  draw(){
+    
   }
 }
