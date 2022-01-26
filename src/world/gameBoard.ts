@@ -97,7 +97,7 @@ class GameBoard {
         
         this.life.draw();
 
-        // this.gameState.setGameState('Running');
+        //this.gameState.setGameState('Running');
         // // keyPressed();
         // // this.windowBounderies();
         // rectMode(CENTER);
@@ -109,6 +109,7 @@ class GameBoard {
   
 
     public initGameBoard(activeCharacterName: CharacterNameLabel, activeCharacterName2: CharacterNameLabel2) {
+       // HJÄLP från david tack
        
     }
     
