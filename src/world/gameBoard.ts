@@ -18,7 +18,7 @@ class GameBoard {
         this.gameState = gameState;
         this.life = new Life(createVector(10, 10));
         this.worldMap = new WorldMap();
-        this.entities = []; // this.worldMap.getEntities();
+        this.entities = this.worldMap.getEntities();
 
         this.playerOne = new Character(
             turtleFront, 
@@ -144,11 +144,17 @@ class GameBoard {
         const gunFireP1 = this.playerOne.update();
         if (gunFireP1) {
             this.entities.push(gunFireP1);
+            setTimeout(() => {
+                this.entities.pop();
+             }, 500);
         }
 
         const gunFireP2 = this.playerTwo.update();
         if(gunFireP2) {
             this.entities.push(gunFireP2);
+            setTimeout(() => {
+               this.entities.pop(); 
+            }, 500);
         }
         
         for (const entity of this.entities) {

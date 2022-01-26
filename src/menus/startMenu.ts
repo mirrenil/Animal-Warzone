@@ -35,7 +35,7 @@ class StartMenu {
         instructionsButtonEl.className = 'btn'
 
         this.startMenuDivEl.append(startMenuHeaderEl, this.startMenuPicture, newGameButtonEl, instructionsButtonEl)
-        this.openStartMenu();
+        // this.openStartMenu();
     }
 
 

@@ -112,20 +112,20 @@ class Character extends Entity {
 
     
 
-    if(keyIsDown(this.controls.shoot)) {
+    if (keyIsDown(this.controls.shoot)) {
       const appearance = banana;
       const size = createVector(35, 35);
       const velocity = createVector(0, 0);
       if (currentDirection == 'up') {
-        velocity.y = -15;
+        velocity.y = -30;
       } else if (currentDirection == 'down') {
-        velocity.y = 15;
+        velocity.y = 30;
       } else if (currentDirection == 'right') {
-        velocity.x = 15;
+        velocity.x = 30;
       } else if (currentDirection == 'left') {
-        velocity.x = -15;
+        velocity.x = -30;
       }
-      return new GunFire(appearance, this.x, this.y, size, velocity)
+      return new GunFire(appearance, this.x, this.y, size, velocity);
     }
     
   }
