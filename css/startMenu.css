@@ -14,7 +14,6 @@
     --FontColor: #FAFAFA;
     --fontFBtn: 'Raleway', sans-serif;
     --fontFBigText: 'Mochiy Pop P One', sans-serif;
-
 }
 
 
@@ -36,6 +35,23 @@
     font-family: 'Mochiy Pop P One', sans-serif;
 }
 
+.start-image {
+    padding: 0;
+}
+
+.btn-divs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem;
+    padding-bottom: 5rem;
+    /* align-content: flex-end;
+    position: fixed;
+    bottom: 50;
+    left: 50;
+    right: 50; */
+}
+
 .btn {
     color: var(--FontColor);
     background-color: var(--blueBtn);
@@ -43,10 +59,8 @@
     width: 10rem;
     border-radius: 25px;
     margin-top: 3rem;
-
     font-family: 'Raleway', sans-serif;
     cursor: pointer;
-
 }
 
 

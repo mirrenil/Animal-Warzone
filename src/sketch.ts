@@ -27,8 +27,6 @@ function preload() {
   // monkeyFront = loadImage("/documents/gameCharacters/monkeyFront.png");
   banana = loadImage('/assets/images/banana.png')
 
-  
-
 
     images = {
       monkeyBig: loadImage("/assets/images/bigMonkey.png"),
@@ -70,6 +68,7 @@ function preload() {
  * and save it as a global variable so it can be used
  * in the draw function below
  */
+
 function setup() {
 
     createCanvas(windowWidth, windowHeight);

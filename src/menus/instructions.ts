@@ -1,35 +1,35 @@
     class InstructionsMenu {
 
     private gameState: GameState;
-    public mainDiv: HTMLDivElement;
+    public mainDivInstructions: HTMLDivElement;
     
         public openInstructionsMenu(){
-            document.body.append(this.mainDiv);
+            document.body.append(this.mainDivInstructions);
         }
 
     constructor(gameState: GameState) {
         this.gameState = gameState;
         
         
-        this.mainDiv = document.createElement('div');
-        this.mainDiv.className = 'main-div';
+        this.mainDivInstructions = document.createElement('div');
+        this.mainDivInstructions.className = 'main-div-instructions';
 
         //Header
 
         const header = document.createElement('div');
-        header.className = 'header';
+        header.className = 'headerInstructions';
 
         const player1Header = document.createElement('h2');
-        player1Header.className = ('player1');
+        player1Header.className = ('player1Instructions');
         player1Header.textContent = 'Player 1';
 
         const player2Header = document.createElement('h2');
-        player2Header.className = ('player2');
+        player2Header.className = ('player2Instructions');
         player2Header.textContent = ('Player 2');
 
         const mainMenu = document.createElement('img');
         mainMenu.setAttribute('src', './assets/images/Vector.png');
-        mainMenu.className = ('startMenu');
+        mainMenu.className = ('startMenuButton');
         mainMenu.addEventListener('click', () => this.openStartMenu());
 
         header.appendChild(player1Header);
@@ -146,13 +146,13 @@
         footer.appendChild(speedUpDiv);
         footer.appendChild(shieldDiv);
         
-        this.mainDiv.append(header, main, footer);
+        this.mainDivInstructions.append(header, main, footer);
         
         
 }
 public openStartMenu(){
     this.gameState.setGameState("Start");
     // this.mainDiv.className = ('hide');
-    this.mainDiv.remove();
+    this.mainDivInstructions.remove();
 }
 }
