@@ -6,14 +6,21 @@
 // let move = 5;
 
 class GameBoard {
+
     private gameState: GameState;
     private PlayersLife: PlayersLife;
+
+    public gameState: GameState;
+    private life: Life;
+
     private worldMap: WorldMap;
     private entities: Entity[];
-    private playerOne: Character;
-    private playerTwo: Character;
+    public playerOne: Character;
+    public playerTwo: Character;
 
-    constructor(gameState: GameState) {
+    constructor(gameState: GameState, activeCharacterName: CharacterNameLabel, 
+         activeCharacterName2: CharacterNameLabel) {
+
         this.gameState = gameState;
         this. PlayersLife = new PlayersLife(createVector(10, 10));
         this.worldMap = new WorldMap(
@@ -26,10 +33,16 @@ class GameBoard {
         this.entities = this.worldMap.getEntities();
 
         this.playerOne = new Character(
+
             turtleFront, 
             width *0.3 + 200,
             height * .5 - 30,
             createVector(70, 60),
+
+            this.getCharacterImage(activeCharacterName),
+            createVector(150, height * .5 - 30), //this.worldMap.getPlayerOnePosition()
+            createVector(10, 10),
+
             {
                 left: LEFT_ARROW,
                 right: RIGHT_ARROW,
@@ -40,10 +53,16 @@ class GameBoard {
         );
 
         this.playerTwo = new Character(
+
             monkeyFront, 
             width *0.3,
             height * .5 - 30,
             createVector(70, 60),
+
+            this.getCharacterImage(activeCharacterName2),
+            createVector(width - 150, height * .5 - 30),
+            createVector(10, 10),
+
             {
                 left: 65,
                 right: 68,
@@ -53,6 +72,7 @@ class GameBoard {
             }
         );
     }
+
 
 
 
@@ -156,7 +176,17 @@ class GameBoard {
     //        rectY1 =rectY1 - move;
     //     }
     // }
+    private getCharacterImage(name: CharacterNameLabel) {
+        switch(name) {
+            case "turtle": return images.turtleFront;
+            case "monkey": return images.monkeyFront;
+            case "rabbit": return images.rabbitFront;
+            case "pig": return images.pigFront;
+            default: return images.pigFront;
+        }
+    }
 
+   
     // private checkCollisions() {
 
 
@@ -215,6 +245,23 @@ class GameBoard {
 
         // this.barricade.update();
         // this.gameState.setGameState('Running');
+        // this.barricade.update();
+        // for (const entity of this.entities) {
+        //     entity.update();
+        // }
+
+        this.playerOne.update();
+        this.playerTwo.update();
+    }
+
+    public draw() {
+        // for (const entity of this.entities) {
+        //     entity.draw();
+        // }
+        this.playerOne.draw();
+        this.playerTwo.draw();
+
+        //this.gameState.setGameState('Running');
         // // keyPressed();
         // // this.windowBounderies();
         // rectMode(CENTER);

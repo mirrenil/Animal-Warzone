@@ -34,18 +34,22 @@ class StartMenu {
         instructionsButtonEl.textContent = 'Instruction'
         instructionsButtonEl.className = 'btn'
 
-        this.startMenuDivEl.append(startMenuHeaderEl, this.startMenuPicture, newGameButtonEl, instructionsButtonEl)
+
+        /* APPEND TO STARTMENU */
+
         // this.openStartMenu();
+
+
     }
 
 
     public openStartMenu() {
-        // console.log('open');
         document.body.append(this.startMenuDivEl);
     }
-
+    
 
     public startNewGame() {
+
         this.gameState.setGameState("Running");
         this.startMenuDivEl.remove();
     }
