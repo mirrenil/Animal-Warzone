@@ -26,7 +26,7 @@ interface Entites {
     heart: p5.Image;
     shield: p5.Image;
     speed: p5.Image;
-    barricade: p5.Image;
+    //barricade: p5.Image;
 }
 
 interface Controls {

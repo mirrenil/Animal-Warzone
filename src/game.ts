@@ -26,12 +26,12 @@ class Game implements GameState {
 
         this.startMenu = new StartMenu(this);
         
-        this.gameBoard = new GameBoard(this);
+        this.gameBoard = new GameBoard(this, "", "");
 
         
-        this.barricade = new Barricade(createVector(10, 10));
+        //this.barricade = new Barricade(createVector(10, 10));
 
-        this.gameOverMenu = new GameOverMenu(this);
+        // this.gameOverMenu = new GameOverMenu();
       
         this.instructionsMenu = new InstructionsMenu(this);
         
@@ -48,11 +48,11 @@ class Game implements GameState {
         } else if (state === 'Character') {
             this.characterMenu.openCharacterMenu();
         } else if (state === 'Running') {
+            const character1 = this.characterMenu.getActiveCharacterName();
+            const character2 = this.characterMenu.getActiveCharacterName2();
+            console.log(character1, character2);
+            this.gameBoard = new GameBoard(this, character1, character2);
 
-            this.gameBoard.initGameBoard(
-                this.characterMenu.activeCharacterStateP1,
-                this.characterMenu.activeCharacterStateP2,
-            );
         } else if (state === 'Instructions'){
             this.instructionsMenu.openInstructionsMenu(); 
         } else if (state === 'GameOver') {
@@ -63,17 +63,19 @@ class Game implements GameState {
 
     public update() {
         if (this.activeGameState === 'Running') {
-             this.gameBoard.update();
-        }   else if(this.activeGameState === 'Character') {
             this.gameBoard.update();
+        }   else if(this.activeGameState === 'Character') {
+
         }   else if(this.activeGameState === 'GameOver') {
 
-
+        }
     }
 
     public draw() {
         background('#21212F');
-        this.gameBoard.draw();
+        if (this.activeGameState === 'Running') {
+            this.gameBoard.draw();
+        }
     }
 
     public openGame() {
