@@ -4,7 +4,7 @@ let player1: p5.TEXT;
 let player2: p5.TEXT;
 
 
-class Life {
+class PlayersLife {
     private size: p5.Vector;
     // private playerOneHeartsPosition = new p5.Vector()
 
@@ -17,10 +17,10 @@ class Life {
     public draw() {
         const imageX = 30
         const imageY = 30
-        text('Player 1', width * .02 - 16, 50);
+        text('Player 1', width * .02 - 10, 50);
         textSize(20)
         fill('white');
-        text('Player 2', width * .92 - 16, 50);
+        text('Player 2', width * .92 - 10, 50);
         textSize(20)
         fill('white');
 

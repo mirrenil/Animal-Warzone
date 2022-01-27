@@ -36,7 +36,10 @@ class StartMenu {
 
 
         /* APPEND TO STARTMENU */
-        this.startMenuDivEl.append(startMenuHeaderEl, this.startMenuPicture, newGameButtonEl, instructionsButtonEl)
+
+        // this.openStartMenu();
+
+
     }
 
 

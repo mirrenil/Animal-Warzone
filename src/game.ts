@@ -18,7 +18,12 @@ class Game implements GameState {
     public instructionsMenu: InstructionsMenu;
 
     constructor() {
+
+        // this.grid = new Grid(createVector(10, 10));
+        this.activeGameState = 'Running';
+
         this.activeGameState = 'Start';
+
         // this.pausedMenu = new PausedMenu(this);
 
         
