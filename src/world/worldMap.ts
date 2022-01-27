@@ -64,6 +64,15 @@ class WorldMap {
     entities.push(new ExtraLife(redHeart, width * .6 - imageX , height * .16 + imageX, this.size ))
     entities.push(new ExtraLife(redHeart, width * .4 - imageX , height * .7, this.size ))
 
+
+    for (let x = 0; x < 4; x++) {
+      console.log("44");
+      
+      entities.push(new PlayersLife(heart,  x * imageX + width * .02, 70, this.size))
+      // image(heart, x * imageX + width * .02, 70, imageX, imageY);
+      // image(heart, x * imageX + width * .92, 70, imageX, imageY);
+  }
+
     return entities;
   }
 

@@ -30,7 +30,7 @@ class GameBoard {
         this.entities = this.worldMap.getEntities();
 
         this.playerOne = new Character(
-            this.getCharacterImage(activeCharacterName),
+            this.getCharacterImage(activeCharacterName2),
             // createVector(150, height * .5 - 30), //this.worldMap.getPlayerOnePosition()
             width * .3 +200,
             height * .5 - 30,
@@ -44,7 +44,7 @@ class GameBoard {
         );
 
         this.playerTwo = new Character(
-            this.getCharacterImage(activeCharacterName2),
+            this.getCharacterImage(activeCharacterName),
             // createVector(width - 150, height * .5 - 30),
             width * .3,
             height * .5 - 30,
@@ -85,19 +85,17 @@ class GameBoard {
                     if (entity1 instanceof Character) {
                         
                         if (entity2 instanceof Character) {
-                            // if (entity1.currentDirection === 'right') {
-                            //     entity1.x = entity2.x - entity1.size.x;
-                            // } else if (entity1.currentDirection === 'left') {
-                            //     entity1.x = entity2.x + entity2.size.x;
-                            // } else if (entity1.currentDirection === 'up') {
-                            //     entity1.y = entity2.y + entity2.size.y;
-                            // } else if (entity1.currentDirection === 'down') {
-                            //     entity1.y = entity2.y - entity1.size.y;
-                            // }
-                           
-                            // console.log('character', entity1.currentDirection, entity2.currentDirection);
-
+                            if (entity1.currentDirection === 'right') {
+                                entity1.x = entity2.x - entity1.size.x;
+                            } else if (entity1.currentDirection === 'left') {
+                                entity1.x = entity2.x + entity2.size.x;
+                            } else if (entity1.currentDirection === 'up') {
+                                entity1.y = entity2.y + entity2.size.y;
+                            } else if (entity1.currentDirection === 'down') {
+                                entity1.y = entity2.y - entity1.size.y;
+                            }
                         } 
+                        
                         if (entity2 instanceof GunFire) {
                             // if (entity1.currentDirection === 'right') {
                             //     entity2.x = entity1.x - entity2.size.x;
@@ -116,9 +114,13 @@ class GameBoard {
                             // reaktion
                         }
                         if (entity2 instanceof ExtraLife) {
-                            console.log('Character passed ExtraLife');
+                            this.entities.splice(this.entities.indexOf(entity2), 1); 
+                            }
 
-                        }
+                                            
+                        
+                        
+            
                         if (entity2 instanceof Barricade) {
                             if (entity1.currentDirection === 'right') {
                                 entity1.x = entity2.x - entity1.size.x;
@@ -135,8 +137,10 @@ class GameBoard {
                         if (entity1 instanceof GunFire) {
                             if (entity2 instanceof Barricade) {
                                 console.log('träffa item')
-                                this.entities.splice(this.entities.indexOf(entity2), 1) 
-                                // this.entities.splice(this.entities.indexOf(entity1), 1) 
+                                this.entities.splice(this.entities.indexOf(entity2), 1); 
+                                
+                                
+                                // this.entities.splice(this.entities.indexOf(entity1), 1);
                                 // if (entity1.currentDirection === 'right') {
                                 //     entity1.x = entity2.x - entity1.size.x;
                                 // } else if (entity1.currentDirection === 'left') {
@@ -147,9 +151,11 @@ class GameBoard {
                                 //     entity1.y = entity2.y - entity1.size.y;
                                 // }
                             }
-                            if (entity2 instanceof Character) {
-                               
-                            }
+                            // if (entity2 instanceof this.playerTwo) {
+                         
+                                    // this.entities.splice(this.entities.indexOf(entity2), 1); 
+                                                           
+                            // }
                         
                         }
               
@@ -177,7 +183,7 @@ class GameBoard {
             this.entities.push(gunFireP2);
             setTimeout(() => {
                this.entities.pop();
-            }, 500);
+            }, 2000);
         }
         
         for (const entity of this.entities) {

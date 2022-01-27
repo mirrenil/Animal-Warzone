@@ -17,11 +17,11 @@ class Character {
   constructor(appearance: p5.Image, x: number, y: number, size: p5.Vector, controls: Controls) {
    
     this.appearance = appearance;
-    this.controls = controls;
+    this.controls = controls; 
     this.size = size;
     this.x = x;
     this.y = y;
-    this.speed = 15;
+    this.speed = 3;
     this.currentDirection = ''; 
   }
 
@@ -30,19 +30,13 @@ class Character {
       this.y = this.y - this.speed;
       this.currentDirection = 'up';
       // this.velocity.y = -15
-    }
-
-    if (keyIsDown(this.controls.down)) {
+    } else if (keyIsDown(this.controls.down)) {
       this.y = this.y + this.speed;
       this.currentDirection = 'down';
-    }
-
-    if (keyIsDown(this.controls.left)) {
+    } else if (keyIsDown(this.controls.left)) {
       this.x = this.x - this.speed;
       this.currentDirection = 'left';
-    }
-
-    if (keyIsDown(this.controls.right)) {
+    } else if (keyIsDown(this.controls.right)) {
       this.x = this.x + this.speed;
       this.currentDirection = 'right';
     }
@@ -72,13 +66,13 @@ class Character {
       const size = createVector(35, 35);
       const velocity = createVector(0, 0);
       if (this.currentDirection == 'up') {
-        velocity.y = -30;
+        velocity.y = -15;
       } else if (this.currentDirection == 'down') {
-        velocity.y = 30;
+        velocity.y = 15;
       } else if (this.currentDirection == 'right') {
-        velocity.x = 30;
+        velocity.x = 15;
       } else if (this.currentDirection == 'left') {
-        velocity.x = -30;
+        velocity.x = -15;
       }
       return new GunFire(appearance, this.x, this.y, size, velocity);
     }
