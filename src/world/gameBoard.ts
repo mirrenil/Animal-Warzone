@@ -7,11 +7,10 @@
 
 class GameBoard {
 
-    private gameState: GameState;
+    public gameState: GameState;
     private PlayersLife: PlayersLife;
 
-    public gameState: GameState;
-    private life: Life;
+    // private life: Life;
 
     private worldMap: WorldMap;
     private entities: Entity[];
@@ -33,16 +32,9 @@ class GameBoard {
         this.entities = this.worldMap.getEntities();
 
         this.playerOne = new Character(
-
-            turtleFront, 
-            width *0.3 + 200,
-            height * .5 - 30,
-            createVector(70, 60),
-
             this.getCharacterImage(activeCharacterName),
             createVector(150, height * .5 - 30), //this.worldMap.getPlayerOnePosition()
             createVector(10, 10),
-
             {
                 left: LEFT_ARROW,
                 right: RIGHT_ARROW,
@@ -53,12 +45,6 @@ class GameBoard {
         );
 
         this.playerTwo = new Character(
-
-            monkeyFront, 
-            width *0.3,
-            height * .5 - 30,
-            createVector(70, 60),
-
             this.getCharacterImage(activeCharacterName2),
             createVector(width - 150, height * .5 - 30),
             createVector(10, 10),
@@ -131,15 +117,15 @@ class GameBoard {
 
                         }
                         if (entity2 instanceof Barricade) {
-                            if (entity1.currentDirection === 'right') {
-                                entity1.x = entity2.x - entity1.size.x;
-                            } else if (entity1.currentDirection === 'left') {
-                                entity1.x = entity2.x + entity2.size.x;
-                            } else if (entity1.currentDirection === 'up') {
-                                entity1.y = entity2.y + entity2.size.y;
-                            } else if (entity1.currentDirection === 'down') {
-                                entity1.y = entity2.y - entity1.size.y;
-                            }
+                            // if (entity1.currentDirection === 'right') {
+                            //     entity1.x = entity2.x - entity1.size.x;
+                            // } else if (entity1.currentDirection === 'left') {
+                            //     entity1.x = entity2.x + entity2.size.x;
+                            // } else if (entity1.currentDirection === 'up') {
+                            //     entity1.y = entity2.y + entity2.size.y;
+                            // } else if (entity1.currentDirection === 'down') {
+                            //     entity1.y = entity2.y - entity1.size.y;
+                            // }
                         console.log('barricade', entity1, entity2);
                         }
                         if (entity1 instanceof GunFire) {
@@ -254,23 +240,23 @@ class GameBoard {
         this.playerTwo.update();
     }
 
-    public draw() {
-        // for (const entity of this.entities) {
-        //     entity.draw();
-        // }
-        this.playerOne.draw();
-        this.playerTwo.draw();
+    // public draw() {
+    //     // for (const entity of this.entities) {
+    //     //     entity.draw();
+    //     // }
+    //     this.playerOne.draw();
+    //     this.playerTwo.draw();
 
-        //this.gameState.setGameState('Running');
-        // // keyPressed();
-        // // this.windowBounderies();
-        // rectMode(CENTER);
-        // noStroke();
-        // fill(255);
+    //     //this.gameState.setGameState('Running');
+    //     // // keyPressed();
+    //     // // this.windowBounderies();
+    //     // rectMode(CENTER);
+    //     // noStroke();
+    //     // fill(255);
 
-        // // character test
-        // rect(rectX1, rectY1, rectWidth, rectHeight);
-    };
+    //     // // character test
+    //     // rect(rectX1, rectY1, rectWidth, rectHeight);
+    // };
 
     public openGame() {
 

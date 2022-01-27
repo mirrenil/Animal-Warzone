@@ -4,10 +4,13 @@ let characterMoR: p5.Image;
 // let currentDirection: string;
 let bullet: p5.Image;
 
-class Character extends Entity {
-  public speed: number;
+class Character {
+  private speed: number;
   public currentDirection: string;
   private controls: Controls;
+  private appearance: p5.Image;
+  private size: p5.Vector;
+  private position: p5.Vector;
   // public position: p5.Vector;
   // private width: number;
   // private height: number;
@@ -17,116 +20,90 @@ class Character extends Entity {
   // private positionX = 500;
   // private positionY = 450;
 
-  constructor(appearance: p5.Image, x: number, y: number, size: p5.Vector, controls: Controls) {
-    super(appearance, x, y, size);
-    this.speed = 15;
+  constructor(appearance: p5.Image, position: p5.Vector, size: p5.Vector, controls: Controls) {
+   
+    this.appearance = appearance;
     this.controls = controls;
+    this.size = size;
+    this.position = position;
+    this.speed = 15;
     this.currentDirection = ''; 
   }
 
   private move() {
     if (keyIsDown(this.controls.up)) {
-      this.y = this.y - this.speed;
+      this.position.y = this.position.y - this.speed;
       this.currentDirection = 'up';
       // this.velocity.y = -15
     }
 
     if (keyIsDown(this.controls.down)) {
-      this.y = this.y + this.speed;
+      this.position.y = this.position.y + this.speed;
       this.currentDirection = 'down';
     }
 
     if (keyIsDown(this.controls.left)) {
-      this.x = this.x - this.speed;
+      this.position.x = this.position.x - this.speed;
       this.currentDirection = 'left';
     }
 
     if (keyIsDown(this.controls.right)) {
-      this.x = this.x + this.speed;
+      this.position.x = this.position.x + this.speed;
       this.currentDirection = 'right';
     }
   }
 
   public update() {
-    super.update();
     this.move();
-    // this.position += this.speed;
-
-    if (this.x < 40) {
-      this.x = this.x + this.speed;
-    }
-
-    if (this.x > width - 40) {
-      this.x = this.x - this.speed;
-    }
-
-    if (this.y < 35) {
-      this.y = this.y + this.speed;
-    }
-
-    if (this.y > height - 35) {
-      this.y = this.y - this.speed;
-    }
-    if (this.x < 40) {
-      this.x = this.x + this.speed;
-    }
-
-    if (this.x > width - 40) {
-      this.x = this.x - this.speed;
-    }
-
-    if (this.y < 35) {
-      this.y = this.y + this.speed;
-    }
-
-    if (this.y > height - 35) {
-      this.y = this.y - this.speed;
-    }
     
-    //bullet
-    // for (let bullet of bulletsP1) {
-    //   image(banana, bullet.x, bullet.y);
-    //   if (currentDirection == 'up') {
-    //     bullet.y = bullet.y - 2;
-    //   } else if (currentDirection == 'down') {
-    //     bullet.y = bullet.y + 2;
-    //   } else if (currentDirection == 'right') {
-    //     bullet.x = bullet.x + 2;
-    //   } else if (currentDirection == 'left') {
-    //     bullet.x = bullet.x - 2;
-    //   }
-    // }
+    if (this.position.x < 40) {
+      this.position.x = this.position.x + this.speed;
+    }
   
-    // for (let bullet of bulletsP2) {
-    //   image(banana, bullet.x, bullet.y);
-    //   if (currentDirection == 'up') {
+    if (this.position.x > width - 40) {
+      this.position.x = this.position.x - this.speed;
+    }
+  
+    if (this.position.y < 35) {
+      this.position.y = this.position.y +this.speed;
+    }
+  
+    if (this.position.y > height - 35) {
+      this.position.y = this.position.y - this.speed;
+    }
+    if (this.position.x < 40) {
+      this.position.x = this.position.x + this.speed;
+    }
+  
+    if (this.position.x > width - 40) {
+      this.position.x = this.position.x - this.speed;
+    }
+  
+    if (this.position.y < 35) {
+      this.position.y = this.position.y + this.speed;
+    }
+  
+    if (this.position.y > height - 35) {
+      this.position.y = this.position.y - this.speed;
+    }
+    //bullet
+    // for (let bullet of bullets) {
+  
+    //   if (this.currentDirection == 'up') {
     //     bullet.y = bullet.y - 2;
-    //   } else if (currentDirection == 'down') {
+    //   } else if (this.currentDirection == 'down') {
     //     bullet.y = bullet.y + 2;
-    //   } else if (currentDirection == 'right') {
+    //   } else if (this.currentDirection == 'right') {
     //     bullet.x = bullet.x + 2;
-    //   } else if (currentDirection == 'left') {
+    //   } else if (this.currentDirection == 'left') {
     //     bullet.x = bullet.x - 2;
     //   }
+    //   image(banana, bullet.x, bullet.y);
     // }
-
-    
-
-    if (keyIsDown(this.controls.shoot)) {
-      const appearance = banana;
-      const size = createVector(35, 35);
-      const velocity = createVector(0, 0);
-      if (this.currentDirection == 'up') {
-        velocity.y = -30;
-      } else if (this.currentDirection == 'down') {
-        velocity.y = 30;
-      } else if (this.currentDirection == 'right') {
-        velocity.x = 30;
-      } else if (this.currentDirection == 'left') {
-        velocity.x = -30;
-      }
-      return new GunFire(appearance, this.x, this.y, size, velocity);
-    }
-    
   }
+  public draw() {
+    imageMode(CENTER)
+    image(this.appearance, this.position.x, this.position.y)
+  }
+
 }
