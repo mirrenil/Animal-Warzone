@@ -9,8 +9,6 @@ class GameBoard {
 
     private gameState: GameState;
     private PlayersLife: PlayersLife;
-
-    public gameState: GameState;
     private life: Life;
 
     private worldMap: WorldMap;
@@ -33,16 +31,11 @@ class GameBoard {
         this.entities = this.worldMap.getEntities();
 
         this.playerOne = new Character(
-
-            turtleFront, 
+ 
+            this.getCharacterImage(activeCharacterName),
             width *0.3 + 200,
             height * .5 - 30,
             createVector(70, 60),
-
-            this.getCharacterImage(activeCharacterName),
-            createVector(150, height * .5 - 30), //this.worldMap.getPlayerOnePosition()
-            createVector(10, 10),
-
             {
                 left: LEFT_ARROW,
                 right: RIGHT_ARROW,
@@ -53,16 +46,10 @@ class GameBoard {
         );
 
         this.playerTwo = new Character(
-
-            monkeyFront, 
+            this.getCharacterImage(activeCharacterName2),
             width *0.3,
             height * .5 - 30,
             createVector(70, 60),
-
-            this.getCharacterImage(activeCharacterName2),
-            createVector(width - 150, height * .5 - 30),
-            createVector(10, 10),
-
             {
                 left: 65,
                 right: 68,
@@ -72,22 +59,6 @@ class GameBoard {
             }
         );
     }
-
-
-
-
-    // private checkCollision() {
-    //     if(this.player1.position.x < this.player2.position.x + this.player2.size.x &&
-    //       this.player1.position.x + this.player1.size.x > this.player2.position.x &&
-    //       this.player1.position.y < this.player2.position.y + this.player2.size.y &&
-    //       this.player1.size.y + this.player1.position.y > this.player2.position.y) {
-    //           this.player1.speed = this.player1.speed * -1;
-    //           this.player2.speed = this.player2.speed * -1;
-    //       } else {
-    //         this.player1.speed = 15;
-    //         this.player2.speed = 15;
-    //       }
-    // }
 
     private checkCollision() {
         const allEntities = [...this.entities, this.playerOne, this.playerTwo];
@@ -159,23 +130,6 @@ class GameBoard {
     }
 }
 
-    // private windowBounderies() {
-    //     if(rectX1 < 0) {
-    //         rectX1 = rectX1 + move;
-    //     }
-
-    //     if(rectX1 > width) {
-    //         rectX1 = rectX1 - move;
-    //     }
-
-    //     if(rectY1 < 0) {
-    //        rectY1 = rectY1 + move;
-    //     }
-
-    //     if(rectY1 > height) {
-    //        rectY1 =rectY1 - move;
-    //     }
-    // }
     private getCharacterImage(name: CharacterNameLabel) {
         switch(name) {
             case "turtle": return images.turtleFront;
@@ -186,32 +140,10 @@ class GameBoard {
         }
     }
 
-   
-    // private checkCollisions() {
-
-
-    // }
-
-    // public keyPressed() {
-    //     if (keyCode == 38 && keyIsPressed) {
-    //         rectX1 = rectX1 - move;
-    //     }
-
-    //     if (keyCode == 40 && keyIsPressed) {
-    //        rectY1 = rectY1 + move;
-    //     }
-
-    //     if (keyCode == 37 && keyIsPressed) {
-    //         rectX1 = rectX1 - move;
-    //     }
-
-    //     if (keyCode ==  39 && keyIsPressed) {
-    //         rectX1 = rectX1 + move;
-    //     }
-    // }
-
-
     public update() {
+        this.playerOne.update();
+        this.playerTwo.update();
+        
         const gunFireP1 = this.playerOne.update();
         if (gunFireP1) {
             this.entities.push(gunFireP1);
@@ -250,27 +182,7 @@ class GameBoard {
         //     entity.update();
         // }
 
-        this.playerOne.update();
-        this.playerTwo.update();
     }
-
-    public draw() {
-        // for (const entity of this.entities) {
-        //     entity.draw();
-        // }
-        this.playerOne.draw();
-        this.playerTwo.draw();
-
-        //this.gameState.setGameState('Running');
-        // // keyPressed();
-        // // this.windowBounderies();
-        // rectMode(CENTER);
-        // noStroke();
-        // fill(255);
-
-        // // character test
-        // rect(rectX1, rectY1, rectWidth, rectHeight);
-    };
 
     public openGame() {
 
