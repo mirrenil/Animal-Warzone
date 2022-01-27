@@ -100,42 +100,46 @@ footer > div{
 }
 
 .shoot{
-    height: 25vh;
+    height: 15vh;
     min-width: 100%;
     position: relative;
 }
 
 .space-key{
-    height: 40%;
+    height: 60%;
     position: absolute;
     left:9%;
-    top: 50%;
+    top: 70%;
     transform: translateY(-50%);
 }
 
 .enter-key{
-    height: 60%;
+    height: 80%;
     position: absolute;
     right:15%;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%);
 }
 
 .pause{
-    height: 10vh;
+    height: 20vh;
     min-width: 100%;
     position: relative;
 }
 
 .pause > h3{
     position: absolute;
-    left: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    top:0;
 }
 
 .pause > img{
     position: absolute;
-    height: 85%;
+    height: 50%;
+    bottom:0;
     left: 50%;
+    transform: translateX(-50%);
 }
 
 .player1Instructions{
@@ -153,8 +157,7 @@ footer > div{
 }
 
 .startMenuButton{
-    
-    margin: 1rem;
-    cursor:pointer;
+    margin: 2rem;
+    cursor: pointer;
     position: absolute;
 }

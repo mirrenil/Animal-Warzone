@@ -68,6 +68,7 @@ function preload() {
  * and save it as a global variable so it can be used
  * in the draw function below
  */
+
 function setup() {
 
     createCanvas(windowWidth, windowHeight);
