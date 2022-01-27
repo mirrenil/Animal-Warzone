@@ -1,25 +1,8 @@
 type CharacterNameLabel = "" | "rabbit" | "pig" | "turtle" | "monkey";
-type CharacterNameLabel2 = "" | "rabbit" | "pig" | "turtle" | "monkey";
-
-interface CharacterName {
-    activeCharacterName: CharacterNameLabel;
-    setCharacterName: (state: CharacterNameLabel) => void;
-}
-
-interface CharacterName2 {
-    activeCharacterName2: CharacterNameLabel2;
-    setCharacterName2: (state: CharacterNameLabel2) => void;
-}
-class CharacterMenu implements CharacterName, CharacterName2 {
-    // public activeCharacterStateP2: CharacterName;
-    // public activeCharacterName: CharacterNameLabel;
-    public characterName: CharacterName;
-    public characterName2: CharacterName2;
-    public activeCharacterName: CharacterNameLabel;
-    public activeCharacterName2: CharacterNameLabel2; 
-    public playerOne: any;
-    public playerTwo: any;
-    public gameState: GameState;
+class CharacterMenu {
+    private activeCharacterName: CharacterNameLabel;
+    private activeCharacterName2: CharacterNameLabel;
+    private gameState: GameState;
     private mainDiv: HTMLDivElement;
     private characterImg: HTMLDivElement;
     private monkey: HTMLImageElement;
@@ -33,20 +16,9 @@ class CharacterMenu implements CharacterName, CharacterName2 {
     private startGameButton: HTMLButtonElement;
    
 
-    constructor(
-        gameState: GameState,
-        characterName: CharacterName,
-        characterName2: CharacterName2,
-        activeCharacterName: CharacterNameLabel,
-        activeCharacterName2: CharacterNameLabel2,
-        playerOne: Character, playerTwo: Character,
-    ) {
-        //this.activeCharacterName = '';
-        //this.activeCharacterNameP2 = '';
-        this.characterName = characterName;
-        this.activeCharacterName = activeCharacterName;
-        this.characterName2 = characterName2;
-        this.activeCharacterName2 = activeCharacterName2;
+    constructor(gameState: GameState) {
+        this.activeCharacterName = "";
+        this.activeCharacterName2 = "";
         this.gameState = gameState;
         // this.player1Character = player1Character;
 
@@ -202,28 +174,34 @@ class CharacterMenu implements CharacterName, CharacterName2 {
         // this.openCharacterMenu();
     }
 
+    public getActiveCharacterName() { return this.activeCharacterName }
+    public getActiveCharacterName2() { return this.activeCharacterName2 }
+
     /** APPEND.mainDiv HERE */
     public openCharacterMenu() {
         document.body.append(this.mainDiv);
     }
 
     public setCharacterName = (name: CharacterNameLabel) => {
-        this.activeCharacterName = "";
+        this.activeCharacterName = name;
 
         if (name === "monkey") {
-            this.playerOne = "/documents/gameCharacters/monkeyFront.png";
+            this.monkey.style.opacity = '1';
             this.rabbit.style.opacity = ".4";
             this.turtle.style.opacity = ".4";
             this.pig.style.opacity = ".4";
         } else if (name === "pig") {
+            this.pig.style.opacity = '1';
             this.rabbit.style.opacity = ".4";
             this.turtle.style.opacity = ".4";
             this.monkey.style.opacity = ".4";
         } else if (name === "turtle") {
+            this.turtle.style.opacity = '1';
             this.rabbit.style.opacity = ".4";
             this.monkey.style.opacity = ".4";
             this.pig.style.opacity = ".4";
         } else if (name === "rabbit") {
+            this.rabbit.style.opacity = "1";
             this.monkey.style.opacity = ".4";
             this.turtle.style.opacity = ".4";
             this.pig.style.opacity = ".4";
@@ -232,23 +210,26 @@ class CharacterMenu implements CharacterName, CharacterName2 {
        
     }
 
-    public setCharacterName2 = (name: CharacterNameLabel2) => {
-        this.activeCharacterName2 = "";
+    public setCharacterName2 = (name: CharacterNameLabel) => {
+        this.activeCharacterName2 = name;
 
         if (name === "monkey") {
+            this.monkey2.style.opacity = '1';
             this.rabbit2.style.opacity = ".4";
             this.turtle2.style.opacity = ".4";
             this.pig2.style.opacity = ".4";
         } else if (name === "pig") {
-            this.playerTwo = '/documents/gameCharacters/pigFront.png'
+            this.pig2.style.opacity = '1';
             this.rabbit2.style.opacity = ".4";
             this.turtle2.style.opacity = ".4";
             this.monkey2.style.opacity = ".4";
         } else if (name === "turtle") {
+            this.turtle2.style.opacity = '1';
             this.rabbit2.style.opacity = ".4";
             this.monkey2.style.opacity = ".4";
             this.pig2.style.opacity = ".4";
         } else if (name === "rabbit") {
+            this.rabbit2.style.opacity = '1';
             this.monkey2.style.opacity = ".4";
             this.turtle2.style.opacity = ".4";
             this.pig2.style.opacity = ".4";
@@ -257,7 +238,7 @@ class CharacterMenu implements CharacterName, CharacterName2 {
     }
 
     public activateButton() {
-        if (this.activeCharacterName === "" && this.activeCharacterName2 === "") {
+        if (this.activeCharacterName != "" && this.activeCharacterName2 != "") {
             this.startGameButton.classList.remove("unactive");
         }
     }

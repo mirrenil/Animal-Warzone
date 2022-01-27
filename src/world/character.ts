@@ -1,5 +1,3 @@
-let monkeyFront: p5.Image;
-let turtleFront: p5.Image;
 let banana: p5.Image;
 let characterMoL: p5.Image;
 let characterMoR: p5.Image;

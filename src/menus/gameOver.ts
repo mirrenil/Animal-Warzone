@@ -1,10 +1,7 @@
 
 //---- GLOBAL VARIABLES ----//
 
-let monkeyBig: p5.Image;
-let pigBig: p5.Image;
-let rabbitBig: p5.Image;
-let turtleBig: p5.Image;
+
 class GameOverMenu {
     // private gameState: GameState;
     // private gameOverMainDiv:  HTMLDivElement;

@@ -6,28 +6,24 @@ let rectHeight: number = 100;
 let move = 5;
 
 
-class GameBoard extends CharacterMenu {
-    public activeCharacterName: CharacterNameLabel;
+class GameBoard {
     public gameState: GameState;
     private life: Life;
     private worldMap: WorldMap;
     private entities: Entity[];
-    // public playerOne: Character;
-    // public playerTwo: Character;
+    public playerOne: Character;
+    public playerTwo: Character;
 
-    constructor(gameState: GameState, activeCharacterName: CharacterNameLabel, characterName: CharacterName, 
-        characterName2: CharacterName2, activeCharacterName2: CharacterNameLabel2, playerOne: any, playerTwo: any ) {
-            
-        super(gameState, characterName, characterName2, activeCharacterName, activeCharacterName2, playerOne, playerTwo);
-        
+    constructor(gameState: GameState, activeCharacterName: CharacterNameLabel, 
+         activeCharacterName2: CharacterNameLabel) {
+
         this.gameState = gameState;
-        this.activeCharacterName = activeCharacterName;
         this.life = new Life(createVector(10, 10));
         this.worldMap = new WorldMap();
         this.entities = this.worldMap.getEntities();
         this.playerOne = new Character(
-           turtleFront,
-            createVector(150, height * .5 - 30),
+            this.getCharacterImage(activeCharacterName),
+            createVector(150, height * .5 - 30), //this.worldMap.getPlayerOnePosition()
             createVector(10, 10),
             {
                 left: LEFT_ARROW,
@@ -37,7 +33,7 @@ class GameBoard extends CharacterMenu {
             }
         );
         this.playerTwo = new Character(
-            this.activeCharacterName2,
+            this.getCharacterImage(activeCharacterName2),
             createVector(width - 150, height * .5 - 30),
             createVector(10, 10),
             {
@@ -49,24 +45,17 @@ class GameBoard extends CharacterMenu {
         );
     }
 
-    // private windowBounderies() {
-    //     if(rectX1 < 0) {
-    //         rectX1 = rectX1 + move;
-    //     }
+    private getCharacterImage(name: CharacterNameLabel) {
+        switch(name) {
+            case "turtle": return images.turtleFront;
+            case "monkey": return images.monkeyFront;
+            case "rabbit": return images.rabbitFront;
+            case "pig": return images.pigFront;
+            default: return images.pigFront;
+        }
+    }
 
-    //     if(rectX1 > width) {
-    //         rectX1 = rectX1 - move;
-    //     }
-
-    //     if(rectY1 < 0) {
-    //        rectY1 = rectY1 + move;
-    //     }
-
-    //     if(rectY1 > height) {
-    //        rectY1 =rectY1 - move;
-    //     }
-    // }
-
+   
     // private checkCollisions() {
 
 
@@ -92,16 +81,20 @@ class GameBoard extends CharacterMenu {
 
     public update() {
         // this.barricade.update();
+        // for (const entity of this.entities) {
+        //     entity.update();
+        // }
+
         this.playerOne.update();
         this.playerTwo.update();
     }
 
     public draw() {
-        
+        // for (const entity of this.entities) {
+        //     entity.draw();
+        // }
         this.playerOne.draw();
         this.playerTwo.draw();
-        
-        this.life.draw();
 
         //this.gameState.setGameState('Running');
         // // keyPressed();
@@ -111,13 +104,6 @@ class GameBoard extends CharacterMenu {
         // fill(255);
 
 
-    }
-  
-
-    public initGameBoard(activeCharacterName: CharacterNameLabel, activeCharacterName2: CharacterNameLabel2) {
-       // HJÄLP från david tack
-      // Hur kopplar vi string till p5.Image?
-      
     }
     
     public openGame() {
