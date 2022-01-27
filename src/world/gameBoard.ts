@@ -6,7 +6,6 @@
 // let move = 5;
 
 class GameBoard {
-
     public gameState: GameState;
     private PlayersLife: PlayersLife;
     private life: Life;
@@ -53,9 +52,19 @@ class GameBoard {
                 right: 68,
                 up: 87,
                 down: 83,
-                shoot: 32
+                shoot: 32,
             }
         );
+    }
+
+    private getCharacterImage(name: CharacterNameLabel) {
+        switch(name) {
+            case "turtle": return images.turtleFront;
+            case "monkey": return images.monkeyFront;
+            case "rabbit": return images.rabbitFront;
+            case "pig": return images.pigFront;
+            default: return images.pigFront;
+        }
     }
 
     private checkCollision() {
@@ -128,15 +137,7 @@ class GameBoard {
     }
 }
 
-    private getCharacterImage(name: CharacterNameLabel) {
-        switch(name) {
-            case "turtle": return images.turtleFront;
-            case "monkey": return images.monkeyFront;
-            case "rabbit": return images.rabbitFront;
-            case "pig": return images.pigFront;
-            default: return images.pigFront;
-        }
-    }
+   
 
     public update() {
         this.playerOne.update();
@@ -168,7 +169,7 @@ class GameBoard {
     public draw() {
         this.playerOne.draw();
         this.playerTwo.draw();
-        this. PlayersLife.draw();
+        this.PlayersLife.draw();
         for (const entity of this.entities) {
             entity.draw();
         }

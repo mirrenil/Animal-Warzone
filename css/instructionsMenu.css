@@ -22,11 +22,10 @@
 
 body{
     margin: 0;
-    font-family: var(--instructionsFText);
     color: whitesmoke;
 }
 
-.header{
+.headerInstructions{
     min-width: 100%;
     height: 10vh;
     position: relative;
@@ -41,7 +40,7 @@ h3{
     font-size: 52px;
 }
 
-.main-div{
+.main-div-instructions{
     position: fixed;
     inset:0;
     gap: 5rem;
@@ -130,7 +129,7 @@ footer > div{
 
 .pause > h3{
     position: absolute;
-    left: 40%;
+    left: 35%;
 }
 
 .pause > img{
@@ -139,19 +138,22 @@ footer > div{
     left: 50%;
 }
 
-.player1{
+.player1Instructions{
     margin:0;
     position: absolute;
-    left: 14%;
+    left: 10%;
+    font-family: var(--fontFBigText);
 }
 
-.player2{
+.player2Instructions{
+    font-family: var(--fontFBigText);
     margin: 0;
     position: absolute;
-    right:14%;
+    right:10%;
 }
 
-.startMenu{
+.startMenuButton{
+    
     margin: 1rem;
     cursor:pointer;
     position: absolute;

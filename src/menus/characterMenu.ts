@@ -27,6 +27,7 @@ class CharacterMenu {
         this.mainDiv.className = "mainDiv";
 
         const playersDiv = document.createElement("div");
+        // playersDiv.style.inset="0";
         playersDiv.className = "playersDiv";
 
         /** H2 HEADER AND ARROW BACK*/
@@ -36,7 +37,7 @@ class CharacterMenu {
         mainMenu.addEventListener('click', () => this.openStartMenu());
 
         const headerText = document.createElement("h2");
-        headerText.className = "h2";
+        headerText.className = "header-text";
         headerText.textContent = "Choose your character";
 
         /** PLAYER 1 */
@@ -59,12 +60,14 @@ class CharacterMenu {
         const divPig = document.createElement("div");
         divPig.className = "div-animals";
         this.pig = document.createElement("img");
+        this.pig.className = 'img';
         this.pig.src = "/documents/gameCharacters/pigFront.png";
         this.pig.addEventListener("click", () => this.setCharacterName("pig"));
 
         const divTurtle = document.createElement("div");
         divTurtle.className = "div-animals";
         this.turtle = document.createElement("img");
+        this.turtle.className = 'img';
         this.turtle.src = "/documents/gameCharacters/turtleFront.png";
         this.turtle.addEventListener("click", () =>
             this.setCharacterName("turtle")
@@ -73,6 +76,7 @@ class CharacterMenu {
         const divMonkey = document.createElement("div");
         divMonkey.className = "div-animals";
         this.monkey = document.createElement("img");
+        this.monkey.className = 'img';
         this.monkey.src = "/documents/gameCharacters/monkeyFront.png";
         this.monkey.addEventListener("click", () =>
             this.setCharacterName("monkey")
@@ -81,6 +85,7 @@ class CharacterMenu {
         const divRabbit = document.createElement("div");
         divRabbit.className = "div-animals";
         this.rabbit = document.createElement("img");
+        this.rabbit.className = 'img';
         this.rabbit.src = "/documents/gameCharacters/rabbitFront.png";
         this.rabbit.addEventListener("click", () =>
             this.setCharacterName("rabbit")
@@ -110,12 +115,14 @@ class CharacterMenu {
         const divPig2 = document.createElement("div");
         this.pig2 = document.createElement("img");
         this.pig2.src = "/documents/gameCharacters/pigFront.png";
+        this.pig2.className = 'img';
         this.pig2.addEventListener("click", () => this.setCharacterName2("pig"));
 
         const divTurtle2 = document.createElement("div");
         divTurtle2.className = "div-animals";
         this.turtle2 = document.createElement("img");
         this.turtle2.src = "/documents/gameCharacters/turtleFront.png";
+        this.turtle2.className = 'img';
         this.turtle2.addEventListener("click", () =>
             this.setCharacterName2("turtle")
         );
@@ -124,6 +131,7 @@ class CharacterMenu {
         divMonkey2.className = "div-animals";
         this.monkey2 = document.createElement("img");
         this.monkey2.src = "/documents/gameCharacters/monkeyFront.png";
+        this.monkey2.className = 'img';
         this.monkey2.addEventListener("click", () =>
             this.setCharacterName2("monkey")
         );
@@ -132,6 +140,7 @@ class CharacterMenu {
         divRabbit2.className = "div-animals";
         this.rabbit2 = document.createElement("img");
         this.rabbit2.src = "/documents/gameCharacters/rabbitFront.png";
+        this.rabbit2.className = 'img';
         this.rabbit2.addEventListener("click", () =>
             this.setCharacterName2("rabbit")
         );
@@ -153,6 +162,7 @@ class CharacterMenu {
             playerTwoDiv,
             playerTwoText
         );
+    
         playerOneDiv.append(playerOneText, this.characterImg);
         playerTwoDiv.append(playerTwoText, characterImg2);
         this.characterImg.append(leftTop, leftBottom);
@@ -177,7 +187,7 @@ class CharacterMenu {
     public getActiveCharacterName() { return this.activeCharacterName }
     public getActiveCharacterName2() { return this.activeCharacterName2 }
 
-    /** APPEND.mainDiv HERE */
+     /** APPEND .mainDiv HERE */
     public openCharacterMenu() {
         document.body.append(this.mainDiv);
     }
@@ -263,48 +273,6 @@ class CharacterMenu {
     public draw() { }
 }
 
-// function e(e: p5.Image): any {
-//     throw new Error("Function not implemented.");
-// }
 
-// public chooseCharacter(selectedCharacter: CharacterName, player: number) {
 
-// if (player === 1) {
-//     this.activeCharacterName = selectedCharacter;
-//     console.log(selectedCharacter);
-// if (selectedCharacter = 'monkey') {
-//   this.monkey.style.border = 'blue';
-//   console.log(selectedCharacter);
-// } else if (selectedCharacter = 'pig') {
-//     this.rabbit.style.opacity = '.4'
-//     this.turtle.style.opacity = '.4'
-//     this.monkey.style.opacity = '.4'
-// } else if (selectedCharacter = 'rabbit') {
-//     this.pig.style.opacity = '.4'
-//     this.turtle.style.opacity = '.4'
-//     this.monkey.style.opacity = '.4'
-// } else {
-//     this.pig.style.opacity = '.4'
-//     this.rabbit.style.opacity = '.4'
-//     this.monkey.style.opacity = '.4'
-// }
 
-// } else if (player === 2) {
-//     this.activeCharacterStateP2 = selectedCharacter;
-//     if (selectedCharacter = 'pig') {
-//       this.rabbit2.style.opacity = '.4'
-//       this.turtle2.style.opacity = '.4'
-//       this.monkey2.style.opacity = '.4'
-//     } else if (selectedCharacter = 'monkey') {
-//         this.rabbit2.style.opacity = '.4'
-//         this.turtle2.style.opacity = '.4'
-//         this.pig2.style.opacity = '.4'
-//     } else if (selectedCharacter = 'rabbit') {
-//         this.pig2.style.opacity = '.4'
-//         this.turtle2.style.opacity = '.4'
-//         this.monkey2.style.opacity = '.4'
-//     } else if (selectedCharacter = 'turtle') {
-//         this.pig2.style.opacity = '.4'
-//         this.rabbit2.style.opacity = '.4'
-//         this.monkey2.style.opacity = '.4'
-//     }

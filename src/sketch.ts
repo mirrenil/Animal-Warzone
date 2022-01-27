@@ -27,8 +27,6 @@ function preload() {
   // monkeyFront = loadImage("/documents/gameCharacters/monkeyFront.png");
   banana = loadImage('/assets/images/banana.png')
 
-  
-
 
     images = {
       monkeyBig: loadImage("/assets/images/bigMonkey.png"),
