@@ -23,10 +23,10 @@ function preload() {
   barricade = loadImage("/assets/images/Group 67.png");
   heart = loadImage("/assets/images/life.png");
   redHeart = loadImage("/assets/images/redheart.png"),
-  turtleFront = loadImage("/documents/gameCharacters/turtleFront.png");
-  monkeyFront = loadImage("/documents/gameCharacters/monkeyFront.png");
+  // turtleFront = loadImage("/documents/gameCharacters/turtleFront.png");
+  // monkeyFront = loadImage("/documents/gameCharacters/monkeyFront.png");
   banana = loadImage('/assets/images/banana.png')
-=======
+
   
 
 
