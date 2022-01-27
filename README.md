@@ -1,3 +1,22 @@
+# Animal Warzone
+
+## Skapat av: 
+
+**Fia Andersson [github](https://github.com/fiababiakandersson)**
+
+**Max Andersson [github](https://github.com/frontMAX)**
+
+**Hazem Kavas [github](https://github.com/hazem-89)**
+
+**Edwin Körner [github](https://github.com/EdwinKorner)**
+
+**Miranda Nilhag [github](https://github.com/mirrenil)**
+
+**Jonatan Nyberg[github](https://github.com/nybbe123)**
+
+
+[demo]()
+
 # Slutprojektet
 Välkommen till den förinställda kodbasen för slutprojektet.
 Se filen `./src/sketch.ts` för hur ni ska börja skriva er kod!
