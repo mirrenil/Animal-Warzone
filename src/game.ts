@@ -6,12 +6,13 @@ interface GameState {
     setGameState: (state: GameStateLabel) => void;
 }
 
+
+
 class Game implements GameState {
     public activeGameState: GameStateLabel;
     private startMenu: StartMenu;
     private characterMenu: CharacterMenu;
-
-    // private pausedMenu: PausedMenu;
+    private pausedMenu: PausedMenu;
 
     // private gameOverMenu: GameOverMenu;
     private gameBoard: GameBoard;
@@ -20,12 +21,10 @@ class Game implements GameState {
     constructor() {
 
         // this.grid = new Grid(createVector(10, 10));
-        this.activeGameState = 'Running';
-
         this.activeGameState = 'Start';
-
-        // this.pausedMenu = new PausedMenu(this);
-
+        // this.gameState.setGameState('Paused');
+        
+        this.pausedMenu = new PausedMenu(this);
         
         this.characterMenu = new CharacterMenu(this);
 
@@ -40,16 +39,16 @@ class Game implements GameState {
       
         this.instructionsMenu = new InstructionsMenu(this);
         
-        this.setGameState('Character');
+        
     }
 
     public setGameState = (state: GameStateLabel) => {
         this.activeGameState = state;
 
-        if (state === 'Paused') {
-            // this.pausedMenu.openPauseMenu();
-        } else if (state === 'Start') {
+        if (state === 'Start') {
             this.startMenu.openStartMenu();
+        } else if (state === 'Paused') {
+            this.pausedMenu.openPauseMenu();
         } else if (state === 'Character') {
             this.characterMenu.openCharacterMenu();
         } else if (state === 'Running') {
@@ -61,7 +60,7 @@ class Game implements GameState {
         } else if (state === 'Instructions'){
             this.instructionsMenu.openInstructionsMenu(); 
         } else if (state === 'GameOver') {
-            // this.gameOverMenu.openGameOverMenu();
+            //this.gameOverMenu.openGameOverMenu();
 
         }
     };
@@ -70,8 +69,8 @@ class Game implements GameState {
         if (this.activeGameState === 'Running') {
             this.gameBoard.update();
         }   else if(this.activeGameState === 'Character') {
-
-        }   else if(this.activeGameState === 'GameOver') {
+            
+        }else if(this.activeGameState === 'GameOver') {
 
         }
     }

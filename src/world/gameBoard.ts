@@ -32,7 +32,7 @@ class GameBoard {
 
         this.playerOne = new Character(
             this.getCharacterImage(activeCharacterName),
-            createVector(150, height * .5 - 30), //this.worldMap.getPlayerOnePosition()
+            createVector(150, height * .5 - 30), 
             createVector(10, 10),
             {
                 left: LEFT_ARROW,
@@ -40,6 +40,7 @@ class GameBoard {
                 down: DOWN_ARROW,
                 up: UP_ARROW,
                 shoot: ENTER,
+                pause: 27,
             }
         );
 
@@ -53,7 +54,8 @@ class GameBoard {
                 right: 68,
                 up: 87,
                 down: 83,
-                shoot: 32
+                shoot: 32,
+                pause: 27,
             }
         );
     }
@@ -182,7 +184,19 @@ class GameBoard {
 
     }
 
+    public isPaused() {
+        if(keyIsDown(27)){
+        console.log('Paused');
+        }
+    }
+
     public openGame() {
 
+    }
+
+
+    public pauseGame(){
+        this.gameState.setGameState('Paused');
+        
     }
 }
