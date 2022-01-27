@@ -20,9 +20,10 @@ class Game implements GameState {
     constructor() {
 
         // this.grid = new Grid(createVector(10, 10));
-        this.activeGameState = 'Running';
 
-        this.activeGameState = 'Start';
+        this.activeGameState = 'Character';
+
+        //this.setGameState('Start');
 
         // this.pausedMenu = new PausedMenu(this);
 
@@ -40,16 +41,17 @@ class Game implements GameState {
       
         this.instructionsMenu = new InstructionsMenu(this);
         
-        this.setGameState('Character');
+        
     }
 
     public setGameState = (state: GameStateLabel) => {
         this.activeGameState = state;
 
-        if (state === 'Paused') {
-            // this.pausedMenu.openPauseMenu();
-        } else if (state === 'Start') {
+        if (state === 'Start') {
             this.startMenu.openStartMenu();
+            console.trace(this.activeGameState);
+        } else if (state === 'Paused') {
+            // this.pausedMenu.openPauseMenu();
         } else if (state === 'Character') {
             this.characterMenu.openCharacterMenu();
         } else if (state === 'Running') {
@@ -68,7 +70,7 @@ class Game implements GameState {
 
     public update() {
         if (this.activeGameState === 'Running') {
-            this.gameBoard.update();
+            // this.gameBoard.update();
         }   else if(this.activeGameState === 'Character') {
 
         }   else if(this.activeGameState === 'GameOver') {
@@ -79,7 +81,7 @@ class Game implements GameState {
     public draw() {
         background('#21212F');
         if (this.activeGameState === 'Running') {
-            this.gameBoard.draw();
+            //this.gameBoard.draw();
         }
     }
 
