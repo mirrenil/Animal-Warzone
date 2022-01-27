@@ -67,75 +67,75 @@ class GameBoard {
         }
     }
 
-//     private checkCollision() {
-//         const allEntities = [...this.entities, this.playerOne, this.playerTwo];
-//         for (const entity1 of allEntities) {
-//             for (const entity2 of allEntities) {
-//                 // console.log(allEntities);
+    private checkCollision() {
+        const allEntities = [...this.entities, this.playerOne, this.playerTwo];
+        for (const entity1 of allEntities) {
+            for (const entity2 of allEntities) {
+                // console.log(allEntities);
                 
-//                 if (entity1 === entity2) continue;
+                if (entity1 === entity2) continue;
                 
 
-//                 if (entity1.x < entity2.x + entity2.size.x && 
-//                     entity1.x + entity1.size.x > entity2.x && 
-//                     entity1.y < entity2.y + entity2.size.y && 
-//                     entity1.size.y + entity1.y > entity2.y) {
+                if (entity1.x < entity2.x + entity2.size.x && 
+                    entity1.x + entity1.size.x > entity2.x && 
+                    entity1.y < entity2.y + entity2.size.y && 
+                    entity1.size.y + entity1.y > entity2.y) {
                     
-//                     if (entity1 instanceof Character) {
+                    if (entity1 instanceof Character) {
                         
-//                         if (entity2 instanceof Character) {
-//                             // if (entity1.currentDirection === 'right') {
-//                             //     entity1.x = entity2.x - entity1.size.x;
-//                             // } else if (entity1.currentDirection === 'left') {
-//                             //     entity1.x = entity2.x + entity2.size.x;
-//                             // } else if (entity1.currentDirection === 'up') {
-//                             //     entity1.y = entity2.y + entity2.size.y;
-//                             // } else if (entity1.currentDirection === 'down') {
-//                             //     entity1.y = entity2.y - entity1.size.y;
-//                             // }
+                        if (entity2 instanceof Character) {
+                            // if (entity1.currentDirection === 'right') {
+                            //     entity1.x = entity2.x - entity1.size.x;
+                            // } else if (entity1.currentDirection === 'left') {
+                            //     entity1.x = entity2.x + entity2.size.x;
+                            // } else if (entity1.currentDirection === 'up') {
+                            //     entity1.y = entity2.y + entity2.size.y;
+                            // } else if (entity1.currentDirection === 'down') {
+                            //     entity1.y = entity2.y - entity1.size.y;
+                            // }
                            
-//                             // console.log('character', entity1.currentDirection, entity2.currentDirection);
+                            // console.log('character', entity1.currentDirection, entity2.currentDirection);
 
-//                         } 
-//                         if (entity2 instanceof GunFire) {
-//                             // console.log('gunfire hit Character');
+                        } 
+                        if (entity2 instanceof GunFire) {
+                            // console.log('gunfire hit Character');
 
-//                         }
-//                         if (entity2 instanceof Shield) {
-//                             // reaktion
-//                         }
-//                         if (entity2 instanceof ExtraLife) {
-//                             // console.log('Character passed ExtraLife');
+                        }
+                        if (entity2 instanceof Shield) {
+                            // reaktion
+                        }
+                        if (entity2 instanceof ExtraLife) {
+                            // console.log('Character passed ExtraLife');
 
-//                         }
-//                         if (entity2 instanceof Barricade) {
-//                             // if (entity1.currentDirection === 'right') {
-//                             //     entity1.x = entity2.x - entity1.size.x;
-//                             // } else if (entity1.currentDirection === 'left') {
-//                             //     entity1.x = entity2.x + entity2.size.x;
-//                             // } else if (entity1.currentDirection === 'up') {
-//                             //     entity1.y = entity2.y + entity2.size.y;
-//                             // } else if (entity1.currentDirection === 'down') {
-//                             //     entity1.y = entity2.y - entity1.size.y;
-//                             // }
-//                         console.log('barricade', entity1, entity2);
-//                         }
-//                         if (entity1 instanceof GunFire) {
-//                             if (entity2 instanceof Barricade) {
-//                                 // const index = this.entities.indexOf(Barricade, 0);
-//                                 // if (index > -1) {
-//                                 // this.entities.splice(index, 1);
-//                                 // }
-//                                 // this.entities.pop();
-//                                 console.log('gunfire hit barricade');
-//                             }
+                        }
+                        if (entity2 instanceof Barricade) {
+                            // if (entity1.currentDirection === 'right') {
+                            //     entity1.x = entity2.x - entity1.size.x;
+                            // } else if (entity1.currentDirection === 'left') {
+                            //     entity1.x = entity2.x + entity2.size.x;
+                            // } else if (entity1.currentDirection === 'up') {
+                            //     entity1.y = entity2.y + entity2.size.y;
+                            // } else if (entity1.currentDirection === 'down') {
+                            //     entity1.y = entity2.y - entity1.size.y;
+                            // }
+                        console.log('barricade', entity1, entity2);
+                        }
+                        if (entity1 instanceof GunFire) {
+                            if (entity2 instanceof Barricade) {
+                                // const index = this.entities.indexOf(Barricade, 0);
+                                // if (index > -1) {
+                                // this.entities.splice(index, 1);
+                                // }
+                                // this.entities.pop();
+                                console.log('gunfire hit barricade');
+                            }
                         
-//                         }
-//                 }
-//             }
-//         }
-//     }
-// }
+                        }
+                }
+            }
+        }
+    }
+}
 
    
 

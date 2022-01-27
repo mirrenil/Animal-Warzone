@@ -21,7 +21,7 @@ class Game implements GameState {
 
         // this.grid = new Grid(createVector(10, 10));
 
-        this.activeGameState = 'Character';
+        this.activeGameState = 'Start';
 
         //this.setGameState('Start');
 
