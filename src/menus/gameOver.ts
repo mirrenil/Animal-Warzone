@@ -174,7 +174,7 @@ class GameOverMenu {
     // public update(){
 
     // }
-=======
+
 // //---- GLOBAL VARIABLES ----//
 
 // let monkeyBig: p5.Image;
@@ -360,3 +360,4 @@ class GameOverMenu {
 
 
 // }
+}
