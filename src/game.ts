@@ -57,7 +57,7 @@ class Game implements GameState {
         } else if (state === 'Running') {
             const character1 = this.characterMenu.getActiveCharacterName();
             const character2 = this.characterMenu.getActiveCharacterName2();
-            console.log(character1, character2);
+            // console.log(character1, character2);
             this.gameBoard = new GameBoard(this, character1, character2);
 
         } else if (state === 'Instructions'){
