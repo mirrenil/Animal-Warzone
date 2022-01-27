@@ -13,7 +13,7 @@ class Game implements GameState {
 
     private pausedMenu: PausedMenu;
 
-    private gameOverMenu: GameOverMenu;
+    // private gameOverMenu: GameOverMenu;
     private gameBoard: GameBoard;
     public instructionsMenu: InstructionsMenu;
 
@@ -37,7 +37,7 @@ class Game implements GameState {
         
         //this.barricade = new Barricade(createVector(10, 10));
 
-        this.gameOverMenu = new GameOverMenu(this);
+        // this.gameOverMenu = new GameOverMenu(this);
       
         this.instructionsMenu = new InstructionsMenu(this);
         
@@ -63,14 +63,14 @@ class Game implements GameState {
         } else if (state === 'Instructions'){
             this.instructionsMenu.openInstructionsMenu(); 
         } else if (state === 'GameOver') {
-            this.gameOverMenu.openGameOverMenu();
+            // this.gameOverMenu.openGameOverMenu();
 
         }
     };
 
     public update() {
         if (this.activeGameState === 'Running') {
-            // this.gameBoard.update();
+            this.gameBoard.update();
         }   else if(this.activeGameState === 'Character') {
 
         }   else if(this.activeGameState === 'GameOver') {
@@ -81,7 +81,7 @@ class Game implements GameState {
     public draw() {
         background('#21212F');
         if (this.activeGameState === 'Running') {
-            //this.gameBoard.draw();
+            this.gameBoard.draw();
         }
     }
 

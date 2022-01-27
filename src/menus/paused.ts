@@ -27,7 +27,7 @@ class PausedMenu {
   
       ResumeMenuButton.addEventListener('click',() => this.handleResumeGame);
       quitMenuButton.addEventListener('click', () => this.closeMenu);
-      this.openPauseMenu();
+      // this.openPauseMenu();
       }
       private handleResumeGame() {
         this.gameState.setGameState("Running");
