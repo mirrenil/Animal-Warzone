@@ -186,7 +186,16 @@ h3 {
 
 
 .startMenu{
-    top: 0;
+    top:2rem;
+    left:2rem;
     cursor:pointer;
     position: absolute;
+}
+
+.main-div-character{
+    position: fixed;
+    inset:0;
+    gap: 5rem;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.8);
 }

@@ -24,7 +24,7 @@ class CharacterMenu {
 
         /** CREATING DIV TO HOLD EVERYTHING */
         this.mainDiv = document.createElement("div");
-        this.mainDiv.className = "mainDiv";
+        this.mainDiv.className = "main-div-character";
 
         const playersDiv = document.createElement("div");
         // playersDiv.style.inset="0";
