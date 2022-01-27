@@ -3,11 +3,12 @@ let turtleFront: p5.Image;
 let banana: p5.Image;
 let characterMoL: p5.Image;
 let characterMoR: p5.Image;
-let currentDirection: string;
+// let currentDirection: string;
 let bullet: p5.Image;
 
 class Character extends Entity {
   public speed: number;
+  public currentDirection: string;
   private controls: Controls;
   // public position: p5.Vector;
   // private width: number;
@@ -21,29 +22,30 @@ class Character extends Entity {
   constructor(appearance: p5.Image, x: number, y: number, size: p5.Vector, controls: Controls) {
     super(appearance, x, y, size);
     this.speed = 15;
-    this.controls = controls; 
+    this.controls = controls;
+    this.currentDirection = ''; 
   }
 
   private move() {
     if (keyIsDown(this.controls.up)) {
       this.y = this.y - this.speed;
-      currentDirection = 'up';
+      this.currentDirection = 'up';
       // this.velocity.y = -15
     }
 
     if (keyIsDown(this.controls.down)) {
       this.y = this.y + this.speed;
-      currentDirection = 'down';
+      this.currentDirection = 'down';
     }
 
     if (keyIsDown(this.controls.left)) {
       this.x = this.x - this.speed;
-      currentDirection = 'left';
+      this.currentDirection = 'left';
     }
 
     if (keyIsDown(this.controls.right)) {
       this.x = this.x + this.speed;
-      currentDirection = 'right';
+      this.currentDirection = 'right';
     }
   }
 
@@ -116,13 +118,13 @@ class Character extends Entity {
       const appearance = banana;
       const size = createVector(35, 35);
       const velocity = createVector(0, 0);
-      if (currentDirection == 'up') {
+      if (this.currentDirection == 'up') {
         velocity.y = -30;
-      } else if (currentDirection == 'down') {
+      } else if (this.currentDirection == 'down') {
         velocity.y = 30;
-      } else if (currentDirection == 'right') {
+      } else if (this.currentDirection == 'right') {
         velocity.x = 30;
-      } else if (currentDirection == 'left') {
+      } else if (this.currentDirection == 'left') {
         velocity.x = -30;
       }
       return new GunFire(appearance, this.x, this.y, size, velocity);

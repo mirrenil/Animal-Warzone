@@ -4,7 +4,7 @@ let player1: p5.TEXT;
 let player2: p5.TEXT;
 
 
-class PlayersLifes {
+class PlayersLife {
     private size: p5.Vector;
     // private playerOneHeartsPosition = new p5.Vector()
 
