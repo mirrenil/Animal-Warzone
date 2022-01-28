@@ -1,6 +1,7 @@
 class PausedMenu {
     private gameState: GameState;
     private pausedMenuDiv: HTMLDivElement;
+
    
     constructor(gameState: GameState){
       this.gameState = gameState;
@@ -48,3 +49,4 @@ class PausedMenu {
 
   }
 }
+

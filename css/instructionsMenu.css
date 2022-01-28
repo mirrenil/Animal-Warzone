@@ -22,11 +22,10 @@
 
 body{
     margin: 0;
-    font-family: var(--instructionsFText);
     color: whitesmoke;
 }
 
-.header{
+.headerInstructions{
     min-width: 100%;
     height: 10vh;
     position: relative;
@@ -41,7 +40,7 @@ h3{
     font-size: 52px;
 }
 
-.main-div{
+.main-div-instructions{
     position: fixed;
     inset:0;
     gap: 5rem;
@@ -101,58 +100,64 @@ footer > div{
 }
 
 .shoot{
-    height: 25vh;
+    height: 15vh;
     min-width: 100%;
     position: relative;
 }
 
 .space-key{
-    height: 40%;
+    height: 60%;
     position: absolute;
     left:9%;
-    top: 50%;
+    top: 70%;
     transform: translateY(-50%);
 }
 
 .enter-key{
-    height: 60%;
+    height: 80%;
     position: absolute;
     right:15%;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%);
 }
 
 .pause{
-    height: 10vh;
+    height: 20vh;
     min-width: 100%;
     position: relative;
 }
 
 .pause > h3{
     position: absolute;
-    left: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    top:0;
 }
 
 .pause > img{
     position: absolute;
-    height: 85%;
+    height: 50%;
+    bottom:0;
     left: 50%;
+    transform: translateX(-50%);
 }
 
-.player1{
+.player1Instructions{
     margin:0;
     position: absolute;
-    left: 14%;
+    left: 10%;
+    font-family: var(--fontFBigText);
 }
 
-.player2{
+.player2Instructions{
+    font-family: var(--fontFBigText);
     margin: 0;
     position: absolute;
-    right:14%;
+    right:10%;
 }
 
-.startMenu{
-    margin: 1rem;
-    cursor:pointer;
+.startMenuButton{
+    margin: 2rem;
+    cursor: pointer;
     position: absolute;
 }

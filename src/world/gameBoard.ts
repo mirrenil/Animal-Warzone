@@ -6,10 +6,9 @@
 // let move = 5;
 
 class GameBoard {
-
     public gameState: GameState;
     private PlayersLife: PlayersLife;
-    private life: Life;
+    // private life: Life;
 
     private worldMap: WorldMap;
     private entities: Entity[];
@@ -33,8 +32,12 @@ class GameBoard {
         this.playerOne = new Character(
             this.getCharacterImage(activeCharacterName),
             createVector(150, height * .5 - 30), 
-            createVector(10, 10),
-            {
+            //createVector(10, 10),
+            // createVector(150, height * .5 - 30), //this.worldMap.getPlayerOnePosition()
+            width * .3 +200,
+            height * .5 - 30,
+            createVector(80, 80),           {
+
                 left: LEFT_ARROW,
                 right: RIGHT_ARROW,
                 down: DOWN_ARROW,
@@ -46,9 +49,10 @@ class GameBoard {
 
         this.playerTwo = new Character(
             this.getCharacterImage(activeCharacterName2),
-            createVector(width - 150, height * .5 - 30),
-            createVector(10, 10),
-
+            // createVector(width - 150, height * .5 - 30),
+            width * .3,
+            height * .5 - 30,
+            createVector(80, 80),
             {
                 left: 65,
                 right: 68,
@@ -58,6 +62,16 @@ class GameBoard {
                 pause: 27,
             }
         );
+    }
+
+    private getCharacterImage(name: CharacterNameLabel) {
+        switch(name) {
+            case "turtle": return images.turtleFront;
+            case "monkey": return images.monkeyFront;
+            case "rabbit": return images.rabbitFront;
+            case "pig": return images.pigFront;
+            default: return images.pigFront;
+        }
     }
 
     private checkCollision() {
@@ -73,7 +87,6 @@ class GameBoard {
                     entity1.x + entity1.size.x > entity2.x && 
                     entity1.y < entity2.y + entity2.size.y && 
                     entity1.size.y + entity1.y > entity2.y) {
-                    
                     if (entity1 instanceof Character) {
                         
                         if (entity2 instanceof Character) {
@@ -91,56 +104,68 @@ class GameBoard {
 
                         } 
                         if (entity2 instanceof GunFire) {
-                            // console.log('gunfire hit Character');
-
-                        }
-                        if (entity2 instanceof Shield) {
-                            // reaktion
-                        }
-                        if (entity2 instanceof ExtraLife) {
-                            // console.log('Character passed ExtraLife');
-
-                        }
-                        if (entity2 instanceof Barricade) {
                             // if (entity1.currentDirection === 'right') {
-                            //     entity1.x = entity2.x - entity1.size.x;
+                            //     entity2.x = entity1.x - entity2.size.x;
                             // } else if (entity1.currentDirection === 'left') {
                             //     entity1.x = entity2.x + entity2.size.x;
                             // } else if (entity1.currentDirection === 'up') {
                             //     entity1.y = entity2.y + entity2.size.y;
                             // } else if (entity1.currentDirection === 'down') {
                             //     entity1.y = entity2.y - entity1.size.y;
-                            // }
-                        console.log('barricade', entity1, entity2);
+                            // }                                     // kulan
+                            
+                            // console.log('gunfire hit Character');
+                            
                         }
+                        if (entity2 instanceof Shield) {
+                            // reaktion
+                        }
+                        if (entity2 instanceof ExtraLife) {
+                            console.log('Character passed ExtraLife');
+
+                        }
+                        if (entity2 instanceof Barricade) {
+                            if (entity1.currentDirection === 'right') {
+                                entity1.x = entity2.x - entity1.size.x;
+                            } else if (entity1.currentDirection === 'left') {
+                                entity1.x = entity2.x + entity2.size.x;
+                            } else if (entity1.currentDirection === 'up') {
+                                entity1.y = entity2.y + entity2.size.y;
+                            } else if (entity1.currentDirection === 'down') {
+                                entity1.y = entity2.y - entity1.size.y;
+                            }
+                        // console.log('barricade', entity1, entity2);
+                        }  
+                    }
                         if (entity1 instanceof GunFire) {
                             if (entity2 instanceof Barricade) {
-                                // const index = this.entities.indexOf(Barricade, 0);
-                                // if (index > -1) {
-                                // this.entities.splice(index, 1);
+                                console.log('träffa item')
+                                this.entities.splice(this.entities.indexOf(entity2), 1) 
+                                // this.entities.splice(this.entities.indexOf(entity1), 1) 
+                                // if (entity1.currentDirection === 'right') {
+                                //     entity1.x = entity2.x - entity1.size.x;
+                                // } else if (entity1.currentDirection === 'left') {
+                                //     entity1.x = entity2.x + entity2.size.x;
+                                // } else if (entity1.currentDirection === 'up') {
+                                //     entity1.y = entity2.y + entity2.size.y;
+                                // } else if (entity1.currentDirection === 'down') {
+                                //     entity1.y = entity2.y - entity1.size.y;
                                 // }
-                                // this.entities.pop();
-                                console.log('gunfire hit barricade');
+                            }
+                            if (entity2 instanceof Character) {
+                               
                             }
                         
                         }
-                }
+              
             }
         }
     }
 }
 
-    private getCharacterImage(name: CharacterNameLabel) {
-        switch(name) {
-            case "turtle": return images.turtleFront;
-            case "monkey": return images.monkeyFront;
-            case "rabbit": return images.rabbitFront;
-            case "pig": return images.pigFront;
-            default: return images.pigFront;
-        }
-    }
+   
 
-    public update() {
+    public update(){
         this.playerOne.update();
         this.playerTwo.update();
         
@@ -170,7 +195,7 @@ class GameBoard {
     public draw() {
         this.playerOne.draw();
         this.playerTwo.draw();
-        this. PlayersLife.draw();
+        this.PlayersLife.draw();
         for (const entity of this.entities) {
             entity.draw();
         }
