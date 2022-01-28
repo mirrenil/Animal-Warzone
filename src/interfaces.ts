@@ -23,12 +23,13 @@ interface Images {
 }
 
 interface Entites {
-    heart: p5.Image;
+    redHeart: p5.Image;
+    greenHeart: p5.Image;
     shield: p5.Image;
     speed: p5.Image;
-    //barricade: p5.Image;
+    banana: p5.Image;
+    barricade: p5.Image;
 }
-
 interface Controls {
     left: number;
     right: number;
