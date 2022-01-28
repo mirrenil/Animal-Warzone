@@ -37,6 +37,8 @@
 .pause-text{
     font-size: 72px;
     margin-top: 2rem;
+    font-family:  'Mochiy Pop P One', sans-serif;
+    text-align: center;
 }
 
 .btn {
