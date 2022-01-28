@@ -31,12 +31,12 @@ class GameBoard {
 
         this.playerOne = new Character(
             this.getCharacterImage(activeCharacterName),
-            createVector(150, height * .5 - 30), 
-            //createVector(10, 10),
+            // createVector(150, height * .5 - 30), 
+            // createVector(10, 10),
             // createVector(150, height * .5 - 30), //this.worldMap.getPlayerOnePosition()
             width * .3 +200,
             height * .5 - 30,
-            createVector(80, 80),           {
+            createVector(80, 80),{
 
                 left: LEFT_ARROW,
                 right: RIGHT_ARROW,
@@ -46,6 +46,22 @@ class GameBoard {
                 pause: 27,
             }
         );
+
+        // this.playerOne = new Character(
+        //     this.getCharacterImage(activeCharacterName2),
+        //     // createVector(width - 150, height * .5 - 30),
+        //     width * .3,
+        //     height * .5 - 30,
+        //     createVector(80, 80),
+        //     {
+        //         left: LEFT_ARROW,
+        //         right: RIGHT_ARROW,
+        //         up: UP_ARROW,
+        //         down: DOWN_ARROW,
+        //         shoot: ENTER,
+        //         pause: 27,
+        //     }
+        // );
 
         this.playerTwo = new Character(
             this.getCharacterImage(activeCharacterName2),
