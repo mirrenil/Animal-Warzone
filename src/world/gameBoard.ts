@@ -4,7 +4,6 @@
 // let rectWidth: number = 100;
 // let rectHeight: number = 100;
 // let move = 5;
-
 class GameBoard {
     public gameState: GameState;
     private PlayersLife: PlayersLife;
@@ -13,6 +12,7 @@ class GameBoard {
     private entities: Entity[];
     public playerOne: Character;
     public playerTwo: Character;
+    
 
     constructor(gameState: GameState, activeCharacterName: CharacterNameLabel,
         activeCharacterName2: CharacterNameLabel) {
@@ -35,17 +35,37 @@ class GameBoard {
 
         this.playerOne = new Character(
             this.getCharacterImage(activeCharacterName2),
+
             // createVector(150, height * .5 - 30), //this.worldMap.getPlayerOnePosition()
             width * .3 + 200,
             height * .5 - 30,
-            createVector(80, 80), {
-            left: LEFT_ARROW,
-            right: RIGHT_ARROW,
-            down: DOWN_ARROW,
-            up: UP_ARROW,
-            shoot: ENTER,
-        }
+            createVector(80, 80),{
+
+                left: LEFT_ARROW,
+                right: RIGHT_ARROW,
+                down: DOWN_ARROW,
+                up: UP_ARROW,
+                shoot: ENTER,
+                pause: 27,
+            }
+
         );
+
+        // this.playerOne = new Character(
+        //     this.getCharacterImage(activeCharacterName2),
+        //     // createVector(width - 150, height * .5 - 30),
+        //     width * .3,
+        //     height * .5 - 30,
+        //     createVector(80, 80),
+        //     {
+        //         left: LEFT_ARROW,
+        //         right: RIGHT_ARROW,
+        //         up: UP_ARROW,
+        //         down: DOWN_ARROW,
+        //         shoot: ENTER,
+        //         pause: 27,
+        //     }
+        // );
 
         this.playerTwo = new Character(
             this.getCharacterImage(activeCharacterName),
@@ -59,6 +79,7 @@ class GameBoard {
                 up: 87,
                 down: 83,
                 shoot: 32,
+                pause: 27,
             }
         );
     }
@@ -153,6 +174,7 @@ class GameBoard {
                             // console.log('barricade', entity1, entity2);
                         }
                     }
+
                     if (entity1 instanceof GunFire) {
                         if (entity2 instanceof Barricade) {
                             console.log('träffa item')
@@ -169,6 +191,7 @@ class GameBoard {
                             // } else if (entity1.currentDirection === 'down') {
                             //     entity1.y = entity2.y - entity1.size.y;
                             // }
+=
                         }
                         // if (entity2 instanceof this.playerTwo) {
                         // this.entities.splice(this.entities.indexOf(entity2), 1); 
@@ -244,7 +267,35 @@ class GameBoard {
 
     }
 
-    public openGame() {
+    public isPaused() {
+        // if(e.keyCode == 77)
+        
+    } 
+    /// Ska inte vi öppna pause menyn om spelaren klickar? 
 
-    }
+    // public openGame() {
+    //     if(keyCode === 27){
+    //         document.addEventListener('keypress', () => this.pausedMenu.openPauseMenu());
+    //     }
+    // }
+
+
+    // public pauseGame(){
+    //     if(this.gameState.activeGameState === 'Running'){
+        
+    //         // if (event.defaultPrevented) {
+    //         //   return; // Do nothing if the event was already processed
+    //         // }
+
+    //     switch(key){
+    //         case "PressEscape":
+    //         case "Escape":
+                
+    //             break;
+            
+    //     }
+        
+    // }}
 }
+
+

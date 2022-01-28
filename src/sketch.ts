@@ -2,6 +2,8 @@
 let game: Game;
 let images: Images;
 let entites: Entites;
+let isPaused: boolean = false;
+
 
 
 // let sound: p5.SoundFile

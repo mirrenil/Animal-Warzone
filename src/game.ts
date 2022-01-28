@@ -6,16 +6,27 @@ interface GameState {
     setGameState: (state: GameStateLabel) => void;
 }
 
+
+
 class Game implements GameState {
     public activeGameState: GameStateLabel;
     private startMenu: StartMenu;
     private characterMenu: CharacterMenu;
 
     private pausedMenu: PausedMenu;
-
     // private gameOverMenu: GameOverMenu;
     private gameBoard: GameBoard;
     public instructionsMenu: InstructionsMenu;
+
+    public PauseMenu(){
+        this.pausedMenu.openPauseMenu();
+        if(!isPaused) {
+            isPaused = true;
+        } else {
+            isPaused = false;
+            this.pausedMenu.pausedMenuDiv.remove();
+        }
+    }
 
     constructor() {
 
@@ -25,8 +36,11 @@ class Game implements GameState {
 
         //this.setGameState('Start');
 
+        
+
         this.pausedMenu = new PausedMenu(this);
 
+        
         
         this.characterMenu = new CharacterMenu(this);
 
@@ -44,43 +58,59 @@ class Game implements GameState {
         
     }
 
+    
     public setGameState = (state: GameStateLabel) => {
         this.activeGameState = state;
 
         if (state === 'Start') {
             this.startMenu.openStartMenu();
-            console.trace(this.activeGameState);
         } else if (state === 'Paused') {
-            this.pausedMenu.openPauseMenu();
+
         } else if (state === 'Character') {
             this.characterMenu.openCharacterMenu();
         } else if (state === 'Running') {
+            
+                                
+                    window.addEventListener('keydown', function (event){
+
+                    switch(event.key){
+                        case "PressEscape":
+                        case "Escape":
+                            game.PauseMenu();
+                            break;
+
+                            
+                        
+                    }});
+            // console.log(character1, character2);
             const character1 = this.characterMenu.getActiveCharacterName();
             const character2 = this.characterMenu.getActiveCharacterName2();
-            // console.log(character1, character2);
+            
             this.gameBoard = new GameBoard(this, character1, character2);
-
         } else if (state === 'Instructions'){
             this.instructionsMenu.openInstructionsMenu(); 
         } else if (state === 'GameOver') {
-            // this.gameOverMenu.openGameOverMenu();
+            //this.gameOverMenu.openGameOverMenu();
 
         }
     };
 
     public update() {
         if (this.activeGameState === 'Running') {
-            this.gameBoard.update();
+            if(!isPaused) {
+                this.gameBoard.update();
+            }
+            // this.gameBoard.isPaused();
         }   else if(this.activeGameState === 'Character') {
-
-        }   else if(this.activeGameState === 'GameOver') {
+            
+        }else if(this.activeGameState === 'GameOver') {
 
         }
     }
 
     public draw() {
         background('#21212F');
-        if (this.activeGameState === 'Running') {
+        if (this.activeGameState === 'Running' || this.activeGameState === 'Paused' ) {
             this.gameBoard.draw();
         }
     }

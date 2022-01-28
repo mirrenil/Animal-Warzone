@@ -1,56 +1,55 @@
 class PausedMenu {
     private gameState: GameState;
-    private pausedMenuDiv: HTMLDivElement;
-    // private gamepaused: boolean;
-    // private continueGameButton: any;
-    // private exitGameButton: any;
-  
+    public pausedMenuDiv: HTMLDivElement;
+
+   
     constructor(gameState: GameState){
       this.gameState = gameState;
+      
       this.pausedMenuDiv = document.createElement("div");
-      this.pausedMenuDiv.className = "pauseMenu";
+      this.pausedMenuDiv.className = "pausedMenuDiv";
   
-      const pauseMenuTitles = document.createElement("h1");
+      const pauseDiv = document.createElement('div');
+      pauseDiv.className = 'pauseSmallDiv';
+
+      const pauseMenuTitles = document.createElement("h2");
+      pauseMenuTitles.className = 'pause-text';
       pauseMenuTitles.innerText = "Paused";
-      this.pausedMenuDiv.appendChild(pauseMenuTitles)
   
       const pauseMenuButtonsDiv = document.createElement("div");
-      pauseMenuButtonsDiv.className = "pauseMenuButtons"
+      pauseMenuButtonsDiv.className = "button-div";
+
       const ResumeMenuButton = document.createElement("button");
-      ResumeMenuButton.className = "resumeMenuButton";
+      ResumeMenuButton.className = "btn";
       ResumeMenuButton.innerText = "Resume";
-      const quitMenuButton = document.createElement("button");
-      quitMenuButton.className = "resumeMenuButton";
-      quitMenuButton.innerText = "Quit";
-      pauseMenuButtonsDiv.append(quitMenuButton, ResumeMenuButton)
-      this.pausedMenuDiv.append(pauseMenuButtonsDiv)
+      const mainMenuButton = document.createElement("button");
+      mainMenuButton.className = "btn";
+      mainMenuButton.innerText = "Main Menu";
+      pauseMenuButtonsDiv.append(mainMenuButton, ResumeMenuButton);
+      pauseDiv.append(pauseMenuTitles, pauseMenuButtonsDiv);
+      this.pausedMenuDiv.append(pauseDiv);
   
-      ResumeMenuButton.addEventListener('click',() => this.handleResumeGame);
-      quitMenuButton.addEventListener('click', () => this.closeMenu);
-      // this.openPauseMenu();
+      ResumeMenuButton.addEventListener('click',() => this.handleResumeGame());
+      mainMenuButton.addEventListener('click', () => this.closeMenu());
+      //this.openPauseMenu();
       }
       private handleResumeGame() {
-        this.gameState.setGameState("Running");
-        this.closeMenu();
-        
+        this.pausedMenuDiv.remove();
+        isPaused = false;
     }
     public openPauseMenu(){
-      document.body.appendChild(this.pausedMenuDiv);
-      console.log('daaaa22')
+      document.body.append(this.pausedMenuDiv);
     }
+
     private closeMenu() {
-      this.pausedMenuDiv.remove();
+      window.location.reload();
+      // this.gameState.setGameState("Start");
+      // this.pausedMenuDiv.remove();
   }
+
   
-  
-    
-    public isPaused(){
-  
-    }
-  
-  
-   public draw(){
-  
-    }
+  public draw() {
+
+  }
 }
-  
+
