@@ -4,7 +4,6 @@
 // let rectWidth: number = 100;
 // let rectHeight: number = 100;
 // let move = 5;
-
 class GameBoard {
     public gameState: GameState;
     private PlayersLife: PlayersLife;
@@ -14,6 +13,7 @@ class GameBoard {
     private entities: Entity[];
     public playerOne: Character;
     public playerTwo: Character;
+    
 
     constructor(gameState: GameState, activeCharacterName: CharacterNameLabel, 
          activeCharacterName2: CharacterNameLabel) {
@@ -226,16 +226,34 @@ class GameBoard {
     }
 
     public isPaused() {
+        // if(e.keyCode == 77)
         
-    } /// Ska inte vi öppna pause menyn om spelaren klickar? 
+    } 
+    /// Ska inte vi öppna pause menyn om spelaren klickar? 
 
-    public openGame() {
+    // public openGame() {
+    //     if(keyCode === 27){
+    //         document.addEventListener('keypress', () => this.pausedMenu.openPauseMenu());
+    //     }
+    // }
 
-    }
 
-
-    public pauseGame(){
-        this.gameState.setGameState('Paused');
+    // public pauseGame(){
+    //     if(this.gameState.activeGameState === 'Running'){
         
-    }
+    //         // if (event.defaultPrevented) {
+    //         //   return; // Do nothing if the event was already processed
+    //         // }
+
+    //     switch(key){
+    //         case "PressEscape":
+    //         case "Escape":
+                
+    //             break;
+            
+    //     }
+        
+    // }}
 }
+
+

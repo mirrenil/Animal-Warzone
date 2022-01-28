@@ -1,10 +1,11 @@
 class PausedMenu {
     private gameState: GameState;
-    private pausedMenuDiv: HTMLDivElement;
+    public pausedMenuDiv: HTMLDivElement;
 
    
     constructor(gameState: GameState){
       this.gameState = gameState;
+      
       this.pausedMenuDiv = document.createElement("div");
       this.pausedMenuDiv.className = "pausedMenuDiv";
   
@@ -28,24 +29,24 @@ class PausedMenu {
       pauseDiv.append(pauseMenuTitles, pauseMenuButtonsDiv);
       this.pausedMenuDiv.append(pauseDiv);
   
-      ResumeMenuButton.addEventListener('click',() => this.handleResumeGame);
-      mainMenuButton.addEventListener('click', () => this.closeMenu);
+      ResumeMenuButton.addEventListener('click',() => this.handleResumeGame());
+      mainMenuButton.addEventListener('click', () => this.closeMenu());
       //this.openPauseMenu();
       }
       private handleResumeGame() {
         this.gameState.setGameState("Running");
         this.pausedMenuDiv.remove();
-        
     }
     public openPauseMenu(){
       document.body.append(this.pausedMenuDiv);
-
     }
 
     private closeMenu() {
       this.gameState.setGameState('Start');
       this.pausedMenuDiv.remove();
   }
+
+  
   public draw() {
 
   }
