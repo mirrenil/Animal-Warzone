@@ -153,69 +153,6 @@ class GameOverMenu {
 
 
 
-    // public update(){
-
-    // }
-
-// //---- GLOBAL VARIABLES ----//
-
-// let monkeyBig: p5.Image;
-// let pigBig: p5.Image;
-// let rabbitBig: p5.Image;
-// let turtleBig: p5.Image;
-// class GameOverMenu {
-//     private gameState: GameState;
-//     private gameOverMainDiv:  HTMLDivElement;
-//     private gameOverDiv: HTMLDivElement;
-//     private gameOverWinner: HTMLDivElement;
-//     private gameOverLoser: HTMLDivElement;
-//     private winnersDiv: HTMLDivElement;
-//     private losersDiv: HTMLDivElement;
-//     private winner: HTMLSpanElement;
-//     private loser: HTMLSpanElement;
-//     private buttonsDiv: HTMLDivElement;
-//     private playAgainBtn: HTMLButtonElement;
-//     private mainMenuBtn: HTMLButtonElement;
-//     private pigW: HTMLImageElement;
-//     private monkeyW: HTMLImageElement;
-//     private turtleW: HTMLImageElement;
-//     private rabbitW: HTMLImageElement;
-//     private pig: HTMLImageElement;
-//     private monkey: HTMLImageElement;
-//     private turtle: HTMLImageElement;
-//     private rabbit: HTMLImageElement;
-
-//      constructor(gameState: GameState ) { 
-//         this.gameState = gameState;
-
-
-//         /** CREATING DIVS AND SPAN */
-//         this.gameOverMainDiv = document.createElement('div');
-//         this.gameOverMainDiv.className = 'gameOverMainDiv';
-        
-
-//         this.gameOverDiv = document.createElement('div');
-//         this.gameOverDiv.className = 'flex evenly';
-
-//         this.gameOverWinner = document.createElement('div');
-//         this.gameOverWinner.className = 'gameOverTitle flex column align padding-right padding-top';
-//         // this.gameOverDiv.append(this.gameOverWinner);
-
-//         this.winner = document.createElement('span');
-//         this.winner.textContent = 'WINNER';
-//         this.gameOverWinner.append(this.winner);
-
-//         this.gameOverLoser = document.createElement('div');
-//         this.gameOverLoser.className = 'gameOverTitle flex column padding-top';
-//         // this.gameOverDiv.append(this.gameOverLoser);
-
-//         this.loser = document.createElement('span');
-//         this.loser.textContent = 'LOSER';
-//         this.gameOverLoser.append(this.loser);
-
-        
-//         /** CHARACTER WINNER */
-
     public startNewGame() {
         this.gameState.setGameState('Character');
         this.gameOverDiv.remove();
@@ -237,5 +174,3 @@ class GameOverMenu {
     public update(){
  
     }
-
-}

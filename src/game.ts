@@ -6,6 +6,8 @@ interface GameState {
     setGameState: (state: GameStateLabel) => void;
 }
 
+
+
 class Game implements GameState {
     public activeGameState: GameStateLabel;
     private startMenu: StartMenu;
@@ -21,12 +23,12 @@ class Game implements GameState {
 
         // this.grid = new Grid(createVector(10, 10));
 
+
         this.activeGameState = 'Start';
 
         //this.setGameState('Start');
 
         this.pausedMenu = new PausedMenu(this);
-
         
         this.characterMenu = new CharacterMenu(this);
 
@@ -49,7 +51,6 @@ class Game implements GameState {
 
         if (state === 'Start') {
             this.startMenu.openStartMenu();
-            console.trace(this.activeGameState);
         } else if (state === 'Paused') {
             this.pausedMenu.openPauseMenu();
         } else if (state === 'Character') {
@@ -63,7 +64,7 @@ class Game implements GameState {
         } else if (state === 'Instructions'){
             this.instructionsMenu.openInstructionsMenu(); 
         } else if (state === 'GameOver') {
-            // this.gameOverMenu.openGameOverMenu();
+            //this.gameOverMenu.openGameOverMenu();
 
         }
     };
@@ -72,8 +73,8 @@ class Game implements GameState {
         if (this.activeGameState === 'Running') {
             this.gameBoard.update();
         }   else if(this.activeGameState === 'Character') {
-
-        }   else if(this.activeGameState === 'GameOver') {
+            
+        }else if(this.activeGameState === 'GameOver') {
 
         }
     }
