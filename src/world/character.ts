@@ -1,4 +1,4 @@
-let banana: p5.Image;
+//let banana: p5.Image;
 let characterMoL: p5.Image;
 let characterMoR: p5.Image;
 // let currentDirection: string;
@@ -6,6 +6,7 @@ let bullet: p5.Image;
 let bullets: any[] = [];
 
 class Character {
+
   private speed: number;
   public currentDirection: string;
   private controls: Controls;
@@ -14,6 +15,8 @@ class Character {
   // public position: p5.Vector;
   public x: number;
   public y: number;
+  // public shotLimit: number;
+  // public coolDown: number;
   constructor(appearance: p5.Image, x: number, y: number, size: p5.Vector, controls: Controls) {
 
     this.appearance = appearance;
@@ -22,6 +25,8 @@ class Character {
     this.x = x;
     this.y = y;
     this.speed = 15;
+    // this.shotLimit = 1;
+    // this.coolDown = 0;
     this.currentDirection = '';
   }
 
@@ -44,6 +49,7 @@ class Character {
 
   public update() {
     this.move();
+    //this.playerShoot();
 
     if (this.x < 0) {
       this.x = this.x + this.speed;
@@ -60,23 +66,39 @@ class Character {
     if (this.y > height - 75) {
       this.y = this.y - this.speed;
     }
-
     if (keyIsDown(this.controls.shoot)) {
-      const appearance = banana;
-      const size = createVector(35, 35);
-      const velocity = createVector(0, 0);
-      if (this.currentDirection == 'up') {
-        velocity.y = -15;
-      } else if (this.currentDirection == 'down') {
-        velocity.y = 15;
-      } else if (this.currentDirection == 'right') {
-        velocity.x = 15;
-      } else if (this.currentDirection == 'left') {
-        velocity.x = -15;
+        const appearance = entites.banana; 
+        const size = createVector(35, 35);
+        const velocity = createVector(0, 0);
+        if (this.currentDirection == 'up') {
+          velocity.y = -15;
+        } else if (this.currentDirection == 'down') {
+          velocity.y = 15;
+        } else if (this.currentDirection == 'right') {
+          velocity.x = 15;
+        } else if (this.currentDirection == 'left') {
+          velocity.x = -15;
+        }
+        return new GunFire(appearance, this.x, this.y, size, velocity);
       }
-      return new GunFire(appearance, this.x, this.y, size, velocity);
-    }
+    
+    
   }
+
+  // public playerShoot() {
+  
+  //   /* setTimeout(function(){
+  //       alert("Hello World");
+  //   },2000);*/
+    
+  //   //  setInterval(()  => {
+  //   //  console.log('setTimeout');
+  //   //  }, 1);
+  // }
+  
+ 
+
+
   public draw() {
     imageMode(CORNER)
     image(this.appearance, this.x, this.y, this.size.x, this.size.y);

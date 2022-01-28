@@ -3,7 +3,7 @@ class Entity {
     public x: number;
     public y: number;
     public size: p5.Vector;
-    protected velocity: p5.Vector;
+    public velocity: p5.Vector;
 
     constructor(appearance: p5.Image, x: number, y: number, size: p5.Vector, velocity?: p5.Vector) {
         this.appearance = appearance;

@@ -3,12 +3,6 @@ let game: Game;
 let images: Images;
 let entites: Entites;
 
-let barricade: p5.Image;
-let redHeart: p5.Image;
-
-//let barricade: p5.Image;
-//let instructions: Instructions;
-
 
 // let sound: p5.SoundFile
 
@@ -19,13 +13,6 @@ let redHeart: p5.Image;
  */
 function preload() {
   // sound: p5.SoundFile = loadSound('../assets/mySound.wav');
-
-  barricade = loadImage("/assets/images/Group 67.png");
-  heart = loadImage("/assets/images/life.png");
-  redHeart = loadImage("/assets/images/redheart.png"),
-  // turtleFront = loadImage("/documents/gameCharacters/turtleFront.png");
-  // monkeyFront = loadImage("/documents/gameCharacters/monkeyFront.png");
-  banana = loadImage('/assets/images/banana.png')
 
   
   images = {
@@ -53,9 +40,13 @@ function preload() {
   };
 
   entites = {
-    heart: loadImage("/assets/images/redheart.png"),
+    greenHeart: loadImage('/assets/images/life.png'),
+    redHeart: loadImage("/assets/images/redheart.png"),
     shield: loadImage("/assets/images/shield.png"),
     speed: loadImage("/assets/images/speed.png"),
+    banana: loadImage('/assets/images/banana.png'),
+    barricade: loadImage("/assets/images/Group 67.png")
+
   };
 }
 
