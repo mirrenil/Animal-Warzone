@@ -15,14 +15,14 @@ class Character {
   public x: number;
   public y: number;
   constructor(appearance: p5.Image, x: number, y: number, size: p5.Vector, controls: Controls) {
-   
+
     this.appearance = appearance;
-    this.controls = controls; 
+    this.controls = controls;
     this.size = size;
     this.x = x;
     this.y = y;
-    this.speed = 3;
-    this.currentDirection = ''; 
+    this.speed = 15;
+    this.currentDirection = '';
   }
 
   private move() {
@@ -44,23 +44,23 @@ class Character {
 
   public update() {
     this.move();
-    
-    if (this.x < 40) {
+
+    if (this.x < 0) {
       this.x = this.x + this.speed;
     }
-  
-    if (this.x > width - 40) {
+
+    if (this.x > width - 80) {
       this.x = this.x - this.speed;
     }
-  
-    if (this.y < 35) {
-      this.y = this.y +this.speed;
+
+    if (this.y < 0) {
+      this.y = this.y + this.speed;
     }
-  
-    if (this.y > height - 35) {
+
+    if (this.y > height - 75) {
       this.y = this.y - this.speed;
     }
-    
+
     if (keyIsDown(this.controls.shoot)) {
       const appearance = banana;
       const size = createVector(35, 35);
