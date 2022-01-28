@@ -30,7 +30,7 @@ class PausedMenu {
   
       ResumeMenuButton.addEventListener('click',() => this.handleResumeGame);
       mainMenuButton.addEventListener('click', () => this.closeMenu);
-      this.openPauseMenu();
+      //this.openPauseMenu();
       }
       private handleResumeGame() {
         this.gameState.setGameState("Running");
@@ -39,8 +39,9 @@ class PausedMenu {
     }
     public openPauseMenu(){
       document.body.append(this.pausedMenuDiv);
-      
+
     }
+
     private closeMenu() {
       this.gameState.setGameState('Start');
       this.pausedMenuDiv.remove();

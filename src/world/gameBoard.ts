@@ -226,10 +226,8 @@ class GameBoard {
     }
 
     public isPaused() {
-        if(keyIsDown(27)){
-        console.log('Paused');
-        }
-    }
+        
+    } /// Ska inte vi öppna pause menyn om spelaren klickar? 
 
     public openGame() {
 
