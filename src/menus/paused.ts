@@ -34,16 +34,17 @@ class PausedMenu {
       //this.openPauseMenu();
       }
       private handleResumeGame() {
-        this.gameState.setGameState("Running");
         this.pausedMenuDiv.remove();
+        isPaused = false;
     }
     public openPauseMenu(){
       document.body.append(this.pausedMenuDiv);
     }
 
     private closeMenu() {
-      this.gameState.setGameState('Start');
-      this.pausedMenuDiv.remove();
+      window.location.reload();
+      // this.gameState.setGameState("Start");
+      // this.pausedMenuDiv.remove();
   }
 
   

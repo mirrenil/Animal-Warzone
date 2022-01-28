@@ -155,8 +155,7 @@ class GameBoard {
                     }
                         if (entity1 instanceof GunFire) {
                             if (entity2 instanceof Barricade) {
-                                console.log('träffa item')
-                                this.entities.splice(this.entities.indexOf(entity2), 1) 
+                                this.entities.splice(this.entities.indexOf(entity2), 1);
                                 // this.entities.splice(this.entities.indexOf(entity1), 1) 
                                 // if (entity1.currentDirection === 'right') {
                                 //     entity1.x = entity2.x - entity1.size.x;
@@ -169,7 +168,7 @@ class GameBoard {
                                 // }
                             }
                             if (entity2 instanceof Character) {
-                               
+
                             }
                         
                         }

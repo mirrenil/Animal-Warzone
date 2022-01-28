@@ -20,7 +20,12 @@ class Game implements GameState {
 
     public PauseMenu(){
         this.pausedMenu.openPauseMenu();
-        this.setGameState("Paused");
+        if(!isPaused) {
+            isPaused = true;
+        } else {
+            isPaused = false;
+            this.pausedMenu.pausedMenuDiv.remove();
+        }
     }
 
     constructor() {
@@ -52,12 +57,7 @@ class Game implements GameState {
         
         
     }
-    // public keyPress (e: { key: 27; }){
-    //     if(e.key === 27){
-    //         // this.setGameState("Paused");
-    //         console.log("Hej");
-    //     }
-    // }
+
     
     public setGameState = (state: GameStateLabel) => {
         this.activeGameState = state;
@@ -65,14 +65,12 @@ class Game implements GameState {
         if (state === 'Start') {
             this.startMenu.openStartMenu();
         } else if (state === 'Paused') {
-            // this.pausedMenu.openPauseMenu();
+
         } else if (state === 'Character') {
             this.characterMenu.openCharacterMenu();
         } else if (state === 'Running') {
             
-            
-                    // this.gameBoard.pauseGame();
-                    
+                                
                     window.addEventListener('keydown', function (event){
 
                     switch(event.key){
@@ -99,8 +97,9 @@ class Game implements GameState {
 
     public update() {
         if (this.activeGameState === 'Running') {
-            
-            this.gameBoard.update();
+            if(!isPaused) {
+                this.gameBoard.update();
+            }
             // this.gameBoard.isPaused();
         }   else if(this.activeGameState === 'Character') {
             

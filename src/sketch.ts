@@ -2,7 +2,7 @@
 let game: Game;
 let images: Images;
 let entites: Entites;
-
+let isPaused: boolean = false;
 let barricade: p5.Image;
 let redHeart: p5.Image;
 
