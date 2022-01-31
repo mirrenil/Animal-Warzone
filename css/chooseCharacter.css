@@ -1,120 +1,130 @@
-@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Raleway:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inconsolata:wght@300&family=M+PLUS+1+Code:wght@200&family=Source+Code+Pro:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Raleway:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inconsolata:wght@300&family=M+PLUS+1+Code:wght@200&family=Source+Code+Pro:wght@100&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    color: var(--FontColor);
-    background: var(--background);
+body {
+  color: var(
+    --FontColor
+  );
+  background: var(
+    --background
+  );
 }
 
 :root {
-    --background: #21212f;
-    --blueBtn: #0085FF;
-    --HoverBtn: #0458a7;
-    --FontColor: #FAFAFA;
-    --fontFBtn: 'Raleway', sans-serif;
-    --fontFBigText: 'Mochiy Pop P One', sans-serif;
-    --instructionsFText: 'Bebas Neue';
+  --background: #21212f;
+  --blueBtn: #0085ff;
+  --HoverBtn: #0458a7;
+  --FontColor: #fafafa;
+  --fontFBtn: "Raleway",
+    sans-serif;
+  --fontFBigText: "Mochiy Pop P One",
+    sans-serif;
+  --instructionsFText: "Bebas Neue";
 }
 
-
 .header-text {
-    font-size: 72px; 
-    font-family: var(--fontFBigText);  
-    height:65vh;
-    min-width: 100%;
-    position: relative;   
-    height:20vh;
-    min-width: 100%;
-    text-align: center;
-    letter-spacing: 4px;
+  font-size: 72px;
+  font-family: var(
+    --fontFBigText
+  );
+  height: 65vh;
+  min-width: 100%;
+  position: relative;
+  height: 20vh;
+  min-width: 100%;
+  text-align: center;
+  letter-spacing: 4px;
 }
 
 h3 {
-    font-size: 52px; 
-    font-family: var(--fontFBigText);
-    padding-bottom: 40px;
-    letter-spacing: 2px;
+  font-size: 52px;
+  font-family: var(
+    --fontFBigText
+  );
+  padding-bottom: 40px;
+  letter-spacing: 2px;
 }
-
 
 .playersDiv {
-    display: flex;
-    
+  display: flex;
 }
 
-.player1{
-    height: 100%;
-    position: absolute;
-    align-items: center;
-    left:10rem;
+.player1 {
+  height: 100%;
+  position: absolute;
+  align-items: center;
+  left: 10rem;
 }
 
-.player2{
-    height: 100%;
-    position: absolute;
-    align-items: center;
-    right:10rem;
+.player2 {
+  height: 100%;
+  position: absolute;
+  align-items: center;
+  right: 10rem;
 }
 
-.choose-characters{
-    position: absolute;
-    transform: translateX(-50%);
-    display: flex;
-    row-gap: 50px;
-    column-gap: 50px;
-    padding-left: 16rem;
+.choose-characters {
+  position: absolute;
+  transform: translateX(
+    -50%
+  );
+  display: flex;
+  row-gap: 50px;
+  column-gap: 50px;
+  padding-left: 16rem;
 }
 
 .right-top {
-    display: flex;
-    flex-direction: column;
-    column-gap:  40px;
-    row-gap: 40px;
+  display: flex;
+  flex-direction: column;
+  column-gap: 40px;
+  row-gap: 40px;
 }
 
 .right-bottom {
-    display: flex;
-    flex-direction: column;
-    column-gap:  40px;
-    row-gap: 60px;
+  display: flex;
+  flex-direction: column;
+  column-gap: 40px;
+  row-gap: 60px;
 }
 
 .left-top {
-    display: flex;
-    flex-direction: column;
-    column-gap:  40px;
-    row-gap: 40px;
+  display: flex;
+  flex-direction: column;
+  column-gap: 40px;
+  row-gap: 40px;
 }
 
 .left-bottom {
-    display: flex;
-    flex-direction: column;
-    column-gap:  40px;
-    row-gap: 60px;
+  display: flex;
+  flex-direction: column;
+  column-gap: 40px;
+  row-gap: 60px;
 }
 
-
-.div-animals{
-    align-items: center;
-    width: 50%;
-    
+.div-animals {
+  align-items: center;
+  width: 50%;
 }
 
 .img {
-    padding: 30px;
-    transition: transform .2s; /* Animation */
-    margin: 0 auto;
+  padding: 30px;
+  transition: transform
+    0.2s; /* Animation */
+  margin: 0 auto;
 }
 
 .img:hover {
-    transform: scale(1.3);
+  transform: scale(
+    1.3
+  );
 }
 
 /* .checkbox{
@@ -127,75 +137,95 @@ h3 {
 } */
 
 .btn-div {
-    display: flex;
-    justify-content: center;
-    align-content: flex-end;
-    position: fixed;
-    bottom: 50;
-    left: 50;
-    right: 50;
+  display: flex;
+  justify-content: center;
+  align-content: flex-end;
+  position: fixed;
+  bottom: 50;
+  left: 50;
+  right: 50;
 }
 
 .unactive {
-    pointer-events: none;
+  pointer-events: none;
 
-    color: var(--FontColor);
-    background-color: var(--blueBtn);
-    height: 3rem;
-    width: 10rem;
-    border-radius: 25px;
-    margin-top: 3rem;
-    font-family: 'Raleway', sans-serif;
-    opacity: .5;
+  color: var(
+    --FontColor
+  );
+  background-color: var(
+    --blueBtn
+  );
+  height: 3rem;
+  width: 10rem;
+  border-radius: 25px;
+  margin-top: 3rem;
+  font-family: "Raleway",
+    sans-serif;
+  opacity: 0.5;
 }
-
 
 .btn {
-    color: var(--FontColor);
-    background-color: var(--blueBtn);
-    height: 3rem;
-    width: 10rem;
-    border-radius: 25px;
-    margin-top: 3rem;
-    font-family: 'Raleway', sans-serif;
-    cursor: pointer;
+  color: var(
+    --FontColor
+  );
+  background-color: var(
+    --blueBtn
+  );
+  height: 3rem;
+  width: 10rem;
+  border-radius: 25px;
+  margin-top: 3rem;
+  font-family: "Raleway",
+    sans-serif;
+  cursor: pointer;
 }
-
 
 /* Hover functions*/
 .btn:hover {
-    background-color: var(--Hover);
-    box-shadow: 10px 10px 10px 10px rgba(71, 69, 69, 0.2);
-
+  background-color: var(
+    --Hover
+  );
+  box-shadow: 10px
+    10px 10px 10px
+    rgba(
+      71,
+      69,
+      69,
+      0.2
+    );
 }
 
-.opacityBtn{
-    background-color: transparent; 
-    border: transparent; 
-    cursor: pointer;
+.opacityBtn {
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
 }
-.vertical{
-    height: 20rem;
-    width: 0.1rem;
-    background: whitesmoke;
-    position: fixed;
-    left: 50%;
-    right: 50%;
-    bottom: 30%;
-}
-
-
-.startMenu{
-    top:2rem;
-    left:2rem;
-    cursor:pointer;
-    position: absolute;
+.vertical {
+  height: 20rem;
+  width: 0.1rem;
+  background: whitesmoke;
+  position: fixed;
+  left: 50%;
+  right: 50%;
+  bottom: 30%;
 }
 
-.main-div-character{
-    position: fixed;
-    inset:0;
-    gap: 5rem;
-    display: block;
-    background-color: rgba(0, 0, 0, 0.8);
+.startMenu {
+  top: 2rem;
+  left: 2rem;
+  cursor: pointer;
+  position: absolute;
+}
+
+.main-div-character {
+  position: fixed;
+  inset: 0;
+  gap: 5rem;
+  display: block;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.8
+  );
 }

@@ -1,13 +1,12 @@
 //---- GLOBAL VARIABLES ----//
-let animalWarzon: p5.Image;
+//let animalWarzone: p5.Image;
 
 class StartMenu {
     private gameState: GameState;
     public startMenuDivEl: HTMLDivElement;
     private startMenuPicture: HTMLImageElement;
 
-    // private width: Number;
-    // private height: Number;
+
     // private appearance: p5.Image;
     // private gameInstructions: Instructions;
 
@@ -30,8 +29,8 @@ class StartMenu {
 
         const newGameButtonEl = document.createElement('button');
         newGameButtonEl.addEventListener('click', () => this.startNewGame());
-        newGameButtonEl.textContent = 'Starta'
-        newGameButtonEl.className = 'btn'
+        newGameButtonEl.textContent = 'Start';
+        newGameButtonEl.className = 'btn';
 
 
         const instructionsButtonEl = document.createElement('button');
@@ -62,10 +61,5 @@ class StartMenu {
     public showInstructionsMenu() {
         this.gameState.setGameState('Instructions');
         this.startMenuDivEl.remove(); // ta ev bort.
-    }
-
-
-    public draw() {
-        
     }
 }

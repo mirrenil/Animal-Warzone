@@ -1,12 +1,6 @@
 
-// let rectX1: number = 600;
-// let rectY1: number = 300;
-// let rectWidth: number = 100;
-// let rectHeight: number = 100;
-// let move = 5;
 class GameBoard {
     public gameState: GameState;
-    private PlayersLife: PlayersLife;
     //private life: Life;
     private worldMap: WorldMap;
     private entities: Entity[];
@@ -18,26 +12,21 @@ class GameBoard {
         activeCharacterName2: CharacterNameLabel) {
 
         this.gameState = gameState;
-        this.PlayersLife = new PlayersLife(
-            entites.greenHeart,
-            50,
-            50,
-            createVector(40, 40)
-        );
         this.worldMap = new WorldMap(
             entites.barricade,
             50,
             50,
-            createVector(40, 40)
+            createVector(0, 0)
 
         );
         this.entities = this.worldMap.getEntities();
+       
 
-        this.playerOne = new Character(
+        this.playerTwo = new Character(
+            2,
             this.getCharacterImage(activeCharacterName2),
-
             // createVector(150, height * .5 - 30), //this.worldMap.getPlayerOnePosition()
-            width * .3 + 200,
+            width * .3 + 600,
             height * .5 - 30,
             createVector(80, 80),{
 
@@ -47,27 +36,12 @@ class GameBoard {
                 up: UP_ARROW,
                 shoot: ENTER,
                 pause: 27,
+                create: 80,
             }
 
         );
-
-        // this.playerOne = new Character(
-        //     this.getCharacterImage(activeCharacterName2),
-        //     // createVector(width - 150, height * .5 - 30),
-        //     width * .3,
-        //     height * .5 - 30,
-        //     createVector(80, 80),
-        //     {
-        //         left: LEFT_ARROW,
-        //         right: RIGHT_ARROW,
-        //         up: UP_ARROW,
-        //         down: DOWN_ARROW,
-        //         shoot: ENTER,
-        //         pause: 27,
-        //     }
-        // );
-
-        this.playerTwo = new Character(
+        this.playerOne = new Character(
+            1,
             this.getCharacterImage(activeCharacterName),
             // createVector(width - 150, height * .5 - 30),
             width * .3,
@@ -80,10 +54,10 @@ class GameBoard {
                 down: 83,
                 shoot: 32,
                 pause: 27,
+                create: 82,
             }
         );
     }
-
     private getCharacterImage(name: CharacterNameLabel) {
         switch (name) {
             case "turtle": return images.turtleFront;
@@ -99,8 +73,6 @@ class GameBoard {
         const allEntities = [...this.entities, this.playerOne, this.playerTwo];
         for (const entity1 of allEntities) {
             for (const entity2 of allEntities) {
-                // console.log(allEntities);
-
                 if (entity1 === entity2) continue;
 
                 if (entity1.x < entity2.x + entity2.size.x &&
@@ -110,55 +82,55 @@ class GameBoard {
                     if (entity1 instanceof Character) {
 
                         if (entity2 instanceof Character) {
-                            if (entity1.currentDirection === 'right') {
-                                entity1.x = entity2.x - entity1.size.x;
-                            } else if (entity1.currentDirection === 'left') {
-                                entity1.x = entity2.x + entity2.size.x;
-                            } else if (entity1.currentDirection === 'up') {
-                                entity1.y = entity2.y + entity2.size.y;
-                            } else if (entity1.currentDirection === 'down') {
-                                entity1.y = entity2.y - entity1.size.y;
-                            }
+                            // if (entity1.currentDirection === 'right' && entity1.velocity.x) {
+                            //     entity1.x = entity2.x - entity1.size.x;
+                            // } else if (entity1.currentDirection === 'left' && entity1.velocity.x) {
+                            //     entity1.x = entity2.x + entity2.size.x;
+                            // } else if (entity1.currentDirection === 'up' && entity1.velocity.y) {
+                            //     entity1.y = entity2.y + entity2.size.y;
+                            // } else if (entity1.currentDirection === 'down' && entity1.velocity.y) {
+                            //     entity1.y = entity2.y - entity1.size.y;
+                            // }
+                            entity1.x -= entity1.velocity.x;
+                            entity1.y -= entity1.velocity.y;
                         }
                    
                         if (entity2 instanceof GunFire) { 
-                            // console.log(entity1, entity2);
-
-                            if (entity2.velocity.x > 0 && entity1.x > entity2.x
-                                || entity2.velocity.x < 0 && entity1.x < entity2.x ||
-                                entity2.velocity.y > 0 && entity1.y > entity2.y ||
-                                entity2.velocity.y < 0 && entity1.y < entity2.y  ) {
-                                console.log('yes');
-                                // this.PlayersLife.update();
+                            if (entity2.playerNum !== entity1.playerNum ) {
+                                    this.entities.splice(this.entities.indexOf(entity2), 1);
+                                    if (!entity1.isShielding) {
+                                        entity1.totalLives =  entity1.totalLives -1;
+                                        console.log(entity1.totalLives);
+                                    }
+                                    if (  entity1.totalLives === 0) {
+                                        
+                                    }
                                 
                             }
-                            //  if (entity2.x < entity1.x) {
-                            //        console.log('player hit by shot');
-                                //     if (entity2.x < entity1.x) {
-                                //     console.log('pew pew Player 2');
-                                // }
-                            //  }
+                           
                         }
                         
-                            // if (entity1.currentDirection === 'right') {
-                            //     entity2.x = entity1.x - entity2.size.x;
-                            // } else if (entity1.currentDirection === 'left') {
-                            //     entity1.x = entity2.x + entity2.size.x;
-                            // } else if (entity1.currentDirection === 'up') {
-                            //     entity1.y = entity2.y + entity2.size.y;
-                            // } else if (entity1.currentDirection === 'down') {
-                            //     entity1.y = entity2.y - entity1.size.y;
-                            // }                                     // kulan
-
-                            // console.log('gunfire hit Character');
-
                         
                         if (entity2 instanceof Shield) {
-                            // reaktion
+                            if (!entity1.isShielding) {
+                                this.entities.splice(this.entities.indexOf(entity2), 1);
+                                entity1.isShielding =  true;
+                            } 
                             
+                            console.log(entity1.isShielding);
+                        }
+                        if (entity2 instanceof Speed){
+                            if (!entity1.isSpeeding) {
+                                this.entities.splice(this.entities.indexOf(entity2), 1);
+                                entity1.isSpeeding =  true; 
+                            } 
+                            
+                            console.log(entity1.isShielding);
                         }
                         if (entity2 instanceof ExtraLife) {
                             this.entities.splice(this.entities.indexOf(entity2), 1);
+                            entity1.totalLives =  entity1.totalLives + 1;
+                            console.log(entity1.totalLives);
                         }
 
                         if (entity2 instanceof Barricade) {
@@ -176,94 +148,49 @@ class GameBoard {
                     }
 
                     if (entity1 instanceof GunFire) {
-                        if (entity2 instanceof Barricade) {
-                            console.log('träffa item')
-                            this.entities.splice(this.entities.indexOf(entity2), 1);
-                            this.entities.splice(this.entities.indexOf(entity1), 1); // kanske funkar ?
-
-                            // this.entities.splice(this.entities.indexOf(entity1), 1);
-                            // if (entity1.currentDirection === 'right') {
-                            //     entity1.x = entity2.x - entity1.size.x;
-                            // } else if (entity1.currentDirection === 'left') {
-                            //     entity1.x = entity2.x + entity2.size.x;
-                            // } else if (entity1.currentDirection === 'up') {
-                            //     entity1.y = entity2.y + entity2.size.y;
-                            // } else if (entity1.currentDirection === 'down') {
-                            //     entity1.y = entity2.y - entity1.size.y;
-                            // }
-=
+                            if (entity1.x > width || entity1.x < 0 || entity1.y > height || entity1.y < 0) {
+                            this.entities.splice(this.entities.indexOf(entity1), 1);
                         }
-                        // if (entity2 instanceof this.playerTwo) {
-                        // this.entities.splice(this.entities.indexOf(entity2), 1); 
-                        // }
-                        
-                    }
-
-                    //  if (entity1 instanceof GunFire) {
-                    //     if (entity2 instanceof PlayersLife) {
-                    //     if (entity2.x = this.playerTwo.x) {
-                    //         console.log('pew by playerTwo');
+                        if (entity2 instanceof Barricade) {
+                            this.entities.splice(this.entities.indexOf(entity1), 1); 
+                            entity2.damageTaken = entity2.damageTaken + 1;
+                            console.log(entity2.damageTaken);
                             
-                    //         // this.entities.splice(this.entities.indexOf(entity2), 1);
-                    //         // this.PlayersLife.update();
-                    //         }
-            
-                    //     }   
-                    //     // if (entity2.x = this.playerOne.x) {
-                    //     //     console.log('pew BY playerOne')
-                    //     // }
-                    // }
-
-                    /*(let x = 0; x < 4; x++) {
-                        image(entites.greenHeart, x * imageX + width * .02, 70, imageX, imageY);
-                        image(entites.greenHeart, x * imageX + width * .92, 70, imageX, imageY);
-                    }*/
+                            if (entity2.damageTaken === 2) {
+                                this.entities.splice(this.entities.indexOf(entity2), 1);
+                            }
+                        }
+                    }
+                }
             }
-        }
         }
     }
 
     public update() {
-        this.playerOne.update();
-        this.playerTwo.update();
-
         const gunFireP1 = this.playerOne.update();
         if (gunFireP1) {
             this.entities.push((gunFireP1));
-            // setTimeout(() => {
-            //     this.entities.pop();
-            // }, 2000);
         }
-
+        
         const gunFireP2 = this.playerTwo.update();
         if (gunFireP2) {
             this.entities.push(gunFireP2);
-            // setTimeout(() => {
-            //     this.entities.pop();
-            // }, 2000);
         }
-
+        
+        
         for (const entity of this.entities) {
             entity.update();
         }
-
         this.checkCollision();
+
     }
 
     public draw() {
         this.playerOne.draw();
         this.playerTwo.draw();
-        this.PlayersLife.draw();
         for (const entity of this.entities) {
             entity.draw();
         }
-
-        // this.barricade.update();
-        // this.gameState.setGameState('Running');
-        // this.barricade.update();
-        // for (const entity of this.entities) {
-        //     entity.update();
-        // }
 
     }
 
@@ -271,31 +198,4 @@ class GameBoard {
         // if(e.keyCode == 77)
         
     } 
-    /// Ska inte vi öppna pause menyn om spelaren klickar? 
-
-    // public openGame() {
-    //     if(keyCode === 27){
-    //         document.addEventListener('keypress', () => this.pausedMenu.openPauseMenu());
-    //     }
-    // }
-
-
-    // public pauseGame(){
-    //     if(this.gameState.activeGameState === 'Running'){
-        
-    //         // if (event.defaultPrevented) {
-    //         //   return; // Do nothing if the event was already processed
-    //         // }
-
-    //     switch(key){
-    //         case "PressEscape":
-    //         case "Escape":
-                
-    //             break;
-            
-    //     }
-        
-    // }}
 }
-
-
