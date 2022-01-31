@@ -1,7 +1,7 @@
 type CharacterNameLabel = "" | "rabbit" | "pig" | "turtle" | "monkey";
 class CharacterMenu {
-    private activeCharacterName: CharacterNameLabel;
-    private activeCharacterName2: CharacterNameLabel;
+    public activeCharacterName: CharacterNameLabel;
+    public activeCharacterName2: CharacterNameLabel;
     private gameState: GameState;
     private mainDiv: HTMLDivElement;
     private characterImg: HTMLDivElement;
@@ -20,7 +20,6 @@ class CharacterMenu {
         this.activeCharacterName = "";
         this.activeCharacterName2 = "";
         this.gameState = gameState;
-        // this.player1Character = player1Character;
 
         /** CREATING DIV TO HOLD EVERYTHING */
         this.mainDiv = document.createElement("div");
@@ -216,8 +215,7 @@ class CharacterMenu {
             this.turtle.style.opacity = ".4";
             this.pig.style.opacity = ".4";
         }
-        this.activateButton();
-       
+        this.activateButton();  
     }
 
     public setCharacterName2 = (name: CharacterNameLabel) => {

@@ -6,11 +6,11 @@ class GameBoard {
     private entities: Entity[];
     public playerOne: Character;
     public playerTwo: Character;
-    
 
     constructor(gameState: GameState, activeCharacterName: CharacterNameLabel,
         activeCharacterName2: CharacterNameLabel) {
 
+            
         this.gameState = gameState;
         this.worldMap = new WorldMap(
             entites.barricade,
@@ -36,10 +36,10 @@ class GameBoard {
                 up: UP_ARROW,
                 shoot: ENTER,
                 pause: 27,
-                create: 80,
             }
 
         );
+       
         this.playerOne = new Character(
             1,
             this.getCharacterImage(activeCharacterName),
@@ -54,10 +54,9 @@ class GameBoard {
                 down: 83,
                 shoot: 32,
                 pause: 27,
-                create: 82,
             }
         );
-    }
+        }
     private getCharacterImage(name: CharacterNameLabel) {
         switch (name) {
             case "turtle": return images.turtleFront;
@@ -82,15 +81,6 @@ class GameBoard {
                     if (entity1 instanceof Character) {
 
                         if (entity2 instanceof Character) {
-                            // if (entity1.currentDirection === 'right' && entity1.velocity.x) {
-                            //     entity1.x = entity2.x - entity1.size.x;
-                            // } else if (entity1.currentDirection === 'left' && entity1.velocity.x) {
-                            //     entity1.x = entity2.x + entity2.size.x;
-                            // } else if (entity1.currentDirection === 'up' && entity1.velocity.y) {
-                            //     entity1.y = entity2.y + entity2.size.y;
-                            // } else if (entity1.currentDirection === 'down' && entity1.velocity.y) {
-                            //     entity1.y = entity2.y - entity1.size.y;
-                            // }
                             entity1.x -= entity1.velocity.x;
                             entity1.y -= entity1.velocity.y;
                         }
@@ -100,37 +90,28 @@ class GameBoard {
                                     this.entities.splice(this.entities.indexOf(entity2), 1);
                                     if (!entity1.isShielding) {
                                         entity1.totalLives =  entity1.totalLives -1;
-                                        console.log(entity1.totalLives);
                                     }
-                                    if (  entity1.totalLives === 0) {
-                                        
+                                    if (entity1.totalLives === 0) {
+                                        entity1.isLosing === true;
+                                        this.gameState.setGameState('GameOver');
                                     }
-                                
-                            }
-                           
+                                }   
                         }
-                        
-                        
                         if (entity2 instanceof Shield) {
                             if (!entity1.isShielding) {
                                 this.entities.splice(this.entities.indexOf(entity2), 1);
                                 entity1.isShielding =  true;
-                            } 
-                            
-                            console.log(entity1.isShielding);
+                            }  
                         }
                         if (entity2 instanceof Speed){
                             if (!entity1.isSpeeding) {
                                 this.entities.splice(this.entities.indexOf(entity2), 1);
                                 entity1.isSpeeding =  true; 
                             } 
-                            
-                            console.log(entity1.isShielding);
                         }
                         if (entity2 instanceof ExtraLife) {
                             this.entities.splice(this.entities.indexOf(entity2), 1);
                             entity1.totalLives =  entity1.totalLives + 1;
-                            console.log(entity1.totalLives);
                         }
 
                         if (entity2 instanceof Barricade) {
@@ -151,10 +132,10 @@ class GameBoard {
                             if (entity1.x > width || entity1.x < 0 || entity1.y > height || entity1.y < 0) {
                             this.entities.splice(this.entities.indexOf(entity1), 1);
                         }
+                        
                         if (entity2 instanceof Barricade) {
                             this.entities.splice(this.entities.indexOf(entity1), 1); 
                             entity2.damageTaken = entity2.damageTaken + 1;
-                            console.log(entity2.damageTaken);
                             
                             if (entity2.damageTaken === 2) {
                                 this.entities.splice(this.entities.indexOf(entity2), 1);
@@ -184,6 +165,7 @@ class GameBoard {
         this.checkCollision();
 
     }
+
 
     public draw() {
         this.playerOne.draw();
