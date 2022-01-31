@@ -29,6 +29,7 @@ class Game implements GameState {
     }
 
     constructor() {
+        music.startMenuSound.play();
         this.activeGameState = 'Start';
         this.pausedMenu = new PausedMenu(this);
         this.characterMenu = new CharacterMenu(this);

@@ -3,6 +3,8 @@ let game: Game;
 let images: Images;
 let entites: Entites;
 let isPaused: boolean = false;
+let sound: Sound;
+let music: Music;
 
 
 
@@ -14,8 +16,19 @@ let isPaused: boolean = false;
  * sound files, images etc...
  */
 function preload() {
-  // sound: p5.SoundFile = loadSound('../assets/mySound.wav');
-
+  sound = {
+    gunFireSound: loadSound('./assets/images/sound/gunFireSound.wav'),
+    powerupSound: loadSound('./assets/images/sound/powerup.wav'),
+    drainLifeSound: loadSound('./assets/images/sound/takingDamage.wav'),
+    collisionSound: loadSound('./assets/images/sound/collision.wav'),
+    breakBarricadeSound: loadSound('./assets/images/sound/breakBarricade.wav')
+  };
+  
+  music = {
+    startMenuSound: loadSound('./assets/images/sound/startMenu.wav'),
+    gameOverSound: loadSound('./assets/images/sound/gameOverMusic.wav'), 
+    inGameSound: loadSound('./assets/images/sound/inGameMusic.wav'),
+  };
   
   images = {
     monkeyBig: loadImage("/assets/images/bigMonkey.png"),
@@ -48,8 +61,8 @@ function preload() {
     speed: loadImage("/assets/images/speed.png"),
     banana: loadImage('/assets/images/banana.png'),
     barricade: loadImage("/assets/images/Group 67.png")
-
   };
+  
 }
 
 /**

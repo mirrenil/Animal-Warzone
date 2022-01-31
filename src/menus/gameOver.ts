@@ -147,6 +147,8 @@ class GameOverMenu {
     
     public openGameOverMenu() {
        document.body.append(this.gameOverMainDiv);
+       music.inGameSound.stop();
+       music.gameOverSound.play();
     }
 
     // public closeGameOverMenu() {
@@ -159,6 +161,7 @@ class GameOverMenu {
     public startNewGame() {
         this.gameState.setGameState('Character');
         this.gameOverDiv.remove();
+        music.gameOverSound.stop();
     }
 
 

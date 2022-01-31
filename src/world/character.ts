@@ -19,6 +19,8 @@ class Character extends Entity {
   public gunFire1: boolean;
   public gunFire2: boolean;
 
+
+
   constructor( playerNum: number, appearance: p5.Image, x: number, y: number, size: p5.Vector, controls: Controls) {
     super(appearance, x, y, size, createVector(0,0), )
     this.speed = 1;
@@ -39,8 +41,10 @@ class Character extends Entity {
     if ((this.playerNum === 1 && !this.gunFire1) || (this.playerNum === 2 && !this.gunFire2))  {
       if (this.playerNum === 1) {
         this.gunFire1 = true;
+        sound.gunFireSound.play();
       } else {
         this.gunFire2 = true;
+        sound.gunFireSound.play();
       }
    
     const appearance = entites.banana; 
