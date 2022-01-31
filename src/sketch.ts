@@ -38,7 +38,7 @@ function preload() {
     turtleBack: loadImage("/documents/gameCharacters/turtleBack.png"),
     turtleLeft: loadImage("/documents/gameCharacters/turtleLeft.png"),
     turtleRight: loadImage("/documents/gameCharacters/turtleRight.png"),
-    animalWarzon: loadImage("/assets/images/startMenuPicture.png"),
+    animalWarzone: loadImage("/assets/images/startMenuPicture.png"),
   };
 
   entites = {
@@ -75,7 +75,6 @@ function setup() {
  * you created in the setup function above
  */
 function draw() {
-
   game.update();
   game.draw();
 

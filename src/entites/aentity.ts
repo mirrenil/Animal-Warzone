@@ -5,6 +5,7 @@ class Entity {
     public size: p5.Vector;
     public velocity: p5.Vector;
 
+
     constructor(appearance: p5.Image, x: number, y: number, size: p5.Vector, velocity?: p5.Vector) {
         this.appearance = appearance;
         this.x = x;
@@ -22,6 +23,11 @@ class Entity {
         push();
         imageMode(CORNER);
         image(this.appearance, this.x, this.y, this.size.x, this.size.y);
+        
+        noFill();
+        stroke('red');
+        rect(this.x, this.y, this.size.x, this.size.y);
+        
         pop();
     }
 

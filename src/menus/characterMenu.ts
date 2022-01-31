@@ -264,8 +264,8 @@ class CharacterMenu {
     }
 
     public openStartMenu() {
-        this.gameState.setGameState("Start");
-        this.mainDiv.remove();
+       this.gameState.setGameState("Start");
+       this.mainDiv.remove();
     }
 
     public update() { }

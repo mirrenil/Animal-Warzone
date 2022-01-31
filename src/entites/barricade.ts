@@ -1,5 +1,6 @@
 class Barricade extends Entity  {
   //  private size: p5.Vector;
+  public damageTaken: number;
 
   //   constructor(size: p5.Vector) {
   //     this.size = size; 
@@ -8,6 +9,7 @@ class Barricade extends Entity  {
   
   public constructor(appearance: p5.Image, x: number, y: number, size: p5.Vector) {
     super(appearance, x, y, size);
+    this.damageTaken = 0;
   }
 
   // public draw() {

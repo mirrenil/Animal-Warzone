@@ -29,32 +29,14 @@ class Game implements GameState {
     }
 
     constructor() {
-
-        // this.grid = new Grid(createVector(10, 10));
-
         this.activeGameState = 'Start';
-
-        //this.setGameState('Start');
-
-        
-
         this.pausedMenu = new PausedMenu(this);
-
-        
-        
         this.characterMenu = new CharacterMenu(this);
-
         this.startMenu = new StartMenu(this);
-        
         this.gameBoard = new GameBoard(this, "", "");
-
-        
-        //this.barricade = new Barricade(createVector(10, 10));
-
-        // this.gameOverMenu = new GameOverMenu(this);
-      
         this.instructionsMenu = new InstructionsMenu(this);
-        
+        // this.gameOverMenu = new GameOverMenu(this);
+        console.log(this.activeGameState);
         
     }
 
@@ -63,6 +45,7 @@ class Game implements GameState {
         this.activeGameState = state;
 
         if (state === 'Start') {
+            console.log(this.activeGameState);
             this.startMenu.openStartMenu();
         } else if (state === 'Paused') {
 
@@ -82,16 +65,14 @@ class Game implements GameState {
                             
                         
                     }});
-            // console.log(character1, character2);
             const character1 = this.characterMenu.getActiveCharacterName();
             const character2 = this.characterMenu.getActiveCharacterName2();
             
             this.gameBoard = new GameBoard(this, character1, character2);
         } else if (state === 'Instructions'){
-            this.instructionsMenu.openInstructionsMenu(); 
+            this.instructionsMenu.openInstructionsMenu();        
         } else if (state === 'GameOver') {
-            //this.gameOverMenu.openGameOverMenu();
-
+            // this.gameOverMenu.openGameOverMenu();
         }
     };
 
@@ -100,11 +81,6 @@ class Game implements GameState {
             if(!isPaused) {
                 this.gameBoard.update();
             }
-            // this.gameBoard.isPaused();
-        }   else if(this.activeGameState === 'Character') {
-            
-        }else if(this.activeGameState === 'GameOver') {
-
         }
     }
 

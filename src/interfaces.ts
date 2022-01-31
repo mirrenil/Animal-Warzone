@@ -19,7 +19,7 @@ interface Images {
   turtleBack: p5.Image;
   turtleLeft: p5.Image;
   turtleRight: p5.Image;
-  animalWarzon: p5.Image;
+  animalWarzone: p5.Image;
 }
 
 interface Entites {
@@ -37,4 +37,5 @@ interface Controls {
     down: number;
     shoot: number;
     pause: number;
+    create: number;
 }

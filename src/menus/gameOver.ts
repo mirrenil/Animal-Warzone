@@ -139,7 +139,10 @@ class GameOverMenu {
         
         
         this.openGameOverMenu();
+    }
 
+    public gameOver() {
+        // för att se vem som vann och skicka med rätt bild
     }
     
     public openGameOverMenu() {
@@ -174,3 +177,4 @@ class GameOverMenu {
     public update(){
  
     }
+}

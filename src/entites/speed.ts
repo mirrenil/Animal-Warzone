@@ -2,16 +2,20 @@
 let speed: p5.Image;
 class Speed extends Entity {
 
-    speedUpCharacter() {
+    public constructor(appearance: p5.Image, x: number, y: number, size: p5.Vector) {
+        super(appearance, x, y, size);
+      }
+    
+    // speedUpCharacter() {
 
-    }
+    // }
 
-    updateSpeed() {
+    // updateSpeed() {
 
-    }
+    // }
 
-    draw() {
-    imageMode(CENTER);
-    image(speed, windowHeight / 2, windowWidth / 2);
-    }
+    // draw() {
+    // imageMode(CENTER);
+    // image(speed, windowHeight / 2, windowWidth / 2);
+    // }
 }
