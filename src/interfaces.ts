@@ -7,7 +7,6 @@ interface Images {
   pigFront: p5.Image;
   monkeyFront: p5.Image;
   turtleFront: p5.Image;
-  animalWarzone: p5.Image;
 }
 
 interface Entites {

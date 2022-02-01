@@ -48,7 +48,7 @@ class GameOverMenu {
 
         this.imageWinner = document.createElement('img');
         this.imageWinner.className = 'winner';
-        this.imageWinner.src = '/assets/images/big.png';
+        this.imageWinner.src = '';
    
 
         /** CHARACTER LOSER */
@@ -59,7 +59,7 @@ class GameOverMenu {
         
         this.imageLoser = document.createElement('img');
         this.imageLoser.className = 'loser';
-        this.imageLoser.src = '/assets/images/big.png';
+        this.imageLoser.src = '';
         
         /** BUTTONS */
 

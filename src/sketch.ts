@@ -18,24 +18,23 @@ function preload() {
 
   
   images = {
-    monkeyBig: loadImage("/assets/images/bigMonkey.png"),
-    pigBig: loadImage("/assets/images/bigPig.png"),
-    rabbitBig: loadImage("/assets/images/bigRabbit.png"),
-    turtleBig: loadImage("/assets/images/bigTurtle.png"),
-    rabbitFront: loadImage("/assets/images/gameCharacters/rabbitFront.png"),
-    pigFront: loadImage("/assets/images/gameCharacters/pigFront.png"),
-    monkeyFront: loadImage("/assets/images/gameCharacters/monkeyFront.png"),
-    turtleFront: loadImage("/assets/images/gameCharacters/turtleFront.png"),
-    animalWarzone: loadImage("/assets/images/startMenuPicture.png"),
+    monkeyBig: loadImage("./assets/images/bigMonkey.png"),
+    pigBig: loadImage("./assets/images/bigPig.png"),
+    rabbitBig: loadImage("./assets/images/bigRabbit.png"),
+    turtleBig: loadImage("./assets/images/bigTurtle.png"),
+    rabbitFront: loadImage("./assets/images/gameCharacters/rabbitFront.png"),
+    pigFront: loadImage("./assets/images/gameCharacters/pigFront.png"),
+    monkeyFront: loadImage("./assets/images/gameCharacters/monkeyFront.png"),
+    turtleFront: loadImage('./assets/images/gameCharacters/turtleFront.png'),
   };
 
   entites = {
-    greenHeart: loadImage('/assets/images/life.png'),
-    redHeart: loadImage("/assets/images/redheart.png"),
-    shield: loadImage("/assets/images/shield.png"),
-    speed: loadImage("/assets/images/speed.png"),
-    banana: loadImage('/assets/images/banana.png'),
-    barricade: loadImage("/assets/images/Group 67.png")
+    greenHeart: loadImage('./assets/images/life.png'),
+    redHeart: loadImage("./assets/images/redheart.png"),
+    shield: loadImage("./assets/images/shield.png"),
+    speed: loadImage("./assets/images/speed.png"),
+    banana: loadImage('./assets/images/banana.png'),
+    barricade: loadImage("./assets/images/Group 67.png")
 
   };
 }
