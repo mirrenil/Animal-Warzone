@@ -178,8 +178,6 @@ class CharacterMenu {
         divTurtle2.append(this.turtle2);
         divMonkey2.append(this.monkey2);
         buttonDiv.append(this.startGameButton);
-
-        // this.openCharacterMenu();
     }
 
     public getActiveCharacterName() { return this.activeCharacterName }
@@ -264,10 +262,6 @@ class CharacterMenu {
        this.gameState.setGameState("Start");
        this.mainDiv.remove();
     }
-
-    public update() { }
-
-    public draw() { }
 }
 
 

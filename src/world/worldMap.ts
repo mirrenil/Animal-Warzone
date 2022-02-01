@@ -75,9 +75,5 @@ class WorldMap {
    
       return entities;
       
-      }
- 
-  draw(){
-    
-  }
+    }
 }

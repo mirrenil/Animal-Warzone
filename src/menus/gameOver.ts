@@ -87,13 +87,10 @@ class GameOverMenu {
         this.winnersDiv.append(this.imageWinner);
         this.gameOverLoser.append(this.loser, this.losersDiv);
         this.losersDiv.append(this.imageLoser);
-        
-        
-        // this.openGameOverMenu();
+       
     }
 
     public openGameOverMenu(player1: Character, player2: Character) {
-        console.log(player1);
         
         if (player1.isLosing) {
             
@@ -102,7 +99,6 @@ class GameOverMenu {
             this.setLoser();
             this.imageWinner.style.height = '500px'
             this.setWinner();
-            // console.log('append');
             
                
         } else if (player2.isLosing) {
@@ -132,9 +128,6 @@ class GameOverMenu {
         }
     }
 
-    
-    
-
     public setLoser(name: CharacterNameLabel) {
         this.imageLoser.src = '';
         if (name === "monkey") {
@@ -162,9 +155,6 @@ class GameOverMenu {
         this.gameOverMainDiv.remove();
     }
     
-    public draw() {
-    
-    }
 
     public update(){
  

@@ -27,6 +27,7 @@ class Game implements GameState {
     }
 
     constructor() {
+        music.startMenuSound.play();
         this.activeGameState = 'Start';
         this.pausedMenu = new PausedMenu(this);
         this.characterMenu = new CharacterMenu(this);
@@ -34,7 +35,6 @@ class Game implements GameState {
         this.gameBoard = new GameBoard(this, "", "");
         this.instructionsMenu = new InstructionsMenu(this);
         this.gameOverMenu = new GameOverMenu(this)
-        console.log(this.activeGameState);
         
     }
 
@@ -42,19 +42,13 @@ class Game implements GameState {
     public setGameState = (state: GameStateLabel) => {
         this.activeGameState = state;
 
-        // this.setGameState('Start');
-
-        // this.activeGameState === 'Start';
-
         if (state === 'Start') {
-            console.log(this.activeGameState);
             this.startMenu.openStartMenu();
         } else if (state === 'Paused') {
 
         } else if (state === 'Character') {
             this.characterMenu.openCharacterMenu();
         } else if (state === 'Running') {
-            
                                 
                     window.addEventListener('keydown', function (event){
 
@@ -63,8 +57,6 @@ class Game implements GameState {
                         case "Escape":
                             game.PauseMenu();
                             break;
-   
-                        
                     }});
             const character1 = this.characterMenu.getActiveCharacterName();
             const character2 = this.characterMenu.getActiveCharacterName2();
