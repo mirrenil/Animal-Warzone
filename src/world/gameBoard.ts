@@ -23,6 +23,7 @@ class GameBoard {
 
         this.playerTwo = new Character(
             2,
+            activeCharacterName2,
             this.getCharacterImage(activeCharacterName2),
             width * .3 + 600,
             height * .5 - 30,
@@ -40,6 +41,7 @@ class GameBoard {
        
         this.playerOne = new Character(
             1,
+            activeCharacterName,
             this.getCharacterImage(activeCharacterName),
             width * .3,
             height * .5 - 30,
@@ -53,7 +55,9 @@ class GameBoard {
                 pause: 27,
             }
         );
+
         this.entities.push(this.playerOne, this.playerTwo);
+
     }
 
     private getCharacterImage(name: CharacterNameLabel) {
@@ -67,6 +71,7 @@ class GameBoard {
     }
 
     private checkCollision() {
+
         for (const entity1 of this.entities) {
             for (const entity2 of this.entities) {
                 if (entity1 === entity2) continue;
@@ -85,13 +90,13 @@ class GameBoard {
                         if (entity2 instanceof GunFire) { 
                             if (entity2.playerNum !== entity1.playerNum ) {
                                     this.entities.splice(this.entities.indexOf(entity2), 1);
-                                    console.log('DDD');
                                     
                                     if (!entity1.isShielding) {
                                         entity1.totalLives =  entity1.totalLives - 1;
                                     }
+
                                     if (entity1.totalLives === 0) {
-                                        entity1.isLosing === true;
+                                        entity1.isLosing = true;
                                         this.gameState.setGameState('GameOver');
                                     }
                                 }   
@@ -99,18 +104,18 @@ class GameBoard {
                         if (entity2 instanceof Shield) {
                             if (!entity1.isShielding) {
                                 this.entities.splice(this.entities.indexOf(entity2), 1);
-                                entity1.isShielding =  true;
+                                entity1.isShielding = true;
                             }  
                         }
                         if (entity2 instanceof Speed){
                             if (!entity1.isSpeeding) {
                                 this.entities.splice(this.entities.indexOf(entity2), 1);
-                                entity1.isSpeeding =  true; 
+                                entity1.isSpeeding = true; 
                             } 
                         }
                         if (entity2 instanceof ExtraLife) {
                             this.entities.splice(this.entities.indexOf(entity2), 1);
-                            entity1.totalLives =  entity1.totalLives + 1;
+                            entity1.totalLives = entity1.totalLives + 1;
                         }
 
                         if (entity2 instanceof Barricade) {
@@ -130,6 +135,7 @@ class GameBoard {
                     if (entity1 instanceof Barricade) {
                         // console.log(entity1);
                         // console.log(entity2);
+
                         //     if (entity1.x > width || entity1.x < 0 || entity1.y > height || entity1.y < 0) {
                         //     this.entities.splice(this.entities.indexOf(entity1), 1);
                         //     console.log('ssss');
