@@ -31,6 +31,7 @@ interface Sound {
     drainLifeSound: p5.SoundFile;
     collisionSound: p5.SoundFile;
     breakBarricadeSound: p5.SoundFile;
+    shieldHit: p5.SoundFile;
 }
   
   interface Music {
