@@ -11,7 +11,7 @@ class StartMenu {
 
         this.startMenuPicture = document.createElement('img');
         this.startMenuPicture.className = 'start-image';
-        this.startMenuPicture.src = "/assets/images/startMenuImg.png";
+        this.startMenuPicture.src = "./assets/images/startMenuImg.png";
 
         const startMenuHeaderEl = document.createElement('h1');
         startMenuHeaderEl.className = 'startMenuTitle';
