@@ -1,7 +1,3 @@
-
-//---- GLOBAL VARIABLES ----//
-
-
 class GameOverMenu {
     private gameState: GameState;
     private gameOverMainDiv:  HTMLDivElement;
@@ -15,19 +11,12 @@ class GameOverMenu {
     private buttonsDiv: HTMLDivElement;
     private playAgainBtn: HTMLButtonElement;
     private mainMenuBtn: HTMLButtonElement;
-    private pigW: HTMLImageElement;
-    private monkeyW: HTMLImageElement;
-    private turtleW: HTMLImageElement;
-    private rabbitW: HTMLImageElement;
-    private pig: HTMLImageElement;
-    private monkey: HTMLImageElement;
-    private turtle: HTMLImageElement;
-    private rabbit: HTMLImageElement;
+    private imageWinner: HTMLImageElement;
+    private imageLoser: HTMLImageElement;
+    
 
      constructor(gameState: GameState) { 
         this.gameState = gameState;
-
-
         /** CREATING DIVS AND SPAN */
         this.gameOverMainDiv = document.createElement('div');
         this.gameOverMainDiv.className = 'gameOverMainDiv';
@@ -56,28 +45,9 @@ class GameOverMenu {
 
         this.winnersDiv = document.createElement('div');
         this.winnersDiv.className = 'characters align';
-       
-        
-        this.pigW = document.createElement('img');
-        this.pigW.className = 'winner blocked';
-        this.pigW.src = '/assets/images/bigPig.png';
-   
 
-        this.monkeyW = document.createElement('img');
-        this.monkeyW.className = 'winner blocked';
-        this.monkeyW.src = '/assets/images/bigMonkey.png';
-     
-
-        this.turtleW = document.createElement('img');
-        this.turtleW.className = 'winner blocked';
-        this.turtleW.src = '/assets/images/bigTurtle.png';
-       
-        
-        this.rabbitW = document.createElement('img');
-        this.rabbitW.className = 'winner';
-        this.rabbitW.src = '/assets/images/bigRabbit.png';
-        
-
+        this.imageWinner = document.createElement('img');
+        this.imageWinner.className = 'winner';
 
         /** CHARACTER LOSER */
 
@@ -85,37 +55,19 @@ class GameOverMenu {
         this.losersDiv.className = 'characters align ';
        
         
-        this.pig = document.createElement('img');
-        this.pig.className = 'loser blocked';
-        this.pig.src = '/assets/images/bigPig.png';
-   
-
-        this.monkey = document.createElement('img');
-        this.monkey.className = 'loser blocked';
-        this.monkey.src = '/assets/images/bigMonkey.png';
-     
-
-        this.turtle = document.createElement('img');
-        this.turtle.className = 'loser';
-        this.turtle.src = '/assets/images/Bigturtle.png';
-
-        
-        this.rabbit = document.createElement('img');
-        this.rabbit.className = 'loser blocked';
-        this.rabbit.src = '/assets/images/bigRabbit.png'
+        this.imageLoser = document.createElement('img');
+        this.imageLoser.className = 'loser';
        
-        
         /** BUTTONS */
 
         this.buttonsDiv = document.createElement('div');
-        this.buttonsDiv.className = "flex column center align";
+        this.buttonsDiv.className = 'btn-div';
         
 
         this.playAgainBtn = document.createElement('button');
         this.playAgainBtn.textContent = 'Play Again';
         this.playAgainBtn.className = 'btn';
         this.playAgainBtn.addEventListener('click', () => this.startNewGame());
-        this.startNewGame();
         
         this.mainMenuBtn = document.createElement('button');
         this.mainMenuBtn.textContent = 'Main Menu';
@@ -127,55 +79,72 @@ class GameOverMenu {
        
         this.gameOverMainDiv.append(this.gameOverDiv, this.buttonsDiv);
         this.buttonsDiv.append(this.playAgainBtn, this.mainMenuBtn);
-        // this.playAgainBtn.append(this.buttonsDiv);
-        // this.mainMenuBtn.append(this.buttonsDiv);
         this.gameOverDiv.append(this.gameOverWinner, this.gameOverLoser);
         this.gameOverWinner.append(this.winner, this.winnersDiv);
-        this.winnersDiv.append(this.pigW, this.rabbitW, this.monkeyW, this.turtleW);
+        this.winnersDiv.append(this.imageWinner);
         this.gameOverLoser.append(this.loser, this.losersDiv);
-        this.losersDiv.append(this.pig, this.rabbit, this.monkey, this.turtle);
-        
-       
+        this.losersDiv.append(this.imageLoser);
         
         
-        this.openGameOverMenu();
+        // this.openGameOverMenu();
     }
 
-    public gameOver() {
-        // för att se vem som vann och skicka med rätt bild
+    public openGameOverMenu(player1: Character, player2: Character) {
+        if (player1.isLosing) { 
+            this.setLoser(player1);
+            this.setWinner(player2);
+
+        } else if (player2.isLosing) {
+            this.setLoser(player2);
+            this.setWinner(player1);
+        }
+        document.body.append(this.gameOverMainDiv);
+        music.inGameSound.stop();
+        music.gameOverSound.play();
+    }
+
+    public setWinner(winner: Character) {
+        const name = winner.getName();
+        this.imageWinner.src = this.getCharacterImageUrl(name);
+        console.log(this.imageWinner.src);
+    }
+
+    public setLoser(loser: Character) {
+        const name = loser.getName();
+        this.imageLoser.src = this.getCharacterImageUrl(name);
+        console.log(this.imageLoser.src);
     }
     
-    public openGameOverMenu() {
-       document.body.append(this.gameOverMainDiv);
-       music.inGameSound.stop();
-       music.gameOverSound.play();
+    private getCharacterImageUrl(name: CharacterNameLabel) {
+        if (name === 'monkey') {
+            return './assets/images/bigMonkey.png';
+        } else if (name === 'pig') {
+            return './assets/images/bigPig.png';
+        } else if (name === 'turtle') {
+            return './assets/images/bigTurtle.png';
+        } else if (name === 'rabbit') {
+            return './assets/images/bigRabbit.png';
+        } else {
+            return '';
+        }
     }
-
-    // public closeGameOverMenu() {
-    //     this.closeGameOverMenu.remove();
-
-    // }
-
-
 
     public startNewGame() {
         this.gameState.setGameState('Character');
         this.gameOverDiv.remove();
         music.gameOverSound.stop();
+        this.gameOverMainDiv.remove();
     }
 
 
     public goToMainMenu() {
         this.gameState.setGameState('Start');
-        this.gameOverDiv.remove();
+        this.gameOverMainDiv.remove();
     }
     
     public draw() {
-        
     
     }
-
-// }
 
     public update(){
  
