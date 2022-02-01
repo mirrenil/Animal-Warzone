@@ -152,7 +152,6 @@
 }
 public openStartMenu(){
     this.gameState.setGameState("Start");
-    // this.mainDiv.className = ('hide');
     this.mainDivInstructions.remove();
 }
 }

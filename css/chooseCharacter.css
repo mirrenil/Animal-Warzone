@@ -127,14 +127,6 @@ h3 {
   );
 }
 
-/* .checkbox{
-    width: 50%;
-    height: 50%;
-    position: absolute;
-    opacity: 0;
-    z-index: 1000;
-    cursor: pointer;
-} */
 
 .btn-div {
   display: flex;

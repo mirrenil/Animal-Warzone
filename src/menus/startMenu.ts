@@ -1,14 +1,7 @@
-//---- GLOBAL VARIABLES ----//
-//let animalWarzone: p5.Image;
-
 class StartMenu {
     private gameState: GameState;
     public startMenuDivEl: HTMLDivElement;
     private startMenuPicture: HTMLImageElement;
-
-
-    // private appearance: p5.Image;
-    // private gameInstructions: Instructions;
 
     constructor(gameState: GameState) {
         this.gameState = gameState;
@@ -60,6 +53,6 @@ class StartMenu {
 
     public showInstructionsMenu() {
         this.gameState.setGameState('Instructions');
-        this.startMenuDivEl.remove(); // ta ev bort.
+        this.startMenuDivEl.remove(); 
     }
 }

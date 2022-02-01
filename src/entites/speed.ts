@@ -14,8 +14,5 @@ class Speed extends Entity {
 
     // }
 
-    // draw() {
-    // imageMode(CENTER);
-    // image(speed, windowHeight / 2, windowWidth / 2);
-    // }
+  
 }

@@ -1,7 +1,6 @@
 
 class GameBoard {
     public gameState: GameState;
-    //private life: Life;
     private worldMap: WorldMap;
     private entities: Entity[];
     public playerOne: Character;
@@ -25,7 +24,6 @@ class GameBoard {
         this.playerTwo = new Character(
             2,
             this.getCharacterImage(activeCharacterName2),
-            // createVector(150, height * .5 - 30), //this.worldMap.getPlayerOnePosition()
             width * .3 + 600,
             height * .5 - 30,
             createVector(80, 80),{
@@ -43,7 +41,6 @@ class GameBoard {
         this.playerOne = new Character(
             1,
             this.getCharacterImage(activeCharacterName),
-            // createVector(width - 150, height * .5 - 30),
             width * .3,
             height * .5 - 30,
             createVector(80, 80),
@@ -188,8 +185,5 @@ class GameBoard {
 
     }
 
-    public isPaused() {
-        // if(e.keyCode == 77)
-        
-    } 
+    
 }

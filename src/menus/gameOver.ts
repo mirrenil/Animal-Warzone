@@ -2,8 +2,8 @@ class GameOverMenu {
     private gameState: GameState;
     private gameOverMainDiv:  HTMLDivElement;
     private gameOverDiv: HTMLDivElement;
-    public gameOverWinner: HTMLDivElement;
-    public gameOverLoser: HTMLDivElement;
+    private gameOverWinner: HTMLDivElement;
+    private gameOverLoser: HTMLDivElement;
     private winnersDiv: HTMLDivElement;
     private losersDiv: HTMLDivElement;
     private winner: HTMLSpanElement;
@@ -51,12 +51,6 @@ class GameOverMenu {
         this.imageWinner.src = '/assets/images/big.png';
    
 
-        // this.monkeyW.src = '/assets/images/bigMonkey.png';
-        // this.turtleW.src = '/assets/images/bigTurtle.png';
-        // this.rabbitW.src = '/assets/images/bigRabbit.png';
-        
-
-
         /** CHARACTER LOSER */
 
         this.losersDiv = document.createElement('div');
@@ -102,6 +96,7 @@ class GameOverMenu {
         console.log(player1);
         
         if (player1.isLosing) {
+            
             
             this.imageLoser.style.height = '200px';
             this.setLoser();

@@ -136,19 +136,15 @@ public speedUp() {
     this.velocity.x = 0;
     this.velocity.y = 0;
     if (keyIsDown(this.controls.up)) {
-      // this.y = this.y - this.speed;
       this.currentDirection = 'up';
       this.velocity.y = -this.speed;
     } else if (keyIsDown(this.controls.down)) {
-      // this.y = this.y + this.speed;
       this.currentDirection = 'down';
       this.velocity.y = this.speed;
     } else if (keyIsDown(this.controls.left)) {
-      // this.x = this.x - this.speed;
       this.currentDirection = 'left';
       this.velocity.x = -this.speed;
     } else if (keyIsDown(this.controls.right)) {
-      // this.x = this.x + this.speed;
       this.currentDirection = 'right';
       this.velocity.x = this.speed;
     }
@@ -159,7 +155,6 @@ public speedUp() {
     super.update();
     this.shield();
     this.speedUp();
-    //this.playerShoot();
 
     if (this.x < 0) {
       this.x = 0;
@@ -180,22 +175,7 @@ public speedUp() {
       return this.gunFireThrottle();      
       }
     
-    
   }
-
-  // public playerShoot() {
-  
-  //   /* setTimeout(function(){
-  //       alert("Hello World");
-  //   },2000);*/
-    
-  //   //  setInterval(()  => {
-  //   //  console.log('setTimeout');
-  //   //  }, 1);
-  // }
-  
- 
-
 
   public draw() {
     super.draw();

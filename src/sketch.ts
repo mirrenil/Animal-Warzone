@@ -22,22 +22,10 @@ function preload() {
     pigBig: loadImage("/assets/images/bigPig.png"),
     rabbitBig: loadImage("/assets/images/bigRabbit.png"),
     turtleBig: loadImage("/assets/images/bigTurtle.png"),
-    rabbitFront: loadImage("/documents/gameCharacters/rabbitFront.png"),
-    rabbitBack: loadImage("/documents/gameCharacters/rabbitBack.png"),
-    rabbitLeft: loadImage("/documents/gameCharacters/rabbitLeft.png"),
-    rabbitRight: loadImage("/documents/gameCharacters/rabbitRight.png"),
-    pigFront: loadImage("/documents/gameCharacters/pigFront.png"),
-    pigBack: loadImage("/documents/gameCharacters/pigBack.png"),
-    pigLeft: loadImage("/documents/gameCharacters/pigLeft.png"),
-    pigRight: loadImage("/documents/gameCharacters/pigRight.png"),
-    monkeyFront: loadImage("/documents/gameCharacters/monkeyFront.png"),
-    monkeyBack: loadImage("/documents/gameCharacters/monkeyBack.png"),
-    monkeyLeft: loadImage("/documents/gameCharacters/monkeyLeft.png"),
-    monkeyRight: loadImage("/documents/gameCharacters/monkeyRight.png"),
-    turtleFront: loadImage("/documents/gameCharacters/turtleFront.png"),
-    turtleBack: loadImage("/documents/gameCharacters/turtleBack.png"),
-    turtleLeft: loadImage("/documents/gameCharacters/turtleLeft.png"),
-    turtleRight: loadImage("/documents/gameCharacters/turtleRight.png"),
+    rabbitFront: loadImage("/assets/images/gameCharacters/rabbitFront.png"),
+    pigFront: loadImage("/assets/images/gameCharacters/pigFront.png"),
+    monkeyFront: loadImage("/assets/images/gameCharacters/monkeyFront.png"),
+    turtleFront: loadImage("/assets/images/gameCharacters/turtleFront.png"),
     animalWarzone: loadImage("/assets/images/startMenuPicture.png"),
   };
 
@@ -61,11 +49,11 @@ function preload() {
 function setup() {
 
   createCanvas(windowWidth, windowHeight);
-  frameRate(6);
+  frameRate(60);
   // noCursor();
   
   game = new Game();
-  //characters = new Characters(this);
+  
 
 }
 
