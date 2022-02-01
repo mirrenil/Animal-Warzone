@@ -20,6 +20,7 @@ function preload() {
     drainLifeSound: loadSound('/assets/music//takingDamage.wav'),
     collisionSound: loadSound('/assets/music/collision.wav'),
     breakBarricadeSound: loadSound('/assets/music/breakBarricade.wav'),
+    shieldHit: loadSound('/assets/music/shieldHit.wav'),
   };
   
   music = {

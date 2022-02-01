@@ -91,10 +91,13 @@ class GameBoard {
                    
                         if (entity2 instanceof GunFire) { 
                             if (entity2.playerNum !== entity1.playerNum ) {
+                                    sound.shieldHit.play();
                                     this.entities.splice(this.entities.indexOf(entity2), 1);
                                     if (!entity1.isShielding) {
                                         entity1.totalLives =  entity1.totalLives -1;
                                         sound.drainLifeSound.play();
+                                        sound.shieldHit.stop();
+
                                     }
                                     if (entity1.totalLives === 0) {
                                         entity1.isLosing = true;
