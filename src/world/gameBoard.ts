@@ -35,7 +35,6 @@ class GameBoard {
                 down: DOWN_ARROW,
                 up: UP_ARROW,
                 shoot: ENTER,
-                pause: 27,
             }
 
         );
@@ -53,7 +52,6 @@ class GameBoard {
                 up: 87,
                 down: 83,
                 shoot: 32,
-                pause: 27,
             }
         );
 
