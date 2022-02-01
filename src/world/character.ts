@@ -110,30 +110,12 @@ public playerSpeedDraw() {
   }
 
 }
-public shield() {
-  if (this.isShielding === true) {
-    const imageX = 30
-    const imageY = 30
-    image(entites.shield, this.playerNum === 1 ? 20 + 100 : width - 20, 60, imageX, imageY);
 
-     setTimeout(() => {
-      this.isShielding = false; 
-     }, 15000);
-    
-  
-  }
-}
 public speedUp() {
-  if (this.isSpeeding === true) {
+  if (this.isSpeeding) {
     this.speed = 30;
-     setTimeout(() => {
-      this.isSpeeding = false; 
-      
-     }, 10000);
-    
   } else {
     this.speed = 15;
-
   }
   
   
@@ -158,10 +140,8 @@ public speedUp() {
 
   public update() {
     this.move();
-    super.update();
-    this.shield();
     this.speedUp();
-
+    super.update();
     if (this.x < 0) {
       this.x = 0;
     }

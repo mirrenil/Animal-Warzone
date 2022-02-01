@@ -14,6 +14,7 @@ let music: Music;
  */
 function preload() {
   sound = {
+
     gunFireSound: loadSound('/assets/music/gunFireSound.wav'),
     powerupSound: loadSound('/assets/music//powerup.wav'),
     drainLifeSound: loadSound('/assets/music//takingDamage.wav'),
