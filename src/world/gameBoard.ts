@@ -24,8 +24,8 @@ class GameBoard {
 
         this.playerTwo = new Character(
             2,
+            activeCharacterName2,
             this.getCharacterImage(activeCharacterName2),
-            // createVector(150, height * .5 - 30), //this.worldMap.getPlayerOnePosition()
             width * .3 + 600,
             height * .5 - 30,
             createVector(80, 80),{
@@ -42,8 +42,8 @@ class GameBoard {
        
         this.playerOne = new Character(
             1,
+            activeCharacterName,
             this.getCharacterImage(activeCharacterName),
-            // createVector(width - 150, height * .5 - 30),
             width * .3,
             height * .5 - 30,
             createVector(80, 80),
@@ -56,7 +56,8 @@ class GameBoard {
                 pause: 27,
             }
         );
-        }
+    }
+
     private getCharacterImage(name: CharacterNameLabel) {
         switch (name) {
             case "turtle": return images.turtleFront;
@@ -70,7 +71,6 @@ class GameBoard {
     private checkCollision() {
         
         const allEntities = [...this.entities, this.playerOne, this.playerTwo];
-        console.log(allEntities);
         
         for (const entity1 of allEntities) {
             for (const entity2 of allEntities) {
@@ -90,13 +90,13 @@ class GameBoard {
                         if (entity2 instanceof GunFire) { 
                             if (entity2.playerNum !== entity1.playerNum ) {
                                     this.entities.splice(this.entities.indexOf(entity2), 1);
-                                    console.log('DDD');
                                     
                                     if (!entity1.isShielding) {
                                         entity1.totalLives =  entity1.totalLives -1;
                                     }
+
                                     if (entity1.totalLives === 0) {
-                                        entity1.isLosing === true;
+                                        entity1.isLosing = true;
                                         this.gameState.setGameState('GameOver');
                                     }
                                 }   
@@ -104,18 +104,18 @@ class GameBoard {
                         if (entity2 instanceof Shield) {
                             if (!entity1.isShielding) {
                                 this.entities.splice(this.entities.indexOf(entity2), 1);
-                                entity1.isShielding =  true;
+                                entity1.isShielding = true;
                             }  
                         }
                         if (entity2 instanceof Speed){
                             if (!entity1.isSpeeding) {
                                 this.entities.splice(this.entities.indexOf(entity2), 1);
-                                entity1.isSpeeding =  true; 
+                                entity1.isSpeeding = true; 
                             } 
                         }
                         if (entity2 instanceof ExtraLife) {
                             this.entities.splice(this.entities.indexOf(entity2), 1);
-                            entity1.totalLives =  entity1.totalLives + 1;
+                            entity1.totalLives = entity1.totalLives + 1;
                         }
 
                         if (entity2 instanceof Barricade) {
@@ -137,7 +137,6 @@ class GameBoard {
                         // console.log(entity2);
                             if (entity1.x > width || entity1.x < 0 || entity1.y > height || entity1.y < 0) {
                             this.entities.splice(this.entities.indexOf(entity1), 1);
-                            console.log('ssss');
                             
                         }
                         
@@ -145,7 +144,7 @@ class GameBoard {
                             this.entities.splice(this.entities.indexOf(entity2), 1);
                             this.entities.splice(this.entities.indexOf(entity1), 1); 
                             // entity2.damageTaken = entity2.damageTaken + 1;
-                            console.log(allEntities);
+                            // console.log(allEntities);
                             // console.log(entity2);
                             
                             

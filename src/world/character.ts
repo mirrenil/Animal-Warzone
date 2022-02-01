@@ -2,6 +2,7 @@ class Character extends Entity {
   private speed: number;
   public currentDirection: string;
   private controls: Controls;
+  private name: CharacterNameLabel;
 
   public isLosing: boolean;
   public totalLives: number;
@@ -13,8 +14,9 @@ class Character extends Entity {
   public gunFire1: boolean;
   public gunFire2: boolean;
 
-  constructor( playerNum: number, appearance: p5.Image, x: number, y: number, size: p5.Vector, controls: Controls) {
-    super(appearance, x, y, size, createVector(0,0), )
+  constructor(playerNum: number, name: CharacterNameLabel, appearance: p5.Image, x: number, y: number, size: p5.Vector, controls: Controls) {
+    super(appearance, x, y, size, createVector(0,0))
+    this.name = name;
     this.speed = 1;
     this.controls = controls;
     this.isLosing = false;
@@ -26,10 +28,12 @@ class Character extends Entity {
 
     this.gunFire1 = false;
     this.gunFire2 = false;
-
-    
-  
   }
+
+  public getName() {
+    return this.name;
+  }
+
   public gunFireThrottle () {
     if ((this.playerNum === 1 && !this.gunFire1) || (this.playerNum === 2 && !this.gunFire2))  {
       if (this.playerNum === 1) {
