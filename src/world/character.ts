@@ -44,7 +44,7 @@ class Character extends Entity {
    
     const appearance = entites.banana; 
 
-    const size = createVector(35, 35);
+    const size = createVector(30, 30);
     const velocity = createVector(0, 0);
     if (this.currentDirection == 'up') {
       if (!this.isSpeeding) {
@@ -140,19 +140,15 @@ public speedUp() {
     this.velocity.x = 0;
     this.velocity.y = 0;
     if (keyIsDown(this.controls.up)) {
-      // this.y = this.y - this.speed;
       this.currentDirection = 'up';
       this.velocity.y = -this.speed;
     } else if (keyIsDown(this.controls.down)) {
-      // this.y = this.y + this.speed;
       this.currentDirection = 'down';
       this.velocity.y = this.speed;
     } else if (keyIsDown(this.controls.left)) {
-      // this.x = this.x - this.speed;
       this.currentDirection = 'left';
       this.velocity.x = -this.speed;
     } else if (keyIsDown(this.controls.right)) {
-      // this.x = this.x + this.speed;
       this.currentDirection = 'right';
       this.velocity.x = this.speed;
     }
@@ -163,7 +159,6 @@ public speedUp() {
     super.update();
     this.shield();
     this.speedUp();
-    //this.playerShoot();
 
     if (this.x < 0) {
       this.x = 0;
@@ -181,25 +176,13 @@ public speedUp() {
       this.y = height - this.size.y;
     }
     if (keyIsDown(this.controls.shoot)) {
-      return this.gunFireThrottle();      
+      if (this.currentDirection) {
+        return this.gunFireThrottle(); 
+      }
+           
       }
     
-    
   }
-
-  // public playerShoot() {
-  
-  //   /* setTimeout(function(){
-  //       alert("Hello World");
-  //   },2000);*/
-    
-  //   //  setInterval(()  => {
-  //   //  console.log('setTimeout');
-  //   //  }, 1);
-  // }
-  
- 
-
 
   public draw() {
     super.draw();

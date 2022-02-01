@@ -2,9 +2,7 @@ class Barricade extends Entity  {
   //  private size: p5.Vector;
   public damageTaken: number;
 
-  //   constructor(size: p5.Vector) {
-  //     this.size = size; 
-  //   }
+
 
   
   public constructor(appearance: p5.Image, x: number, y: number, size: p5.Vector) {

@@ -2,8 +2,8 @@ class GameOverMenu {
     private gameState: GameState;
     private gameOverMainDiv:  HTMLDivElement;
     private gameOverDiv: HTMLDivElement;
-    public gameOverWinner: HTMLDivElement;
-    public gameOverLoser: HTMLDivElement;
+    private gameOverWinner: HTMLDivElement;
+    private gameOverLoser: HTMLDivElement;
     private winnersDiv: HTMLDivElement;
     private losersDiv: HTMLDivElement;
     private winner: HTMLSpanElement;
@@ -57,7 +57,7 @@ class GameOverMenu {
         
         this.imageLoser = document.createElement('img');
         this.imageLoser.className = 'loser';
-
+       
         /** BUTTONS */
 
         this.buttonsDiv = document.createElement('div');
@@ -93,6 +93,7 @@ class GameOverMenu {
         if (player1.isLosing) { 
             this.setLoser(player1);
             this.setWinner(player2);
+
         } else if (player2.isLosing) {
             this.setLoser(player2);
             this.setWinner(player1);
