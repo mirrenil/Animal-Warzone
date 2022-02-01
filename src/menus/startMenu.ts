@@ -42,11 +42,9 @@ class StartMenu {
         document.body.append(this.startMenuDivEl);
     }
     
-    
     public startNewGame() {
         this.gameState.setGameState("Character");
         this.startMenuDivEl.remove();
-        
         
     }
     

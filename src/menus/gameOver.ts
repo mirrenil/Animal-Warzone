@@ -17,6 +17,7 @@ class GameOverMenu {
 
      constructor(gameState: GameState) { 
         this.gameState = gameState;
+
         /** CREATING DIVS AND SPAN */
         this.gameOverMainDiv = document.createElement('div');
         this.gameOverMainDiv.className = 'gameOverMainDiv';
@@ -106,13 +107,11 @@ class GameOverMenu {
     public setWinner(winner: Character) {
         const name = winner.getName();
         this.imageWinner.src = this.getCharacterImageUrl(name);
-        console.log(this.imageWinner.src);
     }
 
     public setLoser(loser: Character) {
         const name = loser.getName();
         this.imageLoser.src = this.getCharacterImageUrl(name);
-        console.log(this.imageLoser.src);
     }
     
     private getCharacterImageUrl(name: CharacterNameLabel) {
@@ -143,13 +142,5 @@ class GameOverMenu {
         this.gameOverMainDiv.remove();
         music.gameOverSound.stop();
         music.startMenuSound.play();
-    }
-    
-    public draw() {
-    
-    }
-
-    public update(){
- 
     }
 }

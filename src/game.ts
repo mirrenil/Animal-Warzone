@@ -34,21 +34,14 @@ class Game implements GameState {
         this.startMenu = new StartMenu(this);
         this.gameBoard = new GameBoard(this, "", "");
         this.instructionsMenu = new InstructionsMenu(this);
-        this.gameOverMenu = new GameOverMenu(this)
-        console.log(this.activeGameState);
+        this.gameOverMenu = new GameOverMenu(this);
         
     }
 
     
     public setGameState = (state: GameStateLabel) => {
         this.activeGameState = state;
-
-        // this.setGameState('Start');
-
-        // this.activeGameState === 'Start';
-
         if (state === 'Start') {
-            console.log(this.activeGameState);
             this.startMenu.openStartMenu();
         } else if (state === 'Paused') {
 
@@ -93,10 +86,5 @@ class Game implements GameState {
             this.gameBoard.draw();
         }
     }
-
-    public openGame() {
-
-    }
-    
         
 }

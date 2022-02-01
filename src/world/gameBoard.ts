@@ -95,7 +95,6 @@ class GameBoard {
                                     sound.drainLifeSound.play();
                                     if (!entity1.isShielding) {
                                         entity1.totalLives =  entity1.totalLives -1;
-                                        console.log(entity1.totalLives);
                                         sound.drainLifeSound.play();
                                     }
 
@@ -135,27 +134,16 @@ class GameBoard {
                             } else if (entity1.currentDirection === 'down') {
                                 entity1.y = entity2.y - entity1.size.y;
                             }
-                            // console.log('barricade', entity1, entity2);
                         }
                     }
 
                     if (entity1 instanceof Barricade) {
-                        // console.log(entity1);
-                        // console.log(entity2);
-
-                        //     if (entity1.x > width || entity1.x < 0 || entity1.y > height || entity1.y < 0) {
-                        //     this.entities.splice(this.entities.indexOf(entity1), 1);
-                        //     console.log('ssss');
-                            
-                        // }
+                        
                         if (entity2 instanceof GunFire) {
                             const index1 = this.entities.indexOf(entity1);
                             const index2 = this.entities.indexOf(entity2);
                             this.entities.splice(index2, 1);                            
                             entity1.damageTaken = entity1.damageTaken + 1;
-                            console.log(this.entities);
-                            console.log(index1, entity1);
-                            console.log(index2, entity2);
                             sound.breakBarricadeSound.play();
                             
                             if (entity1.damageTaken === 2) {
@@ -181,13 +169,11 @@ class GameBoard {
             this.entities.push(gunFireP2);
         }
         
-        
         for (const entity of this.entities) {
             if (entity instanceof Character) continue;
             entity.update();
         }
         this.checkCollision();
-
     }
 
 
@@ -197,6 +183,5 @@ class GameBoard {
         }
 
     }
-
     
 }
