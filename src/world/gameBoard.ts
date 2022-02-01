@@ -23,10 +23,12 @@ class GameBoard {
 
         this.playerTwo = new Character(
             2,
+            activeCharacterName2,
             this.getCharacterImage(activeCharacterName2),
             width * .3 + 600,
             height * .5 - 30,
-            createVector(80, 80),{
+            createVector(80, 80),
+            {
 
                 left: LEFT_ARROW,
                 right: RIGHT_ARROW,
@@ -40,6 +42,7 @@ class GameBoard {
        
         this.playerOne = new Character(
             1,
+            activeCharacterName,
             this.getCharacterImage(activeCharacterName),
             width * .3,
             height * .5 - 30,
@@ -53,7 +56,11 @@ class GameBoard {
                 pause: 27,
             }
         );
-        }
+
+        this.entities.push(this.playerOne, this.playerTwo);
+
+    }
+
     private getCharacterImage(name: CharacterNameLabel) {
         switch (name) {
             case "turtle": return images.turtleFront;
@@ -65,11 +72,11 @@ class GameBoard {
     }
 
     private checkCollision() {
-        
-        const allEntities = [...this.entities, this.playerOne, this.playerTwo];
-        
-        for (const entity1 of allEntities) {
-            for (const entity2 of allEntities) {
+
+
+        for (const entity1 of this.entities) {
+            for (const entity2 of this.entities) {
+
                 if (entity1 === entity2) continue;
 
                 if (entity1.x < entity2.x + entity2.size.x &&
@@ -81,17 +88,23 @@ class GameBoard {
                         if (entity2 instanceof Character) {
                             entity1.x -= entity1.velocity.x;
                             entity1.y -= entity1.velocity.y;
+                            sound.collisionSound.play();
                         }
                    
                         if (entity2 instanceof GunFire) { 
                             if (entity2.playerNum !== entity1.playerNum ) {
                                     this.entities.splice(this.entities.indexOf(entity2), 1);
-                                    
+
+                                    sound.drainLifeSound.play();
+
                                     if (!entity1.isShielding) {
                                         entity1.totalLives =  entity1.totalLives -1;
+                                        console.log(entity1.totalLives);
+                                        sound.drainLifeSound.play();
                                     }
+
                                     if (entity1.totalLives === 0) {
-                                        entity1.isLosing === true;
+                                        entity1.isLosing = true;
                                         this.gameState.setGameState('GameOver');
                                     }
                                 }   
@@ -100,17 +113,20 @@ class GameBoard {
                             if (!entity1.isShielding) {
                                 this.entities.splice(this.entities.indexOf(entity2), 1);
                                 entity1.isShielding =  true;
-                            }  
+                                sound.powerupSound.play();
+                            } 
                         }
                         if (entity2 instanceof Speed){
                             if (!entity1.isSpeeding) {
                                 this.entities.splice(this.entities.indexOf(entity2), 1);
                                 entity1.isSpeeding =  true; 
+                                sound.powerupSound.play();
                             } 
                         }
                         if (entity2 instanceof ExtraLife) {
                             this.entities.splice(this.entities.indexOf(entity2), 1);
                             entity1.totalLives =  entity1.totalLives + 1;
+                            sound.powerupSound.play();
                         }
 
                         if (entity2 instanceof Barricade) {
@@ -126,15 +142,31 @@ class GameBoard {
                         }
                     }
 
-                    if (entity1 instanceof GunFire) {
-                            if (entity1.x > width || entity1.x < 0 || entity1.y > height || entity1.y < 0) {
-                            this.entities.splice(this.entities.indexOf(entity1), 1);
+
+                    if (entity1 instanceof Barricade) {
+                        // console.log(entity1);
+                        // console.log(entity2);
+
+                        //     if (entity1.x > width || entity1.x < 0 || entity1.y > height || entity1.y < 0) {
+                        //     this.entities.splice(this.entities.indexOf(entity1), 1);
+                        //     console.log('ssss');
                             
-                        }
-                        
-                        if (entity2 instanceof Barricade) {
-                            this.entities.splice(this.entities.indexOf(entity2), 1);
-                            this.entities.splice(this.entities.indexOf(entity1), 1); 
+                        // }
+                        if (entity2 instanceof GunFire) {
+                            const index1 = this.entities.indexOf(entity1);
+                            const index2 = this.entities.indexOf(entity2);
+                            this.entities.splice(index2, 1);                            
+                            entity1.damageTaken = entity1.damageTaken + 1;
+                            console.log(this.entities);
+                            console.log(index1, entity1);
+                            console.log(index2, entity2);
+                            sound.breakBarricadeSound.play();
+                            
+                            if (entity1.damageTaken === 2) {
+                                this.entities.splice(index1, 1);
+                                sound.breakBarricadeSound.play();
+                            }
+
                         }
                     }
                 }
@@ -155,6 +187,7 @@ class GameBoard {
         
         
         for (const entity of this.entities) {
+            if (entity instanceof Character) continue;
             entity.update();
         }
         this.checkCollision();
@@ -163,8 +196,6 @@ class GameBoard {
 
 
     public draw() {
-        this.playerOne.draw();
-        this.playerTwo.draw();
         for (const entity of this.entities) {
             entity.draw();
         }

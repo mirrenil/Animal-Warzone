@@ -48,8 +48,6 @@ class GameOverMenu {
 
         this.imageWinner = document.createElement('img');
         this.imageWinner.className = 'winner';
-        this.imageWinner.src = '';
-   
 
         /** CHARACTER LOSER */
 
@@ -59,12 +57,11 @@ class GameOverMenu {
         
         this.imageLoser = document.createElement('img');
         this.imageLoser.className = 'loser';
-        this.imageLoser.src = '';
-        
+       
         /** BUTTONS */
 
         this.buttonsDiv = document.createElement('div');
-        this.buttonsDiv.className = "btn-div";
+        this.buttonsDiv.className = 'btn-div';
         
 
         this.playAgainBtn = document.createElement('button');
@@ -91,68 +88,63 @@ class GameOverMenu {
     }
 
     public openGameOverMenu(player1: Character, player2: Character) {
-        
-        if (player1.isLosing) {
-            
-            
-            this.imageLoser.style.height = '200px';
-            this.setLoser();
-            this.imageWinner.style.height = '500px'
-            this.setWinner();
-            
-               
+
+        if (player1.isLosing) { 
+            this.setLoser(player1);
+            this.setWinner(player2);
+
+
         } else if (player2.isLosing) {
-            this.imageLoser.style.height = '200px';
-            this.setLoser();
-            this.imageWinner.style.height = '500px';
-            this.setWinner();
-        
+            this.setLoser(player2);
+            this.setWinner(player1);
         }
-
-       document.body.append(this.gameOverMainDiv);
+        document.body.append(this.gameOverMainDiv);
+        music.inGameSound.stop();
+        music.gameOverSound.play();
     }
 
-    public setWinner(name: CharacterNameLabel) {
-        this.imageWinner.src = '';
-        if (name === "monkey") {
-            images.monkeyBig
-            
-        } else if (name === "pig") {
-            images.pigBig
-            
-        } else if (name === "turtle") {
-            images.turtleBig
-            
-        } else if (name === "rabbit") {
-            images.rabbitBig
-        }
+    public setWinner(winner: Character) {
+        const name = winner.getName();
+        this.imageWinner.src = this.getCharacterImageUrl(name);
+        console.log(this.imageWinner.src);
     }
 
-    public setLoser(name: CharacterNameLabel) {
-        this.imageLoser.src = '';
-        if (name === "monkey") {
-            images.monkeyBig;
-            
-        } else if (name === "pig") {
-            images.pigBig;
-            
-        } else if (name === "turtle") {
-            images.turtleBig;
-            
-        } else if (name === "rabbit") {
-            images.rabbitBig;
+
+    public setLoser(loser: Character) {
+        const name = loser.getName();
+        this.imageLoser.src = this.getCharacterImageUrl(name);
+        console.log(this.imageLoser.src);
+    }
+    
+    private getCharacterImageUrl(name: CharacterNameLabel) {
+        if (name === 'monkey') {
+            return './assets/images/bigMonkey.png';
+        } else if (name === 'pig') {
+            return './assets/images/bigPig.png';
+        } else if (name === 'turtle') {
+            return './assets/images/bigTurtle.png';
+        } else if (name === 'rabbit') {
+            return './assets/images/bigRabbit.png';
+        } else {
+            return '';
+
         }
     }
 
     public startNewGame() {
         this.gameState.setGameState('Character');
+        this.gameOverDiv.remove();
+        music.gameOverSound.stop();
         this.gameOverMainDiv.remove();
+        music.startMenuSound.play();
     }
 
 
     public goToMainMenu() {
         this.gameState.setGameState('Start');
         this.gameOverMainDiv.remove();
+        music.gameOverSound.stop();
+        music.startMenuSound.play();
     }
     
 
