@@ -70,14 +70,9 @@ class WorldMap {
       entities.push(new Barricade(entites.barricade, width * .3 - imageX / 2, y * imageY + height * .2, this.size));
       entities.push(new Barricade(entites.barricade, width * .3 - imageX / 2 + imageX, y * imageY + height * .2, this.size));
     }
-
-    
-   
       return entities;
+    }
       
-      }
- 
-  draw(){
-    
   }
+ 
 }
