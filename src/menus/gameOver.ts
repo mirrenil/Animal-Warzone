@@ -134,12 +134,15 @@ class GameOverMenu {
         this.gameOverDiv.remove();
         music.gameOverSound.stop();
         this.gameOverMainDiv.remove();
+        music.startMenuSound.play();
     }
 
 
     public goToMainMenu() {
         this.gameState.setGameState('Start');
         this.gameOverMainDiv.remove();
+        music.gameOverSound.stop();
+        music.startMenuSound.play();
     }
     
     public draw() {
