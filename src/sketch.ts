@@ -7,9 +7,6 @@ let sound: Sound;
 let music: Music;
 
 
-
-// let sound: p5.SoundFile
-
 /**
  * Built in preload function in P5
  * This is a good place to load assets such as
@@ -17,17 +14,17 @@ let music: Music;
  */
 function preload() {
   sound = {
-    gunFireSound: loadSound('./assets/images/sound/gunFireSound.wav'),
-    powerupSound: loadSound('./assets/images/sound/powerup.wav'),
-    drainLifeSound: loadSound('./assets/images/sound/takingDamage.wav'),
-    collisionSound: loadSound('./assets/images/sound/collision.wav'),
-    breakBarricadeSound: loadSound('./assets/images/sound/breakBarricade.wav')
+    gunFireSound: loadSound('/assets/music/gunFireSound.wav'),
+    powerupSound: loadSound('/assets/music//powerup.wav'),
+    drainLifeSound: loadSound('/assets/music//takingDamage.wav'),
+    collisionSound: loadSound('/assets/music/collision.wav'),
+    breakBarricadeSound: loadSound('/assets/music/breakBarricade.wav'),
   };
   
   music = {
-    startMenuSound: loadSound('./assets/images/sound/startMenu.wav'),
-    gameOverSound: loadSound('./assets/images/sound/gameOverMusic.wav'), 
-    inGameSound: loadSound('./assets/images/sound/inGameMusic.wav'),
+    startMenuSound: loadSound('/assets/music/startMenu.wav'),
+    gameOverSound: loadSound('/assets/music/gameOverMusic.wav'), 
+    inGameSound: loadSound('/assets/music/inGameMusic.wav'),
   };
   
   images = {
@@ -48,7 +45,6 @@ function preload() {
     speed: loadImage("./assets/images/speed.png"),
     banana: loadImage('./assets/images/banana.png'),
     barricade: loadImage("./assets/images/Group 67.png")
-
   };
   
 }
