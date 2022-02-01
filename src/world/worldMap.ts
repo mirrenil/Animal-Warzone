@@ -14,7 +14,16 @@ class WorldMap {
     const entities: Entity[] = [];
     const imageX = 40
     const imageY = 40
+    entities.push(new ExtraLife(entites.redHeart, width * .6 - imageX , height * .16 + imageX, this.size ));
+    entities.push(new ExtraLife(entites.redHeart, width * .4 - imageX , height * .7 + imageY, this.size ));
     
+    entities.push(new Shield(entites.shield, width * .6 - imageX, height * .16 - imageY, this.size ));
+    entities.push(new Shield(entites.shield, width * .4 + imageX, height * .7 + imageX * 2, this.size ));
+
+
+    entities.push(new Speed(entites.speed, width * .4 - imageX , height * .7 + imageX * 3, this.size ));
+    entities.push(new Speed(entites.speed, width * .4 - imageX , height * .4 + imageX * 3, this.size ));
+
     //horizontal
     for (let x = 0; x < 4; x++) {
       // up right
@@ -63,16 +72,7 @@ class WorldMap {
     }
 
     
-    entities.push(new ExtraLife(entites.redHeart, width * .6 - imageX , height * .16 + imageX, this.size ));
-    entities.push(new ExtraLife(entites.redHeart, width * .4 - imageX , height * .7 - imageY, this.size ));
-    
-    entities.push(new Shield(entites.shield, width * .6 - imageX , height * .16 + imageX * 2, this.size ));
-    entities.push(new Shield(entites.shield, width * .4 - imageX , height * .7 + imageX, this.size ));
-
-
-    entities.push(new Speed(entites.speed, width * .4 - imageX , height * .7 + imageX * 3, this.size ));
-    entities.push(new Speed(entites.speed, width * .4 - imageX , height * .4 + imageX * 3, this.size ));
-
+   
       return entities;
       
       }

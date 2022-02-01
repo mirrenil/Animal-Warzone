@@ -37,5 +37,4 @@ interface Controls {
     down: number;
     shoot: number;
     pause: number;
-    create: number;
 }

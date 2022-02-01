@@ -8,12 +8,13 @@
 }
 :root {
   --background: #21212f;
-  --blueBtn: #0085FF;
+  --blueBtn: #0085ff;
   --HoverBtn: #0458a7;
-  --FontColor: #FAFAFA;
-  --fontFBtn: 'Raleway', sans-serif;
-  --fontFBigText: 'Mochiy Pop P One', sans-serif;
-
+  --FontColor: #fafafa;
+  --fontFBtn: "Raleway",
+    sans-serif;
+  --fontFBigText: "Mochiy Pop P One",
+    sans-serif;
 }
 
 .blocked {
@@ -38,7 +39,7 @@
 }
 
 .column {
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .align {
@@ -76,31 +77,55 @@
 body {
   background-color: #000000;
   color: #fafafa;
-  
 }
 
 .gameOverMainDiv {
-  height: 100vh;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.btn-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  left: 50;
+  right: 50;
 }
 
 .btn {
-  color: var(--FontColor);
-  background-color: var(--blueBtn);
+  color: var(
+    --FontColor
+  );
+  background-color: var(
+    --blueBtn
+  );
+  border: none;
   height: 3rem;
   width: 10rem;
   border-radius: 25px;
-  font-family: 'Raleway', sans-serif;
-
+  font-family: "Raleway",
+    sans-serif;
 }
 
 /* Hover functions*/
 .btn:hover {
-  background-color: var(--Hover);
-  box-shadow: 10px 10px 10px 10px rgba(71, 69, 69, 0.2);
-
+  background-color: var(
+    --Hover
+  );
+  box-shadow: 10px
+    10px 10px 10px
+    rgba(
+      71,
+      69,
+      69,
+      0.2
+    );
 }
 
-.gameOverWinner{
+.gameOverWinner {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -127,17 +152,16 @@ span {
   font-weight: bold;
   letter-spacing: 6px;
   text-align: center;
-  font-family: 'Mochiy Pop P One', sans-serif;
+  font-family: "Mochiy Pop P One",
+    sans-serif;
 }
 
 .winner {
   width: 100%;
   height: 100%;
-
 }
 
 .loser {
   width: 100%;
   height: 100%;
-  
 }

@@ -1,15 +1,9 @@
-//let banana: p5.Image;
-// let characterMoL: p5.Image;
-// let characterMoR: p5.Image;
-// let currentDirection: string;
-// let bullet: p5.Image;
-// let bullets: any[] = [];
-
 class Character extends Entity {
   private speed: number;
   public currentDirection: string;
   private controls: Controls;
 
+  public isLosing: boolean;
   public totalLives: number;
   public playerNum: number;
 
@@ -23,6 +17,7 @@ class Character extends Entity {
     super(appearance, x, y, size, createVector(0,0), )
     this.speed = 1;
     this.controls = controls;
+    this.isLosing = false;
     this.totalLives = 4;
     this.playerNum = playerNum;
     this.currentDirection = '';
@@ -31,11 +26,11 @@ class Character extends Entity {
 
     this.gunFire1 = false;
     this.gunFire2 = false;
+
+    
   
   }
   public gunFireThrottle () {
-    console.log( this.gunFire1);
-    
     if ((this.playerNum === 1 && !this.gunFire1) || (this.playerNum === 2 && !this.gunFire2))  {
       if (this.playerNum === 1) {
         this.gunFire1 = true;
@@ -53,7 +48,6 @@ class Character extends Entity {
       }else {
         velocity.y = -30;
       }
-      console.log(velocity.y);
     } else if (this.currentDirection == 'down') {
       if (!this.isSpeeding) {
         velocity.y = 20;
@@ -86,22 +80,19 @@ class Character extends Entity {
   public playersLives() {
     const imageX = 30
     const imageY = 30
-    text(`player ${this.playerNum}`,this.playerNum === 1 ? 20 : width -150, 50);
+    text(`Player ${this.playerNum}`,this.playerNum === 1 ? 80 : width -150, 50);
     textSize(20)
     fill('white');
     
     for (let x = 0; x < this.totalLives; x++){
-      image(entites.greenHeart, this.playerNum === 1 ? 20 + x * imageX : width - 20 - (x + 1) * imageX, 60, imageX, imageY);
+      image(entites.greenHeart, this.playerNum === 1 ? 60 + x * imageX : width - 60 - (x + 1) * imageX, 60, imageX, imageY);
     }
-  // if (totalLives === 0) this.setActiveGameState ==== 'GameOver'
-        
-
 }
 public playerShieldDraw() {
   if (this.isShielding === true) {
     const imageX = 30
     const imageY = 30
-    image(entites.shield, this.playerNum === 1 ? 20: width - 20, 80, imageX, imageY);
+    image(entites.shield, this.playerNum === 1 ? 155: width - 75, 30, imageX, imageY);
   }
 
 }
@@ -109,7 +100,7 @@ public playerSpeedDraw() {
   if (this.isSpeeding === true) {
     const imageX = 30
     const imageY = 30
-    image(entites.speed, this.playerNum === 1 ? 40: width - 20, 80, imageX, imageY);
+    image(entites.speed, this.playerNum === 1 ? 180: width - 50, 30, imageX, imageY);
   }
 
 }
@@ -123,7 +114,7 @@ public shield() {
       this.isShielding = false; 
      }, 15000);
     
-     
+  
   }
 }
 public speedUp() {

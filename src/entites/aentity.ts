@@ -24,9 +24,9 @@ class Entity {
         imageMode(CORNER);
         image(this.appearance, this.x, this.y, this.size.x, this.size.y);
         
-        noFill();
-        stroke('red');
-        rect(this.x, this.y, this.size.x, this.size.y);
+        // noFill();
+        // stroke('red');
+        // rect(this.x, this.y, this.size.x, this.size.y);
         
         pop();
     }

@@ -6,15 +6,13 @@ interface GameState {
     setGameState: (state: GameStateLabel) => void;
 }
 
-
-
 class Game implements GameState {
     public activeGameState: GameStateLabel;
     private startMenu: StartMenu;
     private characterMenu: CharacterMenu;
 
     private pausedMenu: PausedMenu;
-    // private gameOverMenu: GameOverMenu;
+    private gameOverMenu: GameOverMenu;
     private gameBoard: GameBoard;
     public instructionsMenu: InstructionsMenu;
 
@@ -35,7 +33,7 @@ class Game implements GameState {
         this.startMenu = new StartMenu(this);
         this.gameBoard = new GameBoard(this, "", "");
         this.instructionsMenu = new InstructionsMenu(this);
-        // this.gameOverMenu = new GameOverMenu(this);
+        this.gameOverMenu = new GameOverMenu(this)
         console.log(this.activeGameState);
         
     }
@@ -43,6 +41,10 @@ class Game implements GameState {
     
     public setGameState = (state: GameStateLabel) => {
         this.activeGameState = state;
+
+        // this.setGameState('Start');
+
+        // this.activeGameState === 'Start';
 
         if (state === 'Start') {
             console.log(this.activeGameState);
@@ -61,8 +63,7 @@ class Game implements GameState {
                         case "Escape":
                             game.PauseMenu();
                             break;
-
-                            
+   
                         
                     }});
             const character1 = this.characterMenu.getActiveCharacterName();
@@ -72,16 +73,17 @@ class Game implements GameState {
         } else if (state === 'Instructions'){
             this.instructionsMenu.openInstructionsMenu();        
         } else if (state === 'GameOver') {
-            // this.gameOverMenu.openGameOverMenu();
+            this.gameOverMenu.openGameOverMenu(this.gameBoard.playerOne, this.gameBoard.playerTwo);
         }
     };
-
+    
     public update() {
         if (this.activeGameState === 'Running') {
             if(!isPaused) {
                 this.gameBoard.update();
             }
-        }
+        } 
+       
     }
 
     public draw() {
@@ -94,4 +96,6 @@ class Game implements GameState {
     public openGame() {
 
     }
+    
+        
 }
