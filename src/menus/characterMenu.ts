@@ -253,6 +253,9 @@ class CharacterMenu {
     public startGame() {
         this.mainDiv.remove();
         this.gameState.setGameState("Running");
+        music.startMenuSound.stop();
+        music.inGameSound.setVolume(.5);
+        music.inGameSound.play();
     }
 
     public goBack() {

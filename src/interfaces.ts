@@ -25,3 +25,19 @@ interface Controls {
     shoot: number;
     pause: number;
 }
+
+interface Sound {
+    gunFireSound: p5.SoundFile;
+    powerupSound: p5.SoundFile;
+    drainLifeSound: p5.SoundFile;
+    collisionSound: p5.SoundFile;
+    breakBarricadeSound: p5.SoundFile;
+}
+  
+  interface Music {
+    startMenuSound: p5.SoundFile;
+    gameOverSound: p5.SoundFile;
+    inGameSound: p5.SoundFile;
+  }
+     
+    

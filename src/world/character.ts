@@ -38,8 +38,10 @@ class Character extends Entity {
     if ((this.playerNum === 1 && !this.gunFire1) || (this.playerNum === 2 && !this.gunFire2))  {
       if (this.playerNum === 1) {
         this.gunFire1 = true;
+        sound.gunFireSound.play();
       } else {
         this.gunFire2 = true;
+        sound.gunFireSound.play();
       }
    
     const appearance = entites.banana; 

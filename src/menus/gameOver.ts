@@ -99,6 +99,8 @@ class GameOverMenu {
             this.setWinner(player1);
         }
         document.body.append(this.gameOverMainDiv);
+        music.inGameSound.stop();
+        music.gameOverSound.play();
     }
 
     public setWinner(winner: Character) {
@@ -106,13 +108,13 @@ class GameOverMenu {
         this.imageWinner.src = this.getCharacterImageUrl(name);
         console.log(this.imageWinner.src);
     }
-    
+
     public setLoser(loser: Character) {
         const name = loser.getName();
         this.imageLoser.src = this.getCharacterImageUrl(name);
         console.log(this.imageLoser.src);
     }
-
+    
     private getCharacterImageUrl(name: CharacterNameLabel) {
         if (name === 'monkey') {
             return './assets/images/bigMonkey.png';
@@ -129,6 +131,8 @@ class GameOverMenu {
 
     public startNewGame() {
         this.gameState.setGameState('Character');
+        this.gameOverDiv.remove();
+        music.gameOverSound.stop();
         this.gameOverMainDiv.remove();
     }
 
