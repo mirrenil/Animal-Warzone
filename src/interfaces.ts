@@ -23,7 +23,6 @@ interface Controls {
     up: number;
     down: number;
     shoot: number;
-    pause: number;
 }
 
 interface Sound {

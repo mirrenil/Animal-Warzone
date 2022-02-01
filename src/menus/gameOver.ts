@@ -137,10 +137,7 @@ class GameOverMenu {
 
 
     public goToMainMenu() {
-        this.gameState.setGameState('Start');
-        this.gameOverMainDiv.remove();
-        music.gameOverSound.stop();
-        music.startMenuSound.play();
+        window.location.reload();
     }
 
 }
