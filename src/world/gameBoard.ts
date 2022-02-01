@@ -70,6 +70,8 @@ class GameBoard {
     private checkCollision() {
         
         const allEntities = [...this.entities, this.playerOne, this.playerTwo];
+        console.log(allEntities);
+        
         for (const entity1 of allEntities) {
             for (const entity2 of allEntities) {
                 if (entity1 === entity2) continue;
@@ -88,6 +90,8 @@ class GameBoard {
                         if (entity2 instanceof GunFire) { 
                             if (entity2.playerNum !== entity1.playerNum ) {
                                     this.entities.splice(this.entities.indexOf(entity2), 1);
+                                    console.log('DDD');
+                                    
                                     if (!entity1.isShielding) {
                                         entity1.totalLives =  entity1.totalLives -1;
                                     }
@@ -129,17 +133,25 @@ class GameBoard {
                     }
 
                     if (entity1 instanceof GunFire) {
+                        // console.log(entity1);
+                        // console.log(entity2);
                             if (entity1.x > width || entity1.x < 0 || entity1.y > height || entity1.y < 0) {
                             this.entities.splice(this.entities.indexOf(entity1), 1);
+                            console.log('ssss');
+                            
                         }
                         
                         if (entity2 instanceof Barricade) {
+                            this.entities.splice(this.entities.indexOf(entity2), 1);
                             this.entities.splice(this.entities.indexOf(entity1), 1); 
-                            entity2.damageTaken = entity2.damageTaken + 1;
+                            // entity2.damageTaken = entity2.damageTaken + 1;
+                            console.log(allEntities);
+                            // console.log(entity2);
                             
-                            if (entity2.damageTaken === 2) {
-                                this.entities.splice(this.entities.indexOf(entity2), 1);
-                            }
+                            
+                            // if (entity2.damageTaken === 2) {
+                            //     this.entities.splice(this.entities.indexOf(entity2), 1);
+                            // }
                         }
                     }
                 }
