@@ -12,7 +12,7 @@
 
 **Miranda Nilhag [github](https://github.com/mirrenil)**
 
-**Jonatan Nyberg[github](https://github.com/nybbe123)**
+**Jonatan Nyberg [github](https://github.com/nybbe123)**
 
 
 [demo]()
