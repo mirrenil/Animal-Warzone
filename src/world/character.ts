@@ -40,7 +40,7 @@ class Character extends Entity {
    
     const appearance = entites.banana; 
 
-    const size = createVector(35, 35);
+    const size = createVector(30, 30);
     const velocity = createVector(0, 0);
     if (this.currentDirection == 'up') {
       if (!this.isSpeeding) {
@@ -172,7 +172,10 @@ public speedUp() {
       this.y = height - this.size.y;
     }
     if (keyIsDown(this.controls.shoot)) {
-      return this.gunFireThrottle();      
+      if (this.currentDirection) {
+        return this.gunFireThrottle(); 
+      }
+           
       }
     
   }
