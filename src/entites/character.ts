@@ -3,14 +3,11 @@ class Character extends Entity {
   public currentDirection: string;
   private controls: Controls;
   private name: CharacterNameLabel;
-
   public isLosing: boolean;
   public totalLives: number;
   public playerNum: number;
-
   public isShielding: boolean;
   public isSpeeding: boolean;
-
   public gunFire1: boolean;
   public gunFire2: boolean;
 
@@ -25,7 +22,6 @@ class Character extends Entity {
     this.currentDirection = '';
     this.isShielding = false;
     this.isSpeeding = false;
-
     this.gunFire1 = false;
     this.gunFire2 = false;
   }
@@ -34,6 +30,7 @@ class Character extends Entity {
     return this.name;
   }
 
+  // set timer for the shooting "Throttle"
   public gunFireThrottle () {
     if ((this.playerNum === 1 && !this.gunFire1) || (this.playerNum === 2 && !this.gunFire2))  {
       if (this.playerNum === 1) {
@@ -43,9 +40,8 @@ class Character extends Entity {
         this.gunFire2 = true;
         sound.gunFireSound.play();
       }
-   
-    const appearance = entites.banana; 
 
+    const appearance = entites.banana; 
     const size = createVector(30, 30);
     const velocity = createVector(0, 0);
     if (this.currentDirection == 'up') {
@@ -95,13 +91,13 @@ class Character extends Entity {
       image(entites.greenHeart, this.playerNum === 1 ? 60 + x * imageX : width - 60 - (x + 1) * imageX, 60, imageX, imageY);
     }
 }
+
 public playerShieldDraw() {
   if (this.isShielding === true) {
     const imageX = 30
     const imageY = 30
     image(entites.shield, this.playerNum === 1 ? 155: width - 75, 30, imageX, imageY);
   }
-
 }
 public playerSpeedDraw() {
   if (this.isSpeeding === true) {
@@ -109,7 +105,6 @@ public playerSpeedDraw() {
     const imageY = 30
     image(entites.speed, this.playerNum === 1 ? 180: width - 50, 30, imageX, imageY);
   }
-
 }
 
 public speedUp() {
@@ -118,9 +113,8 @@ public speedUp() {
   } else {
     this.speed = 15;
   }
-  
-  
 }
+
   private move() {
     this.velocity.x = 0;
     this.velocity.y = 0;
@@ -161,10 +155,8 @@ public speedUp() {
     if (keyIsDown(this.controls.shoot)) {
       if (this.currentDirection) {
         return this.gunFireThrottle(); 
+      }  
       }
-           
-      }
-    
   }
 
   public draw() {

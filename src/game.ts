@@ -10,7 +10,6 @@ class Game implements GameState {
     public activeGameState: GameStateLabel;
     private startMenu: StartMenu;
     private characterMenu: CharacterMenu;
-
     private pausedMenu: PausedMenu;
     private gameOverMenu: GameOverMenu;
     private gameBoard: GameBoard;
@@ -37,7 +36,6 @@ class Game implements GameState {
         this.gameBoard = new GameBoard(this, "", "");
         this.instructionsMenu = new InstructionsMenu(this);
         this.gameOverMenu = new GameOverMenu(this);
-        
     }
 
     
@@ -49,18 +47,13 @@ class Game implements GameState {
 
         } else if (state === 'Character') {
             this.characterMenu.openCharacterMenu();
-        } else if (state === 'Running') {
-            
-                                
+        } else if (state === 'Running') {         
                     window.addEventListener('keydown', function (event){
-
                     switch(event.key){
                         case "PressEscape":
                         case "Escape":
                             game.PauseMenu();
-                            break;
-   
-                        
+                            break;   
                     }});
             const character1 = this.characterMenu.getActiveCharacterName();
             const character2 = this.characterMenu.getActiveCharacterName2();
@@ -79,9 +72,8 @@ class Game implements GameState {
                 this.gameBoard.update();
             }
         } 
-       
     }
-
+    
     public draw() {
         background('#21212F');
         if (this.activeGameState === 'Running' || this.activeGameState === 'Paused' ) {

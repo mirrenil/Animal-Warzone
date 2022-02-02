@@ -7,10 +7,10 @@ class GameBoard {
     public playerTwo: Character;
 
     constructor(gameState: GameState, activeCharacterName: CharacterNameLabel,
-        activeCharacterName2: CharacterNameLabel) {
-
-            
+        activeCharacterName2: CharacterNameLabel) {     
         this.gameState = gameState;
+
+        // Barricade
         this.worldMap = new WorldMap(
             entites.barricade,
             50,
@@ -20,8 +20,7 @@ class GameBoard {
         );
         this.entities = this.worldMap.getEntities();
        
-
-    
+        // Character playerOne
         this.playerOne = new Character(
             1,
             activeCharacterName,
@@ -37,7 +36,8 @@ class GameBoard {
                 shoot: 32,
             }
         );
-            
+        
+        // Character playerTwo
         this.playerTwo = new Character(
             2,
             activeCharacterName2,
@@ -46,18 +46,14 @@ class GameBoard {
             height * .5 - 30,
             createVector(80, 80),
             {
-
                 left: LEFT_ARROW,
                 right: RIGHT_ARROW,
                 down: DOWN_ARROW,
                 up: UP_ARROW,
                 shoot: ENTER,
             }
-
         );
-
         this.entities.push(this.playerOne, this.playerTwo);
-
     }
 
     private getCharacterImage(name: CharacterNameLabel) {
@@ -71,7 +67,6 @@ class GameBoard {
     }
 
     private checkCollision() {
-
         for (const entity1 of this.entities) {
             for (const entity2 of this.entities) {
                 if (entity1 === entity2) continue;
@@ -80,14 +75,16 @@ class GameBoard {
                     entity1.x + entity1.size.x > entity2.x &&
                     entity1.y < entity2.y + entity2.size.y &&
                     entity1.size.y + entity1.y > entity2.y) {
-                    if (entity1 instanceof Character) {
 
+                    // Collision between the characters and the rest of the entities
+                    if (entity1 instanceof Character) {
+                        // Collision between the characters
                         if (entity2 instanceof Character) {
                             entity1.x -= entity1.velocity.x;
                             entity1.y -= entity1.velocity.y;
                             sound.collisionSound.play();
                         }
-                   
+                        // Collision between the characters and gunfire
                         if (entity2 instanceof GunFire) { 
                             if (entity2.playerNum !== entity1.playerNum ) {
                                     sound.shieldHit.play();
@@ -96,7 +93,6 @@ class GameBoard {
                                         entity1.totalLives =  entity1.totalLives -1;
                                         sound.drainLifeSound.play();
                                         sound.shieldHit.stop();
-
                                     }
                                     if (entity1.totalLives === 0) {
                                         entity1.isLosing = true;
@@ -104,6 +100,7 @@ class GameBoard {
                                     }
                                 }   
                         }
+                        // Collision between the characters and Shields
                         if (entity2 instanceof Shield) {
                             if (!entity1.isShielding) {
                                 this.entities.splice(this.entities.indexOf(entity2), 1);
@@ -114,6 +111,7 @@ class GameBoard {
                                    }, 15000);
                             } 
                         }
+                        // Collision between the characters and Speeds
                         if (entity2 instanceof Speed){
                             if (!entity1.isSpeeding) {
                                 entity1.isSpeeding =  true;
@@ -125,12 +123,13 @@ class GameBoard {
                                    }, 10000);
                             } 
                         }
+                        // Collision between the characters and ExtraLife
                         if (entity2 instanceof ExtraLife) {
                             this.entities.splice(this.entities.indexOf(entity2), 1);
                             entity1.totalLives =  entity1.totalLives + 1;
                             sound.extraBonus.play();
                         }
-
+                        // Collision between the characters and Barricade
                         if (entity2 instanceof Barricade) {
                             if (entity1.currentDirection === 'right') {
                                 entity1.x = entity2.x - entity1.size.x;
@@ -143,9 +142,9 @@ class GameBoard {
                             }
                         }
                     }
-
+                    // Collision between the Barricade and the rest of the entities
                     if (entity1 instanceof Barricade) {
-
+                         // Collision between the Barricade and GunFire
                         if (entity2 instanceof GunFire) {
                             const index1 = this.entities.indexOf(entity1);
                             const index2 = this.entities.indexOf(entity2);
@@ -153,6 +152,7 @@ class GameBoard {
                             entity1.damageTaken = entity1.damageTaken + 1;
                             sound.breakBarricadeSound.play();
                             
+                            // destroying the barricade after tow hits
                             if (entity1.damageTaken === 2) {
                                 this.entities.splice(index1, 1);
                                 sound.breakBarricadeSound.play();

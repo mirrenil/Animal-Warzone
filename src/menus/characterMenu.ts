@@ -14,8 +14,7 @@ class CharacterMenu {
     private pig2: HTMLImageElement;
     private turtle2: HTMLImageElement;
     private startGameButton: HTMLButtonElement;
-   
-
+    
     constructor(gameState: GameState) {
         this.activeCharacterName = "";
         this.activeCharacterName2 = "";
