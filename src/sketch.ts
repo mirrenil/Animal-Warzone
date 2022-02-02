@@ -21,6 +21,8 @@ function preload() {
     collisionSound: loadSound('/assets/music/collision.wav'),
     breakBarricadeSound: loadSound('/assets/music/breakBarricade.wav'),
     shieldHit: loadSound('/assets/music/shieldHit.wav'),
+    playerSelect: loadSound('/assets/music/playerSelect.mp3'),
+    extraBonus: loadSound('/assets/music/extraBonus.wav'),
   };
   
   music = {

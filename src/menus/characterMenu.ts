@@ -60,34 +60,41 @@ class CharacterMenu {
         this.pig = document.createElement("img");
         this.pig.className = 'img';
         this.pig.src = "./assets/images/gameCharacters/pigFront.png";
-        this.pig.addEventListener("click", () => this.setCharacterName("pig"));
+        this.pig.addEventListener("click", () => {
+        this.setCharacterName("pig");
+        this.chooseCharacterSound();
+    });
 
         const divTurtle = document.createElement("div");
         divTurtle.className = "div-animals";
         this.turtle = document.createElement("img");
         this.turtle.className = 'img';
         this.turtle.src = "./assets/images/gameCharacters/turtleFront.png";
-        this.turtle.addEventListener("click", () =>
-            this.setCharacterName("turtle")
-        );
+        this.turtle.addEventListener("click", () => {
+            this.setCharacterName("turtle");
+            this.chooseCharacterSound();
+
+});
 
         const divMonkey = document.createElement("div");
         divMonkey.className = "div-animals";
         this.monkey = document.createElement("img");
         this.monkey.className = 'img';
         this.monkey.src = "./assets/images/gameCharacters/monkeyFront.png";
-        this.monkey.addEventListener("click", () =>
-            this.setCharacterName("monkey")
-        );
+        this.monkey.addEventListener("click", () => {
+            this.setCharacterName("monkey");
+            this.chooseCharacterSound();
+        });
 
         const divRabbit = document.createElement("div");
         divRabbit.className = "div-animals";
         this.rabbit = document.createElement("img");
         this.rabbit.className = 'img';
         this.rabbit.src = "./assets/images/gameCharacters/rabbitFront.png";
-        this.rabbit.addEventListener("click", () =>
-            this.setCharacterName("rabbit")
-        );
+        this.rabbit.addEventListener("click", () => {
+            this.setCharacterName("rabbit");
+            this.chooseCharacterSound();
+        });
 
         /** INSERT VERTICAL LINE IN CSS HERE */
         const verticalLine = document.createElement("div");
@@ -114,34 +121,42 @@ class CharacterMenu {
         this.pig2 = document.createElement("img");
         this.pig2.src = "./assets/images/gameCharacters/pigFront.png";
         this.pig2.className = 'img';
-        this.pig2.addEventListener("click", () => this.setCharacterName2("pig"));
+        this.pig2.addEventListener("click", () => {
+            this.setCharacterName2("pig")
+            this.chooseCharacterSound()
+        });
 
         const divTurtle2 = document.createElement("div");
         divTurtle2.className = "div-animals";
         this.turtle2 = document.createElement("img");
         this.turtle2.src = "./assets/images/gameCharacters/turtleFront.png";
         this.turtle2.className = 'img';
-        this.turtle2.addEventListener("click", () =>
+        this.turtle2.addEventListener("click", () =>{
             this.setCharacterName2("turtle")
-        );
+            this.chooseCharacterSound()
+        });
 
         const divMonkey2 = document.createElement("div");
         divMonkey2.className = "div-animals";
         this.monkey2 = document.createElement("img");
         this.monkey2.src = "./assets/images/gameCharacters/monkeyFront.png";
         this.monkey2.className = 'img';
-        this.monkey2.addEventListener("click", () =>
+        this.monkey2.addEventListener("click", () =>{
             this.setCharacterName2("monkey")
-        );
+            this.chooseCharacterSound()
+
+        });
+
 
         const divRabbit2 = document.createElement("div");
         divRabbit2.className = "div-animals";
         this.rabbit2 = document.createElement("img");
         this.rabbit2.src = "./assets/images/gameCharacters/rabbitFront.png";
         this.rabbit2.className = 'img';
-        this.rabbit2.addEventListener("click", () =>
+        this.rabbit2.addEventListener("click", () => {
             this.setCharacterName2("rabbit")
-        );
+            this.chooseCharacterSound()
+        });
 
         /** BUTTON */
         const buttonDiv = document.createElement("div");
@@ -187,7 +202,10 @@ class CharacterMenu {
     public openCharacterMenu() {
         document.body.append(this.mainDiv);
     }
+    public chooseCharacterSound() {
+        sound.playerSelect.play();
 
+    }
     public setCharacterName = (name: CharacterNameLabel) => {
         this.activeCharacterName = name;
 

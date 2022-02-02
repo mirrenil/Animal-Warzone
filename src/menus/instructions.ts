@@ -134,7 +134,7 @@
 
         const imgShield = document.createElement('img');
         imgShield.setAttribute('src', './assets/images/Welder Shield.png');
-        imgSpeed.className = ('speed-img');
+        imgShield.className = ('shield-img');
 
         const shieldHeader = document.createElement('h3');
         shieldHeader.textContent = ('Shield');

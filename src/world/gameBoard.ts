@@ -61,7 +61,7 @@ class GameBoard {
 
     private getCharacterImage(name: CharacterNameLabel) {
         switch (name) {
-            case "turtle": return images.turtleFront;
+            case "turtle":  return images.turtleFront;
             case "monkey": return images.monkeyFront;
             case "rabbit": return images.rabbitFront;
             case "pig": return images.pigFront;
@@ -127,7 +127,7 @@ class GameBoard {
                         if (entity2 instanceof ExtraLife) {
                             this.entities.splice(this.entities.indexOf(entity2), 1);
                             entity1.totalLives =  entity1.totalLives + 1;
-                            sound.powerupSound.play();
+                            sound.extraBonus.play();
                         }
 
                         if (entity2 instanceof Barricade) {

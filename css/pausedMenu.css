@@ -1,69 +1,76 @@
-@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Raleway:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Raleway:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --background: #21212f;
-    --blueBtn: #0085FF;
-    --HoverBtn: #0458a7;
-    --FontColor: #FAFAFA;
-    --fontFBtn: 'Raleway', sans-serif;
-    --fontFBigText: 'Mochiy Pop P One', sans-serif;
+  --background: #21212f;
+  --blueBtn: #0085ff;
+  --HoverBtn: #0458a7;
+  --FontColor: #fafafa;
+  --fontFBtn: "Raleway",
+    sans-serif;
+  --fontFBigText: "Mochiy Pop P One",
+    sans-serif;
 }
 .pausedMenuDiv {
-    position: fixed;
-    inset:0;
-    gap: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  inset: 0;
+  gap: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.6
+  );
 }
 
 .pauseSmallDiv {
-    background-color: black;
-    width: 550px;
-    height: 600px;
-    border-radius: 20px;
-    border: 2px  solid #0085FF;
-    padding:0;
+  background-color: black;
+  width: 550px;
+  height: 600px;
+  border-radius: 20px;
+  border: 2px solid
+    #0085ff;
+  padding: 0;
 }
 
-.pause-text{
-    font-size: 72px;
-    margin-top: 2rem;
-    font-family:  'Mochiy Pop P One', sans-serif;
-    text-align: center;
+.pause-text {
+  font-size: 72px;
+  margin-top: 2rem;
+  font-family: "Mochiy Pop P One",
+    sans-serif;
+  text-align: center;
 }
 
 .btn {
-    color: var(--FontColor);
-    background-color: var(--blueBtn);
-    height: 3rem;
-    width: 10rem;
-    border-radius: 25px;
-    margin-top: 3rem;
-    font-family: 'Raleway', sans-serif;
-    cursor: pointer;
+  color: var(
+    --FontColor
+  );
+  background-color: var(
+    --blueBtn
+  );
+  height: 3rem;
+  width: 10rem;
+  border-radius: 25px;
+  margin-top: 3rem;
+  font-family: "Raleway",
+    sans-serif;
+  cursor: pointer;
 }
-
 
 /* Hover functions*/
-.btn:hover {
-    background-color: var(--Hover);
-    box-shadow: 10px 10px 10px 10px rgba(71, 69, 69, 0.2);
-
-}
 
 .button-div {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-    
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
 }

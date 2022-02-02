@@ -70,7 +70,6 @@
   padding-top: 1rem;
 }
 
-
 body {
   background-color: #000000;
   color: #fafafa;
@@ -105,21 +104,6 @@ body {
   border-radius: 25px;
   font-family: "Raleway",
     sans-serif;
-}
-
-/* Hover functions*/
-.btn:hover {
-  background-color: var(
-    --Hover
-  );
-  box-shadow: 10px
-    10px 10px 10px
-    rgba(
-      71,
-      69,
-      69,
-      0.2
-    );
 }
 
 .gameOverWinner {
