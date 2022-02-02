@@ -1,5 +1,14 @@
 # Animal Warzone
 
+Slutprojekt i Javascript grundkurs: Skapa ett spel i typescript och P5.
+Vi valde att göra ett multiplayer spel i 2D.
+Spelet heter Animal Warzone och det går ut på att man ska försöka träffa varandra med bananer. 
+Det finns fyra olika karaktärer at välja mellan.
+Det finns olika entiteter positionerade på spelplanen t.ex hjärtan som ger extra liv, blixtar för att gå och skjuta snabbare och sköldar för att inte kunna ta skada under en viss tid.
+Blablabla
+
+
+
 ## Skapat av: 
 
 **Fia Andersson [github](https://github.com/fiababiakandersson)**
