@@ -270,7 +270,7 @@ class CharacterMenu {
         this.mainDiv.remove();
         this.gameState.setGameState("Running");
         music.startMenuSound.stop();
-        music.inGameSound.setVolume(.1);
+        music.inGameSound.setVolume(.4);
         music.inGameSound.loop();
     }
 
