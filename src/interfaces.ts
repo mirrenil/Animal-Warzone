@@ -32,6 +32,8 @@ interface Sound {
     collisionSound: p5.SoundFile;
     breakBarricadeSound: p5.SoundFile;
     shieldHit: p5.SoundFile;
+    playerSelect: p5.SoundFile;
+    extraBonus: p5.SoundFile;
 }
   
   interface Music {

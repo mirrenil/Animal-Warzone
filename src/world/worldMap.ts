@@ -21,7 +21,7 @@ class WorldMap {
     entities.push(new Shield(entites.shield, width * .4 + imageX, height * .7 + imageX * 2, this.size ));
 
 
-    entities.push(new Speed(entites.speed, width * .4 - imageX , height * .7 + imageX * 3, this.size ));
+    entities.push(new Speed(entites.speed, width * .4 - imageX , height * .8, this.size ));
     entities.push(new Speed(entites.speed, width * .4 - imageX , height * .4 + imageX * 3, this.size ));
 
     //horizontal
@@ -33,12 +33,12 @@ class WorldMap {
       //middle-up left
       entities.push(new Barricade(entites.barricade, imageX * x + width * .08, height * .5 - imageY * 3, this.size));
       //middle-up right
-      entities.push(new Barricade(entites.barricade, imageX * x + width * .92 - imageX * 3, height * .5 - imageY * 3, this.size));
+      entities.push(new Barricade(entites.barricade, imageX * x + width * .92 - imageX * 4, height * .5 - imageY * 3, this.size));
 
       //middle-down left
       entities.push(new Barricade(entites.barricade, imageX * x + width * .08, height * .5 + imageY * 2, this.size));
       // middle-down right
-      entities.push(new Barricade(entites.barricade, imageX * x + width * .92 - imageX * 3, height * .5 + imageY * 2, this.size));
+      entities.push(new Barricade(entites.barricade, imageX * x + width * .92 - imageX * 4, height * .5 + imageY * 2, this.size));
 
       // middle-down
       entities.push(new Barricade(entites.barricade, imageX * x + width * .3, height * .7, this.size));
@@ -54,11 +54,11 @@ class WorldMap {
       //middle left 
       entities.push(new Barricade(entites.barricade, width * .08 + imageX * 3, y * imageY + height * .5 - imageY * 2, this.size));
       //middle right 
-      entities.push(new Barricade(entites.barricade, width * .92 - imageX * 3, y * imageY + height * .5 - imageY * 2, this.size));
+      entities.push(new Barricade(entites.barricade, width * .92 - imageX * 4, y * imageY + height * .5 - imageY * 2, this.size));
 
       // middle
-      entities.push(new Barricade(entites.barricade, width * .5 - imageX / 2, y * imageY + height * .5 - imageY * 2, this.size));
-      entities.push(new Barricade(entites.barricade, width * .5 + imageX / 2, y * imageY + height * .5 - imageY * 2, this.size));
+      entities.push(new Barricade(entites.barricade, width * .5 - imageX , y * imageY + height * .5 - imageY * 2, this.size));
+      entities.push(new Barricade(entites.barricade, width * .5, y * imageY + height * .5 - imageY * 2, this.size));
 
       // middle-down
       entities.push(new Barricade(entites.barricade, width * .3 + imageX * 4, y * imageY + height * .7 , this.size));
@@ -67,8 +67,12 @@ class WorldMap {
     }
     for (let y = 0; y < 2; y++) {
       //  left up
-      entities.push(new Barricade(entites.barricade, width * .3 - imageX / 2, y * imageY + height * .2, this.size));
-      entities.push(new Barricade(entites.barricade, width * .3 - imageX / 2 + imageX, y * imageY + height * .2, this.size));
+      entities.push(new Barricade(entites.barricade, width * .3 , y * imageY + height * .2 -imageY, this.size));
+      entities.push(new Barricade(entites.barricade, width * .3 - imageX, y * imageY + height * .2-imageY, this.size));
+      entities.push(new Barricade(entites.barricade, width * .7 , y * imageY + height * .8, this.size));
+      entities.push(new Barricade(entites.barricade, width * .7 - imageX, y * imageY + height * .8, this.size));
+
+
     }
       return entities;
     }

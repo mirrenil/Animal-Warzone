@@ -83,6 +83,7 @@ class Character extends Entity {
     return new GunFire(appearance, this.x,this.y, size, velocity,this.playerNum);
  }
   }
+  
   public playersLives() {
     const imageX = 30
     const imageY = 30
