@@ -18,6 +18,7 @@
 [demo](https://mirrenil.github.io/Animal-Warzone/
 )
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/aa8307bd-6386-44d6-9d0d-a9ce4464797d/deploy-status)](https://app.netlify.com/sites/animalwarzone/deploys)
 
 ### Krav för godkänt
 
