@@ -20,8 +20,10 @@ class Game implements GameState {
         this.pausedMenu.openPauseMenu();
         if(!isPaused) {
             isPaused = true;
+            music.inGameSound.pause();
         } else {
             isPaused = false;
+            music.inGameSound.loop();
             this.pausedMenu.pausedMenuDiv.remove();
         }
     }

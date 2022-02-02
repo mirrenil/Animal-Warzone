@@ -78,20 +78,23 @@ body {
 .gameOverMainDiv {
   position: absolute;
   inset: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .btn-div {
+  width: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
   position: fixed;
+  bottom: 10%;
   left: 50;
   right: 50;
 }
 
-.btn {
+/* .btn-div .btn {
   color: var(
     --FontColor
   );
@@ -104,37 +107,43 @@ body {
   border-radius: 25px;
   font-family: "Raleway",
     sans-serif;
-}
+} */
 
 .gameOverWinner {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 200px;
 }
 
 .gameOverLoser {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 200px;
 }
 
 .characters {
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 300px;
+  padding-top: 0.5em;
 }
 
 .characters img {
-  height: 60%;
+  /* height: 50%; */
   width: auto;
 }
 
 span {
-  font-size: 80px;
+  font-size: 60px;
   font-weight: bold;
   letter-spacing: 6px;
   text-align: center;
   font-family: "Mochiy Pop P One",
     sans-serif;
+  padding: 30% 0;
 }
 
 .winner {
@@ -145,4 +154,17 @@ span {
 .loser {
   width: 100%;
   height: 100%;
+}
+.btn:hover {
+  background-color: var(
+    --Hover
+  );
+  box-shadow: 3px
+    3px 10px 3px
+    rgba(
+      49,
+      48,
+      48,
+      0.2
+    );
 }
