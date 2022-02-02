@@ -21,11 +21,28 @@ class GameBoard {
         this.entities = this.worldMap.getEntities();
        
 
+    
+        this.playerOne = new Character(
+            1,
+            activeCharacterName,
+            this.getCharacterImage(activeCharacterName),
+            width * .1 - 40,
+            height * .5 - 30,
+            createVector(80, 80),
+            {
+                left: 65,
+                right: 68,
+                up: 87,
+                down: 83,
+                shoot: 32,
+            }
+        );
+            
         this.playerTwo = new Character(
             2,
             activeCharacterName2,
             this.getCharacterImage(activeCharacterName2),
-            width * .3 + 600,
+            width * .85 + 40,
             height * .5 - 30,
             createVector(80, 80),
             {
@@ -37,22 +54,6 @@ class GameBoard {
                 shoot: ENTER,
             }
 
-        );
-       
-        this.playerOne = new Character(
-            1,
-            activeCharacterName,
-            this.getCharacterImage(activeCharacterName),
-            width * .3,
-            height * .5 - 30,
-            createVector(80, 80),
-            {
-                left: 65,
-                right: 68,
-                up: 87,
-                down: 83,
-                shoot: 32,
-            }
         );
 
         this.entities.push(this.playerOne, this.playerTwo);

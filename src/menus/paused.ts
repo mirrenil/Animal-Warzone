@@ -34,6 +34,7 @@ class PausedMenu {
       }
       private handleResumeGame() {
         this.pausedMenuDiv.remove();
+        music.inGameSound.loop();
         isPaused = false;
     }
     public openPauseMenu(){

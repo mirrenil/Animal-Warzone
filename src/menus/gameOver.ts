@@ -27,7 +27,7 @@ class GameOverMenu {
         this.gameOverDiv.className = 'flex evenly';
 
         this.gameOverWinner = document.createElement('div');
-        this.gameOverWinner.className = 'gameOverWinner flex column align padding-right padding-top';
+        this.gameOverWinner.className = 'gameOverWinner flex column  padding-top';
         
 
         this.winner = document.createElement('span');

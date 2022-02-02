@@ -20,10 +20,8 @@ class WorldMap {
     entities.push(new Shield(entites.shield, width * .6 - imageX, height * .16 - imageY, this.size ));
     entities.push(new Shield(entites.shield, width * .4 + imageX, height * .7 + imageX * 2, this.size ));
 
-
-    entities.push(new Speed(entites.speed, width * .4 - imageX , height * .8, this.size ));
-    entities.push(new Speed(entites.speed, width * .4 - imageX , height * .4 + imageX * 3, this.size ));
-
+    entities.push(new Speed(entites.speed, width * .3, height * .2 - imageY * 2, this.size ));
+    entities.push(new Speed(entites.speed, width * .7 - imageX , height * .8 + imageY * 2, this.size ));
     //horizontal
     for (let x = 0; x < 4; x++) {
       // up right

@@ -12,9 +12,10 @@ body {
   color: var(
     --FontColor
   );
-  background: var(
-    --background
-  );
+  background: #21212f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 :root {
@@ -55,7 +56,7 @@ h3 {
 .playersDiv {
   display: flex;
   justify-content: space-between;
-  padding: 0 20em;
+  padding: 0 10em;
 }
 
 .player1 {
@@ -129,7 +130,8 @@ h3 {
   );
 }
 
-.btn-div {
+.main-div-character
+  .btn-div {
   display: flex;
   justify-content: center;
   align-content: flex-end;
