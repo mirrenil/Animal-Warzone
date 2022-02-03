@@ -5,8 +5,8 @@ Vi valde att göra ett multiplayer spel i 2D.
 Spelet heter Animal Warzone och det går ut på att man ska försöka träffa varandra med bananer. 
 Det finns fyra olika karaktärer at välja mellan.
 Det finns olika entiteter positionerade på spelplanen t.ex hjärtan som ger extra liv, blixtar för att gå och skjuta snabbare och sköldar för att inte kunna ta skada under en viss tid.
-Blablabla
-
+Spelet går ut på att eliminera varandra med hjälp av bananer som man skjuter. 
+Det finns barrikader som man kan gömma sig bakom och dessa går även att skjuta sönder.
 
 
 ## Skapat av: 
