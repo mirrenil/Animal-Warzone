@@ -15,8 +15,6 @@ class GameBoard {
             entites.barricade,
             50,
             50,
-            createVector(0, 0)
-
         );
         this.entities = this.worldMap.getEntities();
        

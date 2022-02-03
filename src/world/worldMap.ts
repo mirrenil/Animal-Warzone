@@ -3,7 +3,7 @@ class WorldMap {
   protected x: number;
   protected y: number;
   public size: p5.Vector;
-  constructor (appearance: p5.Image, x: number, y: number, size: p5.Vector){
+  constructor (appearance: p5.Image, x: number, y: number){
     this.appearance = appearance;
     this.x = x;
     this.y = y;

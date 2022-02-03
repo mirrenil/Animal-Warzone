@@ -1,10 +1,8 @@
 class PausedMenu {
-    private gameState: GameState;
     public pausedMenuDiv: HTMLDivElement;
 
    
-    constructor(gameState: GameState){
-      this.gameState = gameState;
+    constructor() {
       
       this.pausedMenuDiv = document.createElement("div");
       this.pausedMenuDiv.className = "pausedMenuDiv";
