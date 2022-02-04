@@ -1,4 +1,3 @@
-
 class GameBoard {
     public gameState: GameState;
     private worldMap: WorldMap;
@@ -92,6 +91,7 @@ class GameBoard {
                                         sound.drainLifeSound.play();
                                         sound.shieldHit.stop();
                                     }
+                                    // if either player has 0 lives changes game state to game over
                                     if (entity1.totalLives === 0) {
                                         entity1.isLosing = true;
                                         this.gameState.setGameState('GameOver');
