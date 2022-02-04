@@ -29,20 +29,3 @@ Det finns barrikader som man kan gömma sig bakom och dessa går även att skjut
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/aa8307bd-6386-44d6-9d0d-a9ce4464797d/deploy-status)](https://app.netlify.com/sites/animalwarzone/deploys)
 
-### Krav för godkänt
-
-- Uppgiften lämnas in i tid!
-- Alla filer: spelidé, klassdiagram, skisser, planering, kodbas etc har lämnats in
-- Objekt Orienterade Programmerings Principer har användas
-- Ni har redovisat en idépresentation
-- Ni har genomfört en presentation av projektet
-- Ni har använt er av TypeScript & P5
-- Git och GitHub har används enligt beskrivning
-- Spelet fungerar och efterliknar er idébeskrivning
-- Du lämnar in en individuell loggbok
-
-
-### Krav för väl godkänt
-- Alla punkter för godkänt är uppfyllda
-- Spelet ska vara helt originellt eller vara en originell tappning på ett befintligt spel
-- Slutresultatet matchar er idébeskrivning väl
