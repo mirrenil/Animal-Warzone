@@ -78,36 +78,22 @@ body {
 .gameOverMainDiv {
   position: absolute;
   inset: 0;
-  /* overflow: hidden; */
 }
 
 .btn-div {
   width: 400px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   justify-content: space-between;
   margin: auto;
   position: fixed;
-  bottom: 10%;
+  bottom: 15%;
   left: 50;
   right: 50;
 }
 
-/* .btn-div .btn {
-  color: var(
-    --FontColor
-  );
-  background-color: var(
-    --blueBtn
-  );
-  border: none;
-  height: 3rem;
-  width: 10rem;
-  border-radius: 25px;
-  font-family: "Raleway",
-    sans-serif;
-} */
 
 .gameOverWinner {
   display: flex;

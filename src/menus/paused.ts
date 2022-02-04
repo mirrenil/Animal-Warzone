@@ -1,5 +1,4 @@
 class PausedMenu {
-    private gameState: GameState;
     public pausedMenuDiv: HTMLDivElement;
 
    

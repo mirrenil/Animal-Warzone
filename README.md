@@ -7,8 +7,6 @@ Det finns fyra olika karaktärer at välja mellan.
 Det finns olika entiteter positionerade på spelplanen t.ex hjärtan som ger extra liv, blixtar för att gå och skjuta snabbare och sköldar för att inte kunna ta skada under en viss tid.
 
 
-
-
 ## Utvecklarna bakom spelet är: 
 
 **Fia Andersson [github](https://github.com/fiababiakandersson)**

@@ -85,11 +85,9 @@ class GameOverMenu {
         this.winnersDiv.append(this.imageWinner);
         this.gameOverLoser.append(this.loser, this.losersDiv);
         this.losersDiv.append(this.imageLoser);
-        
-        
-        // this.openGameOverMenu();
+       
     }
-
+    /** Checks if player1 or player2 does not have any lives remaining  */
     public openGameOverMenu(player1: Character, player2: Character) {
         if (player1.isLosing) { 
             this.setLoser(player1);
@@ -103,17 +101,17 @@ class GameOverMenu {
         music.inGameSound.stop();
         music.gameOverSound.play();
     }
-
+    /** Sets the winner and checks which name the character had  */
     public setWinner(winner: Character) {
         const name = winner.getName();
         this.imageWinner.src = this.getCharacterImageUrl(name);
     }
-
+    /** Sets the loser and checks which name the character had  */
     public setLoser(loser: Character) {
         const name = loser.getName();
         this.imageLoser.src = this.getCharacterImageUrl(name);
     }
-    
+    /** Checks which name state that was used and shows that character under either winner or loser */
     private getCharacterImageUrl(name: CharacterNameLabel) {
         if (name === 'monkey') {
             return './assets/images/bigMonkey.png';
