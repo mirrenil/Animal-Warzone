@@ -29,17 +29,17 @@ Det finns olika entiteter positionerade på spelplanen t.ex hjärtan som ger ext
 ### Krav för godkänt
 
 - [x] Uppgiften lämnas in i tid!
-- [ ] Alla filer: spelidé, klassdiagram, skisser, planering, kodbas etc har lämnats in
+- [x] Alla filer: spelidé, klassdiagram, skisser, planering, kodbas etc har lämnats in
 - [x] Objekt Orienterade Programmerings Principer har användas
 - [x] Ni har redovisat en idépresentation
 - [x] Ni har genomfört en presentation av projektet
 - [x] Ni har använt er av TypeScript & P5
 - [x] Git och GitHub har används enligt beskrivning
 - [x] Spelet fungerar och efterliknar er idébeskrivning
-- [ ] Du lämnar in en individuell loggbok
+- [x] Du lämnar in en individuell loggbok
 
 
 ### Krav för väl godkänt
-- [ ] Alla punkter för godkänt är uppfyllda
+- [x] Alla punkter för godkänt är uppfyllda
 - [x] Spelet ska vara helt originellt eller vara en originell tappning på ett befintligt spel
 - [x] Slutresultatet matchar er idébeskrivning väl
