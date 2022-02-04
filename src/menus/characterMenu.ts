@@ -1,3 +1,4 @@
+/**Creates a 'state' which includes a string of the chosen character */ 
 type CharacterNameLabel = "" | "rabbit" | "pig" | "turtle" | "monkey";
 class CharacterMenu {
     public activeCharacterName: CharacterNameLabel;
@@ -193,7 +194,7 @@ class CharacterMenu {
         divMonkey2.append(this.monkey2);
         buttonDiv.append(this.startGameButton);
     }
-
+    /** Saves the chacater name */
     public getActiveCharacterName() { return this.activeCharacterName }
     public getActiveCharacterName2() { return this.activeCharacterName2 }
 
@@ -203,8 +204,9 @@ class CharacterMenu {
     }
     public chooseCharacterSound() {
         sound.playerSelect.play();
-
     }
+
+    /** Adds opacity to the non chosen characters */ 
     public setCharacterName = (name: CharacterNameLabel) => {
         this.activeCharacterName = name;
 
@@ -258,7 +260,7 @@ class CharacterMenu {
         }
         this.activateButton();
     }
-
+    /** The start game button can only be pressed once both players has chosen a character */ 
     public activateButton() {
         if (this.activeCharacterName != "" && this.activeCharacterName2 != "") {
             this.startGameButton.classList.remove("unactive");
