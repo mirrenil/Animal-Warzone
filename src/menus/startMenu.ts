@@ -5,6 +5,8 @@ class StartMenu {
 
     constructor(gameState: GameState) {
         this.gameState = gameState;
+
+        /** creating elements for start menu */
         this.startMenuDivEl = document.createElement('div');
         this.startMenuDivEl.className = 'startMenuContainer';
         
